@@ -11,6 +11,15 @@ Quando o pedido envolver preparatórios de licitação de área de porto organiz
 ## Relação com o contexto fixo
 Aplicar o contexto de Tavares já fornecido pela aplicação. Este arquivo acrescenta o procedimento específico do modelo `modelo_analise_licitação.pdf`; não reproduzir fatos de RDJ07 nem presumir que conclusões e normas do exemplo valham para outro processo. Prevalecem a solicitação concreta, os documentos atuais e as decisões vinculantes do caso.
 
+## Regra de execução: escolhas em cartões
+Depois de carregar esta skill com `skill_ler`, usar a ferramenta `perguntar` com o campo `opcoes` para toda confirmação de conteúdo. **Antes de encerrar uma resposta que dependa de escolha do usuário, fazer a chamada da ferramenta.** Uma pergunta em texto ou uma lista de alternativas em Markdown não gera botão. Exemplo executável após apresentar a minuta:
+
+```json
+{"pergunta":"Nota Técnica de licitação [ÁREA]. Você confirma o conteúdo e o encaminhamento?","opcoes":["Confirmar texto","Rever conclusão","Solicitar ajustes"]}
+```
+
+Após a confirmação da minuta, oferecer cartão de próxima etapa com `Criar Nota Técnica no SEI` e `Manter apenas minuta`; a escrita ainda exige a aprovação própria do aplicativo. Se a ferramenta `perguntar` não estiver disponível, informar a limitação sem fingir que os botões apareceram. Não encerrar com “Você confirma?” em texto quando a ferramenta está disponível.
+
 ## Cartões com botões no SEI-Pro
 Quando for necessária uma escolha do usuário que altere o rumo da análise, chamar a ferramenta nativa `perguntar` com os campos `pergunta` e `opcoes`. Isso produz um cartão de opções clicáveis e um campo `Outra resposta...`. Não simular botões com Markdown ou HTML na mensagem. O aplicativo aceita até seis opções; usar rótulos curtos e específicos, com contexto suficiente no título do cartão.
 
