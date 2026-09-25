@@ -8,6 +8,15 @@ description: Examina a conclusão de Nota Técnica da GPO, consulta o processo e
 ## Finalidade e limites
 Use esta skill quando houver Nota Técnica ou manifestação conclusiva de servidor da GPO a ser apreciada pela chefia imediata e encaminhada à Superintendência de Outorgas. A Nota Técnica é a manifestação técnica do analista; o despacho é a posição própria da Gerência. Não presumir concordância do gerente, nem transformar o despacho de encaminhamento em voto da Diretoria. Aplicar o contexto fixo de Tavares já enviado à API para estilo e método, sem repetir o perfil pessoal no documento.
 
+## Regra de execução: mostrar botões antes de avançar
+Esta skill deve ser carregada com `skill_ler` quando o usuário pedir despacho da GPO à SOG. **A primeira interação após localizar a NT é uma chamada de ferramenta `perguntar` com `opcoes`, antes de qualquer resposta final ou minuta.** Escrever “Deseja encaminhar?” na mensagem não cria botão. Exemplo executável:
+
+```json
+{"pergunta":"Encaminhar a Nota Técnica nº [N]/[ANO]/GPO/SOG (SEI nº [ID]) à SOG?","opcoes":["Sim, esta NT","Ver resumo","Escolher outra NT"]}
+```
+
+Depois de cada justificativa técnica, chamar novamente `perguntar` com opções de posição; depois da minuta integral, chamar `perguntar` para confirmar o texto. Nunca encerrar um turno com a pergunta escrita em prosa quando se espera uma escolha. Se `perguntar` não estiver disponível, informar explicitamente que o aplicativo não disponibilizou cartões interativos nesta conversa; não afirmar que apresentou botões. O cartão de escolha da próxima etapa não substitui a aprovação nativa da gravação do documento.
+
 ## Interface de escolhas do SEI-Pro
 Sempre que uma resposta do usuário determinar qual NT usar, como avaliar uma conclusão ou qual versão da minuta manter, **chamar a ferramenta nativa `perguntar` com `pergunta` e `opcoes`**, para exibir um cartão com botões. Não apresentar as opções apenas como texto corrido ou lista Markdown. O SEI-Pro aceita até seis rótulos em `opcoes` e já mostra o campo `Outra resposta...`; deixar rótulos curtos, claros e orientados à ação. O cabeçalho do cartão traz contexto suficiente, como número da NT e item da conclusão. Não criar HTML de botões na mensagem: o aplicativo renderiza os botões a partir da chamada à ferramenta.
 
