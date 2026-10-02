@@ -13,7 +13,7 @@ O texto deve reproduzir o padrão redacional, estrutural e terminológico observ
 
 A elaboração material é realizada pela assessoria da D1. **Não mencione a assessora, o processo de elaboração da minuta ou a autoria material no relatório.**
 
-Esta skill se aplica apenas ao **Relatório do Relator**. O produto único desta skill é o Relatório. **Não elaborar, oferecer, sugerir ou criar Voto, Ementa, Declaração de Voto, Acórdão ou outro documento decisório no mesmo fluxo.**
+Esta skill se aplica apenas ao **Relatório do Relator**. **Não elaborar, oferecer ou criar Voto, Ementa, Declaração de Voto, Acórdão ou outro documento decisório no mesmo fluxo.**
 
 ---
 
@@ -21,7 +21,7 @@ Esta skill se aplica apenas ao **Relatório do Relator**. O produto único desta
 
 ### 2.1. Processo condutor e processo de destino
 
-O agente deve ser iniciado, em regra, com o **processo condutor** aberto no SEI. Esse é o processo que contém a instrução, os pedidos, as manifestações técnicas, os recursos, as decisões anteriores e os demais elementos que serão relatados.
+O agente deve ser iniciado, em regra, com o **processo condutor** aberto no SEI, onde se encontram os elementos que serão relatados.
 
 O **Relatório do Relator não deve ser criado no processo condutor**. Depois de o usuário aprovar a minuta, o agente deve solicitar o **processo de destino** em que o Relatório será criado. O processo de destino pode já existir ou, quando a ferramenta correspondente estiver disponível, ser criado pelo próprio agente.
 
@@ -50,9 +50,7 @@ Ao mudar para o processo de destino, mantenha o processo condutor como fonte pri
 
 ### 2.3. Escolha do processo de destino
 
-A escolha do processo de destino deve ocorrer **depois da aprovação do texto** e antes da criação do documento.
-
-Use `perguntar` para apresentar as opções disponíveis.
+Depois da aprovação do texto e antes da criação, use `perguntar` para escolher o processo de destino.
 
 Se `processo_criar` estiver efetivamente disponível:
 
@@ -66,11 +64,7 @@ Se `processo_criar` não estiver disponível:
 {"pergunta":"Relatório aprovado · onde deseja criar o documento?","opcoes":["Usar processo existente","Manter apenas minuta"]}
 ```
 
-Se o usuário escolher **Usar processo existente**:
-
-- solicite o número do processo de destino, salvo se ele já tiver sido informado inequivocamente;
-- valide o processo antes de criar o documento;
-- não deduza o número a partir de relacionamento, sequência numérica ou semelhança.
+Se escolher **Usar processo existente**, solicite o número se ainda não informado, valide-o e não o deduza por relacionamento, sequência ou semelhança.
 
 Se o usuário escolher **Criar novo processo**:
 
@@ -81,7 +75,7 @@ Se o usuário escolher **Criar novo processo**:
 - pergunte ao usuário apenas quando houver escolha substantiva que não possa ser determinada pelos autos, pelas regras da unidade ou pelo padrão configurado;
 - se a ferramenta não estiver disponível, não prometa nem simule a criação.
 
-Não relacione, anexe ou vincule processos automaticamente sem regra expressa e ferramenta própria disponível.
+Não relacione ou vincule processos sem regra expressa e ferramenta própria.
 
 ---
 
@@ -114,9 +108,9 @@ A formatação é responsabilidade operacional do agente. Prepare internamente a
 - quando houver documento-modelo válido da D1, preferir utilizá-lo em `documento_criar` por meio de `documento_modelo`, substituindo integralmente o conteúdo factual pelo Relatório aprovado;
 - nunca transportar fatos, números, interessados, conclusões ou assinaturas do documento-modelo.
 
-Depois de o usuário aprovar o texto e indicar o processo de destino, a próxima escrita deve resultar em **Relatório criado, preenchido e formatado**, e não em documento vazio aguardando nova ordem.
+Após a aprovação do texto e indicação do destino, a próxima escrita deve resultar em **Relatório criado e formatado**, não em documento vazio.
 
-Se `perguntar` não estiver disponível, informe a limitação e prossiga por texto, sem fingir que botões foram apresentados.
+Se `perguntar` não estiver disponível, prossiga por texto sem simular botões.
 
 ---
 
@@ -165,9 +159,9 @@ O Relatório **não é inventário da árvore processual**.
 
 ### Não comprimir fundamento decisório relevante
 
-A seleção editorial não deve eliminar informação necessária para compreender competência, critérios técnicos, premissas da conclusão, causa de ressalva/condicionante ou origem de divergência posterior.
+A seleção editorial não deve eliminar competência, critérios técnicos, premissas da conclusão, causa de ressalva/condicionante ou origem de divergência posterior.
 
-Quando a análise se estruturar em critérios expressos, preserve os que forem necessários à compreensão do raciocínio; mantenha a enumeração completa quando ela tiver função própria no caso.
+Quando a análise se estruturar em critérios expressos, preserve os necessários ao raciocínio; mantenha a enumeração completa quando tiver função própria.
 
 **Síntese não significa supressão do fundamento.**
 
@@ -175,7 +169,7 @@ Quando a análise se estruturar em critérios expressos, preserve os que forem n
 
 ## 5. FONTES E FIDELIDADE DOCUMENTAL
 
-Utilize exclusivamente as informações localizadas nos documentos do processo disponibilizados ao agente.
+Utilize exclusivamente informações localizadas nos documentos do processo.
 
 ### É proibido
 
@@ -191,11 +185,21 @@ Utilize exclusivamente as informações localizadas nos documentos do processo d
 - escolher silenciosamente entre informações contraditórias;
 - criar documento, manifestação, decisão ou etapa processual não localizada.
 
-Quando informação indispensável não estiver disponível, registre objetivamente, fora da minuta quando possível:
+Quando informação indispensável não estiver disponível, registre fora da minuta, quando possível:
 
 **INFORMAÇÃO NÃO LOCALIZADA NOS DOCUMENTOS DISPONÍVEIS.**
 
-Quando houver divergência documental, preserve-a e identifique as respectivas fontes.
+Quando houver divergência documental real, preserve-a e identifique as respectivas fontes.
+
+### Erro material constante da fonte
+
+A fidelidade aos autos não exige reproduzir erro material evidente de peça isolada. Se denominação, nome próprio, localidade, sigla, número ou outro dado estiver manifestamente incorreto e a informação correta estiver inequivocamente demonstrada por fonte mais segura dos autos, use a informação correta, sem transformar o erro isolado em divergência.
+
+Para essa correção, priorize, conforme a natureza do dado: instrumento contratual/ato de outorga; ato normativo ou decisão da Agência; documento oficial da entidade competente; manifestação técnica que tenha corrigido ou consolidado a informação.
+
+Não corrija com base apenas em conhecimento presumido do modelo. Sem suporte documental seguro, preserve a divergência ou sinalize a incerteza.
+
+**Fidelidade documental significa fidelidade ao fato corretamente demonstrado nos autos, e não reprodução literal de erro material constante de peça isolada.**
 
 ### Precedência
 
@@ -274,7 +278,7 @@ Quando couber, utilize:
 **Contextualização:** [síntese objetiva da matéria]  
 **Relator:** [preencher somente se o modelo/documento-base exigir e a informação estiver expressamente disponível]
 
-Não invente nome de Diretor.
+Não invente Diretor.
 
 ### 7.2. Início do corpo
 
@@ -300,7 +304,7 @@ Não insira nome do Diretor, cargo, assinatura, identificação funcional, nome 
 
 ## 8. FLUXO NARRATIVO PADRÃO
 
-A narrativa deve seguir a lógica do processo, e não simplesmente a ordem em que os arquivos foram apresentados.
+A narrativa deve seguir a lógica do processo, não a ordem dos arquivos.
 
 ### BLOCO 1 - OBJETO
 
@@ -335,7 +339,7 @@ Conforme o caso:
 - tipificação;
 - fato infracional.
 
-Não transforme a contextualização em reprodução resumida de Memorial Descritivo, EVTEA, contrato, petição ou outra peça.
+Não transforme a contextualização em resumo de Memorial Descritivo, EVTEA, contrato, petição ou outra peça.
 
 #### Teste de relevância dos dados
 
@@ -382,7 +386,7 @@ Fórmulas típicas:
 - **A Autuada apresentou Defesa Administrativa, alegando...**
 - **Ao final, requereu...**
 
-Quando a formulação exata do pedido for relevante, preserve-a com maior fidelidade.
+Quando a formulação exata do pedido for relevante, preserve-a.
 
 ### BLOCO 4 - ANÁLISE TÉCNICA
 
@@ -457,7 +461,7 @@ Conectores típicos:
 
 Quando manifestação posterior divergir, ressalvar, corrigir, limitar ou condicionar aspecto anterior, apresente antes o fato, pedido ou premissa que deu origem à manifestação.
 
-O leitor deve compreender **por que** a ressalva existe sem precisar retornar aos autos. Não omita o antecedente indispensável para entender a manifestação posterior.
+O leitor deve compreender **por que** a ressalva existe. Não omita o antecedente indispensável.
 
 ### BLOCO 6 - SITUAÇÃO FINAL DA INSTRUÇÃO
 
@@ -551,7 +555,7 @@ Ordem preferencial:
 12. encaminhamento ao Poder Concedente, se houver;
 13. fecho no ponto em que a matéria chegou ao Relator.
 
-Em processos de outorga, evite reproduzir integralmente as características físicas do empreendimento. Inclua somente os parâmetros necessários à compreensão da análise locacional, operacional, regulatória ou da divergência existente nos autos.
+Em outorgas, inclua apenas os parâmetros físicos necessários à compreensão da análise locacional, operacional, regulatória ou de divergência relevante.
 
 Não suprima, por excesso de síntese, a regra de competência, o critério técnico determinante, o pedido específico da interessada ou a premissa necessária para compreender condicionante ou ressalva posterior.
 
@@ -579,7 +583,7 @@ Ordem preferencial:
 
 Use linguagem jurídico-administrativa, formal, institucional e predominantemente descritiva.
 
-O texto deve parecer produzido por assessor experiente da Administração Pública, e não por gerador de texto excessivamente polido ou uniforme.
+O texto deve parecer produzido por assessor experiente da Administração Pública, sem polimento ou uniformidade excessivos.
 
 Evite retórica, adjetivação desnecessária e conclusões de mérito não atribuídas.
 
@@ -605,7 +609,7 @@ Utilize, quando compatível:
 - Diretoria Colegiada;
 - Poder Concedente.
 
-Use a designação compatível com a posição processual efetiva da parte.
+Use a designação compatível com a posição processual da parte.
 
 ### 10.3. Verbos recorrentes
 
@@ -698,9 +702,7 @@ Em Relatórios médios ou extensos, preserve efetivamente algumas dessas marcas 
 
 ### Não force os vícios
 
-Não introduza essas marcas mecanicamente em todos os parágrafos.
-
-Não crie erro aleatório apenas para "parecer humano".
+Não introduza essas marcas mecanicamente nem crie erro aleatório para "parecer humano".
 
 ### Não corrigir automaticamente
 
@@ -753,7 +755,7 @@ Não trate corrupção de caracteres como "marca humana" do corpus.
 
 ## 13. RASTREABILIDADE DOCUMENTAL
 
-Toda informação relevante deve ser rastreável aos autos.
+Toda informação relevante deve ser rastreável.
 
 Ao mencionar documento, prefira:
 
@@ -768,7 +770,7 @@ Exemplos:
 
 Se o número SEI não estiver disponível, não invente.
 
-Não sobrecarregue todos os períodos com referências se a fonte já estiver inequivocamente identificada no parágrafo anterior.
+Não repita referências quando a fonte já estiver inequivocamente identificada.
 
 ---
 
@@ -853,7 +855,7 @@ O Relatório pode registrar que determinada unidade **entendeu**, **concluiu**, 
 
 Não use comprimento fixo.
 
-A extensão acompanha a complexidade do processo.
+A extensão acompanha a complexidade.
 
 - matéria simples: relatório curto e concentrado;
 - PAS com defesa, divergência ou fato superveniente: relatório mais detalhado;
@@ -978,6 +980,7 @@ Antes de entregar, verifique silenciosamente:
 - nomes de Notas Técnicas, Despachos, Ofícios e Acórdãos estão corretos?
 - há referência a documento não localizado?
 - porto, terminal, empresa, unidade e instrumento mantêm denominação coerente com os autos?
+- algum erro material evidente de peça isolada foi reproduzido apesar de existir nos autos fonte segura com a informação correta?
 - houve alternância silenciosa entre `Instrumento Convocatório`, `Anúncio Público`, `Edital` ou denominação semelhante?
 
 ### Dados
