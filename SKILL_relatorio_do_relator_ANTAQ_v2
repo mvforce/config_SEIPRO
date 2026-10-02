@@ -1,6 +1,6 @@
 ---
 name: Relatório do Relator - D1
-description: Analisa o processo condutor e elabora ou revisa Relatório do Relator da Diretoria D1 da ANTAQ, com interação por cartões e criação do documento no processo próprio de deliberação.
+description: Analisa o processo condutor e elabora ou revisa Relatório do Relator da Diretoria D1 da ANTAQ; após o usuário aprovar o texto, define o processo de destino e cria o documento já formatado no SEI.
 ---
 
 # SKILL - RELATÓRIO DO RELATOR | DIRETORIA D1 | ANTAQ
@@ -19,79 +19,104 @@ Esta skill se aplica apenas ao **Relatório do Relator**. O produto único desta
 
 ## FLUXO OPERACIONAL NO SEI
 
-### Processo condutor e processo da D1
+### Processo condutor e processo de destino
 
 O agente deve ser iniciado, em regra, com o **processo condutor** aberto no SEI. Esse é o processo que contém a instrução, os pedidos, as manifestações técnicas, os recursos, as decisões anteriores e os demais elementos que serão relatados.
 
-O **Relatório do Relator não deve ser criado no processo condutor**. Ele deve ser produzido em **processo próprio da Diretoria D1**, distinto do processo analisado, salvo ordem expressa e excepcional do usuário em sentido diverso.
+O **Relatório do Relator não deve ser criado no processo condutor**. Depois de o usuário aprovar a minuta, o agente deve solicitar o **processo de destino** em que o Relatório será criado. O processo de destino pode já existir ou, quando a ferramenta correspondente estiver disponível, ser criado pelo próprio agente.
 
 Para esta skill:
 
 - **processo condutor** = processo substantivo/originário cuja marcha processual será relatada;
-- **processo da D1** ou **processo de deliberação** = processo de destino no qual será criado o Relatório do Relator.
+- **processo de destino** = processo distinto no qual será criado o Relatório do Relator.
 
-**Regra de ouro operacional:** o processo condutor é a fonte da instrução; o processo da D1 é o destino do Relatório. Não confundir os dois.
+**Regra de ouro operacional:** o processo condutor é a fonte da instrução; o processo de destino é apenas o local de criação do Relatório. Não confundir os dois.
 
 ### Sequência obrigatória
 
 Quando o pedido envolver elaborar o Relatório a partir do processo aberto:
 
 1. confirme o processo aberto na tela e trate-o, em regra, como processo condutor;
-2. use `tarefas` para mostrar o andamento, pois o fluxo possui várias etapas;
+2. use `tarefas` para mostrar o andamento quando a atividade tiver várias etapas;
 3. leia o processo condutor e os documentos relevantes antes de qualquer criação documental;
-4. reconstrua a marcha processual e conclua a análise necessária ao Relatório ainda com base no processo condutor;
-5. verifique se os autos já identificam, por número, referência ou relacionamento, um processo próprio da D1;
-6. somente depois da análise resolva o processo de destino;
-7. definido o processo da D1, elabore ou revise a minuta integral;
-8. após a confirmação do usuário, crie o Relatório no processo da D1 usando as ferramentas nativas do SEI-Pro;
-9. encerre o fluxo após a criação ou manutenção da minuta, sem iniciar outro produto decisório.
+4. reconstrua a marcha processual e elabore a minuta integral ainda com base no processo condutor;
+5. apresente a minuta ao usuário para revisão;
+6. se o usuário solicitar ajustes, revise a minuta e reapresente-a;
+7. **somente depois de o usuário aceitar o texto**, pergunte em qual processo o Relatório deverá ser criado, oferecendo usar processo existente ou criar novo processo, quando essa ferramenta estiver disponível;
+8. resolvido o processo de destino, crie o Relatório **já com o conteúdo final e a formatação aplicável**, sem abrir uma etapa separada para o usuário mandar formatar, confirmar estilos ou pedir edição posterior;
+9. encerre o fluxo após a criação ou, se o usuário assim escolher, mantenha apenas a minuta.
 
-Não abandone o processo condutor antes de concluir a leitura necessária. Um processo novo da D1 pode estar vazio ou conter apenas documentos de deliberação e, por isso, **não substitui a fonte primária da instrução**.
+Não abandone a base documental do processo condutor ao mudar para o processo de destino. Um processo novo pode estar vazio e **não substitui a fonte primária da instrução**.
 
-### Identificação ou criação do processo da D1
+### Escolha do processo de destino
 
-Antes de perguntar ao usuário, procure nos documentos e nos dados processuais disponíveis se já existe referência inequívoca ao processo de deliberação da D1. Não deduza o número por padrão, sequência ou semelhança.
+A escolha do processo de destino deve ocorrer **depois da aprovação do texto** e antes da criação do documento.
 
-Se já houver processo da D1 identificado, use `perguntar` para confirmar o destino, com opções curtas, por exemplo:
+Use `perguntar` para apresentar as opções disponíveis.
+
+Se `processo_criar` estiver efetivamente disponível:
 
 ```json
-{"pergunta":"Destino do Relatório · processo da D1 localizado: [NÚMERO]","opcoes":["Usar este processo","Informar outro processo","Gerar apenas minuta"]}
+{"pergunta":"Relatório aprovado · onde deseja criar o documento?","opcoes":["Usar processo existente","Criar novo processo","Manter apenas minuta"]}
 ```
 
-Se **não** houver processo da D1 identificado:
+Se `processo_criar` não estiver disponível:
 
-- se a ferramenta `processo_criar` estiver efetivamente disponível ao agente, use `perguntar` para oferecer `Criar novo processo da D1`, `Informar processo existente` e `Gerar apenas minuta`;
-- se `processo_criar` **não** estiver disponível, **não simule nem prometa a criação** e não invente número de processo. Nesse caso, ofereça apenas `Informar processo existente` e `Gerar apenas minuta`;
-- ao criar processo, nunca invente tipo, especificação, interessado, nível de acesso ou hipótese legal. Consulte `sei_opcoes` e, se ainda houver escolha relevante, use `perguntar`;
-- não relacione, anexe ou vincule processos automaticamente sem regra expressa da D1 e ferramenta própria disponível.
+```json
+{"pergunta":"Relatório aprovado · onde deseja criar o documento?","opcoes":["Usar processo existente","Manter apenas minuta"]}
+```
 
-A indisponibilidade de `processo_criar` é limitação da ferramenta, não motivo para alterar o conteúdo do Relatório.
+Se o usuário escolher **Usar processo existente**:
+
+- solicite o número do processo de destino, salvo se ele já tiver sido informado inequivocamente pelo usuário;
+- valide o processo antes de criar o documento;
+- não deduza o número a partir de relacionamento, sequência numérica ou semelhança.
+
+Se o usuário escolher **Criar novo processo**:
+
+- use a ferramenta `processo_criar` somente se ela estiver disponível;
+- a criação do processo é operação de escrita e deve permanecer sujeita à aprovação nativa do SEI-Pro;
+- não invente tipo, especificação, interessado, nível de acesso ou hipótese legal;
+- use `sei_opcoes` e outras ferramentas de leitura para obter opções válidas;
+- pergunte ao usuário apenas quando houver uma escolha substantiva que não possa ser determinada pelos autos, pelas regras da unidade ou pelo padrão já configurado;
+- se a ferramenta não estiver disponível, não prometa nem simule a criação. Informe a limitação e ofereça processo existente ou manutenção da minuta.
+
+Não relacione, anexe ou vincule processos automaticamente sem regra expressa e ferramenta própria disponível.
 
 ---
 
 ## INTERAÇÃO POR CARTÕES E BOTÕES
 
-Use a ferramenta nativa `perguntar` sempre que uma escolha do usuário mudar o rumo do fluxo. **Uma pergunta escrita apenas em texto ou opções simuladas em Markdown não gera botões.**
+Use a ferramenta nativa `perguntar` quando uma escolha do usuário mudar o rumo do fluxo. **Uma pergunta escrita apenas em texto ou opções simuladas em Markdown não gera botões.**
 
 Não use `perguntar` para substituir a aprovação de escrita. As ferramentas de escrita do SEI-Pro possuem cartão próprio de aprovação.
 
-### Cartões recomendados
-
-Quando a regra global do agente perguntar sobre documentos semelhantes, use opções como:
-
-```json
-{"pergunta":"Relatório do Relator · deseja consultar documentos semelhantes no SEI antes da redação?","opcoes":["Sim, procurar similares","Não, usar esta skill"]}
-```
-
-Se o usuário autorizar, use `documentos_similares` e leia no máximo um ou dois Relatórios do Relator pertinentes, apenas para estrutura e linguagem. Nunca transporte fatos, conclusões ou dados do exemplo para o caso atual.
+### Confirmação da minuta
 
 Depois de apresentar a minuta integral, use:
 
 ```json
-{"pergunta":"Relatório do Relator · próxima etapa","opcoes":["Criar Relatório no SEI","Solicitar ajustes","Manter apenas minuta"]}
+{"pergunta":"Relatório do Relator · o texto está aprovado?","opcoes":["Aprovar texto","Solicitar ajustes","Manter apenas minuta"]}
 ```
 
-Se o processo da D1 ainda não estiver definido, resolva o destino antes de oferecer `Criar Relatório no SEI`.
+- `Solicitar ajustes`: receba a orientação do usuário, revise e apresente novamente a minuta;
+- `Manter apenas minuta`: encerre sem escrever no SEI;
+- `Aprovar texto`: passe diretamente à escolha do processo de destino.
+
+### Formatação não é uma decisão do usuário
+
+**Não pergunte ao usuário se deseja formatar o documento, qual estilo aplicar, se deve editar depois da criação ou se deve abrir o editor para ajustes de formatação.**
+
+A formatação é responsabilidade operacional do agente.
+
+Antes da aprovação final do texto, o agente deve preparar internamente a base de formatação necessária ao documento, observando as regras gerais do SEI-Pro:
+
+- carregar `redacao-oficial` quando exigido pelo motor;
+- se o usuário tiver autorizado a consulta de documento semelhante, usar `documentos_similares` e, quando útil, `documento_estilos` em Relatório já existente para conhecer estrutura e classes aceitas pelo órgão;
+- quando houver documento-modelo válido da D1, preferir utilizá-lo em `documento_criar` por meio de `documento_modelo`, substituindo o conteúdo factual pelo Relatório aprovado;
+- nunca transportar fatos, números, interessados, conclusões ou assinaturas do documento-modelo.
+
+Depois de o usuário aprovar o texto e indicar o processo de destino, a próxima escrita deve resultar em **Relatório criado e preenchido**, e não em documento vazio aguardando nova ordem de formatação.
 
 Se a ferramenta `perguntar` não estiver disponível, informe a limitação e prossiga por texto, sem fingir que botões foram apresentados.
 
@@ -725,22 +750,25 @@ Não invente transições processuais para preencher ausências documentais.
 6. corrija erros que afetem precisão, atribuição, compreensão ou fidelidade aos autos;
 7. não transforme a revisão em reescrita completa sem necessidade.
 
-### Quando o usuário escolher criar o Relatório no SEI
+### Quando o usuário aprovar o texto e definir o processo de destino
 
-1. confirme que o **processo de destino é o processo da D1**, e não o processo condutor;
+1. valide que o **processo de destino é distinto do processo condutor**, salvo ordem expressa do usuário em sentido diverso;
 2. leia a skill `redacao-oficial` se ela ainda não tiver sido carregada, conforme as regras gerais do agente;
-3. use `sei_opcoes` para confirmar o nome exato do tipo documental quando houver qualquer dúvida;
-4. se houver mais de um tipo plausível, use `perguntar` com as opções válidas em vez de escolher por inferência;
+3. use `sei_opcoes` para confirmar o nome exato do tipo documental quando houver dúvida;
+4. se houver mais de um tipo documental plausível e não existir regra suficiente para decidir, use `perguntar`; não escolha por inferência;
 5. não invente descrição, número manual, nível de acesso ou hipótese legal;
-6. se os estilos do editor ainda não forem conhecidos, prefira criar o documento sem corpo por `documento_criar`, aguardar o retorno do campo `estilos` e só então inserir o conteúdo com `documento_editar`;
-7. ao editar, use somente as classes de estilo que o próprio SEI devolver para aquele documento;
-8. não duplique cabeçalho, rodapé, brasão, assinatura ou outros elementos que o tipo documental do SEI já forneça automaticamente;
-9. preserve no corpo a estrutura e o conteúdo confirmados pelo usuário;
-10. finalize em **"Era o que cumpria relatar."** e deixe o fecho institucional em branco;
-11. nunca assine o documento como parte desta skill;
-12. após a criação, informe objetivamente o número SEI gerado e o processo da D1 em que o Relatório foi criado.
+6. **prepare o HTML final antes de chamar a escrita**, usando a estrutura e as classes de estilo já obtidas de documento-modelo, documento semelhante ou referência válida do órgão;
+7. prefira uma única chamada a `documento_criar` contendo o `conteudo_html` final e, quando disponível, `documento_modelo` adequado. A própria ferramenta cria o documento e insere o conteúdo na mesma operação aprovada;
+8. não crie documento vazio para depois perguntar se o usuário quer formatá-lo;
+9. não peça nova confirmação apenas para aplicar estilos ou inserir o mesmo texto já aprovado;
+10. use `documento_editar` depois da criação somente para corrigir falha efetiva, limitação técnica ou ajuste solicitado posteriormente pelo usuário, e não como etapa normal do fluxo;
+11. não duplique cabeçalho, rodapé, brasão, assinatura ou outros elementos que o tipo documental/modelo do SEI já forneça automaticamente;
+12. preserve no corpo exatamente o conteúdo material aprovado pelo usuário, admitindo apenas transformações de marcação necessárias à formatação HTML;
+13. finalize em **"Era o que cumpria relatar."** e deixe o fecho institucional em branco;
+14. nunca assine o documento como parte desta skill;
+15. após a criação, informe objetivamente o número SEI gerado e o processo em que o Relatório foi criado.
 
-A criação do documento e a edição de seu conteúdo são operações de escrita e permanecem sujeitas aos cartões nativos de aprovação do SEI-Pro. A escolha `Criar Relatório no SEI` indica o caminho desejado, mas **não equivale à aprovação técnica da operação de escrita**.
+A ferramenta `documento_criar` do SEI-Pro aceita `conteudo_html` e pode usar `documento_modelo`; portanto, o comportamento esperado é entregar o Relatório **criado e formatado em uma única operação de criação**, sujeita ao cartão nativo de aprovação. O aceite do texto pelo usuário autoriza avançar para a escolha do destino, mas a gravação continua sujeita à aprovação técnica do cartão de escrita do aplicativo.
 
 ---
 
@@ -750,9 +778,9 @@ Antes de entregar, verifique silenciosamente:
 
 ### Processos e destino
 - a análise foi construída a partir do processo condutor correto?
-- o processo da D1 foi identificado ou confirmado sem inferência?
+- o processo de destino foi indicado, criado ou confirmado sem inferência?
 - o número usado no cabeçalho foi conferido e não foi confundido com o processo de destino?
-- se houve escrita no SEI, o Relatório foi criado no processo da D1, e não no processo condutor?
+- se houve escrita no SEI, o Relatório foi criado no processo de destino indicado/criado, e não no processo condutor?
 - alguma operação de criação ou vinculação foi prometida apesar de a ferramenta correspondente não estar disponível?
 
 ### Objeto
