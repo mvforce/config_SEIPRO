@@ -1,103 +1,145 @@
-# SKILL - Relatório do Relator ANTAQ
+# SKILL - RELATÓRIO DO RELATOR | DIRETORIA D1 | ANTAQ
 
-## 1. Finalidade
+## 1. FINALIDADE
 
-Gerar ou revisar **Relatório do Relator** da ANTAQ a partir dos documentos do processo, reproduzindo o padrão institucional observado em relatórios reais elaborados pela assessoria da **Diretoria D1**, com alta rastreabilidade documental, narrativa processual objetiva e separação rigorosa entre **relatar** e **julgar**.
+Use esta skill para **elaborar, revisar, ajustar ou completar Relatório do Relator da Diretoria D1 da ANTAQ** a partir dos documentos do processo.
 
-O texto é materialmente elaborado pela assessoria da D1, inclusive pela assessora Gabriella, em nome da Diretoria/Relator. O estilo deve ser tratado como **padrão redacional da assessoria da D1**, e não como estilo pessoal de determinado Diretor.
+O texto deve reproduzir o padrão redacional, estrutural e terminológico observado nos relatórios elaborados pela **Assessoria da Diretoria D1**.
 
-Este skill deve ser aplicado ao Relatório do Relator. Não o confunda com Nota Técnica, Despacho, Voto, Declaração de Voto ou Acórdão.
+A elaboração material é realizada pela assessoria da D1. **Não mencione a assessora, o processo de elaboração da minuta ou a autoria material no relatório.**
 
-## 2. Princípio central
+Esta skill se aplica apenas ao **Relatório do Relator**. Não confunda o documento com Nota Técnica, Despacho, Voto, Declaração de Voto ou Acórdão.
 
-O Relatório do Relator deve reconstruir a marcha processual necessária à compreensão da matéria.
+---
 
-Ele deve responder, em ordem lógica:
+## 2. REGRA CENTRAL
 
-1. Qual é o objeto do processo?
-2. Quem formulou o pedido, praticou o ato ou sofreu a imputação?
-3. Qual é a pretensão, controvérsia, infração, recurso ou medida submetida à Diretoria?
-4. Quais são os argumentos relevantes das partes?
-5. Quais unidades analisaram a matéria?
-6. O que cada unidade concluiu?
-7. Houve divergência, diligência, decisão superveniente ou manifestação hierárquica posterior?
-8. Qual foi a proposta técnica que chegou ao relator?
+O Relatório do Relator deve **reconstruir a marcha processual necessária à compreensão da matéria submetida à Diretoria**.
 
-**Não transforme o relatório em voto.**
+O relatório:
 
-A conclusão de mérito deve ser atribuída à peça ou unidade que a formulou. Não apresente avaliação própria do relator, salvo quando o próprio processo registrar ato anterior praticado pelo relator e essa informação for necessária à cronologia.
+- relata;
+- contextualiza;
+- organiza cronologicamente os atos relevantes;
+- identifica os argumentos das partes;
+- registra as manifestações das unidades técnicas e chefias;
+- atribui cada conclusão a quem efetivamente a formulou;
+- encerra a instrução no ponto em que a matéria chegou ao Relator.
 
-## 3. Regra de fidelidade documental
+O relatório **não julga** e **não antecipa o Voto**.
 
-Use exclusivamente informações localizadas nos autos fornecidos.
+Nunca apresente como entendimento do Relator uma conclusão produzida pela área técnica, Gerência, Superintendência, parte interessada ou qualquer outro documento.
 
-Nunca:
+### Pergunta de controle
 
-- invente fatos, datas, números SEI, dispositivos, valores ou posições institucionais;
-- complete lacunas com conhecimento prévio;
-- presuma que uma unidade anuiu a outra sem documento expresso;
-- converta alegação de parte em fato comprovado;
-- atribua à ANTAQ conclusão que pertence apenas a uma unidade técnica;
-- corrija silenciosamente um dado controvertido sem verificar a fonte.
+Para toda conclusão relevante, verifique:
 
-Quando faltar informação indispensável, declare objetivamente:
+**QUEM DISSE ISSO?**
+
+Se a autoria da afirmação não estiver clara na frase, reescreva.
+
+---
+
+## 3. FONTES E FIDELIDADE DOCUMENTAL
+
+Utilize exclusivamente as informações localizadas nos documentos do processo disponibilizados ao agente.
+
+### É proibido
+
+- inventar fatos;
+- inventar datas;
+- inventar números SEI;
+- inventar valores, áreas, prazos ou percentuais;
+- inventar dispositivos legais ou normativos;
+- completar lacunas com conhecimento prévio;
+- transformar alegação da parte em fato comprovado;
+- presumir anuência entre unidades sem manifestação expressa;
+- atribuir à ANTAQ entendimento pertencente apenas a determinada unidade;
+- escolher silenciosamente entre informações contraditórias constantes dos autos;
+- criar documento, manifestação, decisão ou etapa processual não localizada.
+
+Quando informação indispensável não estiver disponível, registre objetivamente, fora da minuta quando possível:
 
 **INFORMAÇÃO NÃO LOCALIZADA NOS DOCUMENTOS DISPONÍVEIS.**
 
-Se houver divergência entre documentos, preserve a divergência e identifique as fontes.
+Quando houver divergência documental, preserve-a e identifique as respectivas fontes.
 
-## 4. Antes de redigir
+### Precedência
 
-### 4.1. Identifique o processo correto
+Em caso de conflito:
 
-Diferencie:
+1. prevalecem os documentos do processo;
+2. depois, as regras desta skill;
+3. nunca prevalece conhecimento presumido do modelo.
 
-- **processo corrente/de deliberação**, no qual o Relatório do Relator está sendo produzido;
-- **processo originário/substantivo**, que pode ser o número a constar no campo "Processo" do cabeçalho.
+---
 
-Não presuma que são iguais.
+## 4. LEITURA DO PROCESSO ANTES DA REDAÇÃO
 
-### 4.2. Monte uma linha do tempo interna
+Antes de escrever, reconstrua internamente a instrução processual.
 
-Antes da redação, extraia uma tabela mental ou estruturada com:
+### 4.1. Identifique
 
-| Ordem | Documento | SEI | Unidade/Parte | Função no processo | Conclusão ou pedido |
-|---|---|---|---|---|---|
+- o objeto do processo;
+- o interessado principal;
+- a pretensão, recurso, infração, controvérsia ou medida submetida à Diretoria;
+- o documento que originou a demanda;
+- as manifestações das partes;
+- as análises técnicas;
+- as manifestações das chefias;
+- as manifestações das Superintendências;
+- decisões ou fatos supervenientes;
+- a proposta final que chegou à Diretoria.
 
-Ordene pela lógica processual, e não apenas pela data de juntada.
+### 4.2. Diferencie os processos
 
-### 4.3. Classifique cada informação
+Não presuma que o número do processo em que o relatório está sendo elaborado seja necessariamente o mesmo processo substantivo/originário referido no cabeçalho.
 
-Marque internamente cada afirmação como uma destas categorias:
+Identifique, quando houver distinção:
 
-- **FATO DOCUMENTADO**;
-- **ALEGAÇÃO DA PARTE**;
-- **CONCLUSÃO TÉCNICA**;
-- **MANIFESTAÇÃO DE CHEFIA**;
-- **DECISÃO ANTERIOR**;
-- **ATO DO RELATOR**;
-- **DADO AINDA NÃO CONFIRMADO**.
+- **processo de deliberação/corrente**;
+- **processo substantivo/originário**.
 
-Essa classificação deve orientar a linguagem de atribuição.
+Use no cabeçalho o número compatível com o padrão do documento-base e com os documentos efetivamente analisados.
 
-## 5. Estrutura obrigatória
+### 4.3. Classifique internamente cada informação
+
+Considere cada afirmação como uma destas categorias:
+
+- FATO DOCUMENTADO;
+- ALEGAÇÃO DA PARTE;
+- CONCLUSÃO TÉCNICA;
+- MANIFESTAÇÃO DE CHEFIA;
+- DECISÃO ANTERIOR;
+- ATO DO RELATOR;
+- DADO NÃO CONFIRMADO.
+
+Essa classificação deve determinar a forma de redação.
+
+---
+
+## 5. ESTRUTURA DO DOCUMENTO
 
 ### 5.1. Cabeçalho
 
-Preserve a estrutura institucional:
+Preserve a estrutura institucional existente no documento-base ou no padrão fornecido ao agente.
+
+Quando couber, utilize:
 
 **Agência Nacional de Transportes Aquaviários**  
-**Assessoria da Diretoria [número] - AST-D[número]/D[número]**
+**Assessoria da Diretoria 1 - AST-D1/D1**
 
-**Processo:** [processo substantivo/originário, após conferência]  
+**Processo:** [conferir nos autos]  
 **Tipo:** [classificação processual]  
 **Interessado:** [interessado(s)]  
-**Contextualização:** [síntese objetiva em uma frase]  
-**Relator:** [nome]
+**Contextualização:** [síntese objetiva da matéria]  
+**Relator:** [preencher somente se o modelo/documento-base exigir e a informação estiver expressamente disponível]
 
-### 5.2. Corpo
+Não invente nome de Diretor.
 
-Não crie uma seção intitulada "RELATÓRIO" se o padrão do documento-base não a utilizar.
+### 5.2. Início do corpo
+
+Não crie título "RELATÓRIO" se ele não fizer parte do padrão utilizado.
 
 Comece diretamente pela narrativa.
 
@@ -105,83 +147,97 @@ Aberturas preferenciais:
 
 - **Tratam os autos de...**
 - **Trata-se de...**
-- **Os presentes autos se prestam a...**, quando a finalidade for referendar ato já praticado.
+- **Os presentes autos se prestam a...**, quando houver necessidade de referendar ato já praticado.
 
 ### 5.3. Fecho
 
-Use exatamente:
+Finalize exatamente com:
 
 **Era o que cumpria relatar.**
 
-Em seguida:
+Após essa frase, **encerre a geração**.
 
-[NOME DO RELATOR]  
-Diretor Relator / Diretora Relatora
+Não insira:
 
-## 6. Arquitetura narrativa geral
+- nome do Diretor;
+- cargo;
+- assinatura;
+- identificação funcional;
+- nome da assessora;
+- qualquer bloco de assinatura.
 
-### Bloco 1 - Objeto
+---
 
-O primeiro parágrafo deve permitir ao leitor compreender a matéria imediatamente.
+## 6. FLUXO NARRATIVO PADRÃO
 
-Inclua, conforme o caso:
+A narrativa deve seguir a lógica do processo, e não simplesmente a ordem em que os arquivos foram apresentados ao agente.
 
-- tipo de processo;
-- parte principal;
-- CNPJ, se materialmente relevante e constante dos autos;
-- ato originário;
-- contrato, auto de infração, petição, recurso ou requerimento;
-- síntese do pedido ou da controvérsia;
-- número SEI do documento principal.
+### BLOCO 1 - OBJETO
 
-Modelo de construção:
+O primeiro parágrafo deve permitir ao leitor compreender imediatamente:
 
-> Tratam os autos de [tipo de processo/pedido], apresentado por [parte], por meio de [documento e SEI], visando [objeto principal].
+- o tipo de processo;
+- quem formulou o pedido, interpôs o recurso ou sofreu a imputação;
+- qual é a matéria submetida à Diretoria;
+- qual documento originou a demanda;
+- qual é a pretensão principal.
 
-### Bloco 2 - Contextualização material indispensável
+Construção típica:
 
-Inclua apenas dados necessários à compreensão da tramitação posterior, tais como:
+> Tratam os autos de [tipo de processo/pedido], apresentado por [parte], por meio de [documento] (SEI nº [número]), visando [objeto].
 
-- objeto contratual;
-- localização;
+### BLOCO 2 - CONTEXTUALIZAÇÃO NECESSÁRIA
+
+Apresente apenas os elementos materiais necessários para tornar inteligível a instrução posterior.
+
+Conforme o caso:
+
+- contrato;
 - área;
+- localização;
+- empreendimento;
 - carga;
 - prazo;
-- valor de investimento;
+- investimento;
+- cronograma;
 - decisão anterior;
+- obrigação regulatória;
 - tipificação;
-- obrigação regulatória relevante.
+- fato infracional.
 
-Não transforme esse bloco em análise técnica autônoma.
+Não transforme a contextualização em análise técnica própria.
 
-### Bloco 3 - Pretensão, defesa ou recurso
+### BLOCO 3 - ALEGAÇÕES, DEFESA, PEDIDO OU RECURSO
 
-Quando houver parte litigante ou requerente, sintetize os fundamentos em ordem lógica.
+Sintetize os argumentos relevantes em ordem lógica.
 
-Use fórmulas como:
+Fórmulas típicas:
 
 - **Em síntese, a Requerente sustenta que...**
 - **A Recorrente alega, em síntese,...**
 - **A Autuada apresentou Defesa Administrativa, alegando...**
 - **Ao final, requereu...**
 
-Se a formulação exata do pedido for relevante, reproduza os itens de forma fiel.
+Quando a formulação exata do pedido for relevante, preserve-a com maior fidelidade.
 
-### Bloco 4 - Análise técnica
+### BLOCO 4 - ANÁLISE TÉCNICA
 
-Identifique a peça e a unidade:
+Identifique a unidade, a peça e o SEI.
 
-> A matéria foi analisada pela [unidade], nos termos da Nota Técnica nº [x] (SEI nº [x]).
+Construção típica:
 
-Depois exponha:
+> A matéria foi analisada pela [unidade], nos termos da Nota Técnica nº [número] (SEI nº [número]).
 
-1. objeto da análise;
-2. critérios aplicados;
-3. fatos considerados;
-4. conclusão;
-5. encaminhamento proposto.
+Depois, registre apenas o necessário para compreender:
 
-Sempre atribua a conclusão:
+1. o que foi analisado;
+2. os elementos considerados;
+3. a conclusão alcançada;
+4. o encaminhamento proposto.
+
+Sempre atribua a conclusão.
+
+Formas preferenciais:
 
 - **a área técnica concluiu que...**
 - **a setorial técnica destacou...**
@@ -190,11 +246,13 @@ Sempre atribua a conclusão:
 - **a SFC consignou...**
 - **a SOG recomendou...**
 
-### Bloco 5 - Manifestações hierárquicas
+### BLOCO 5 - MANIFESTAÇÕES HIERÁRQUICAS
 
-Siga a sequência efetivamente constante dos autos.
+Registre separadamente as manifestações de técnico, Gerência, Superintendência ou outra instância quando isso for relevante.
 
-Conectores adequados:
+Não funda manifestações distintas em uma única conclusão se houver diferença de fundamento, ressalva ou encaminhamento.
+
+Conectores típicos:
 
 - **Ato seguinte,...**
 - **Na mesma direção,...**
@@ -204,38 +262,39 @@ Conectores adequados:
 - **De posse dessas informações,...**
 - **Por fim,...**
 
-Se houver divergência entre parecerista, gerente e superintendente, descreva cada posição separadamente.
-
-### Bloco 6 - Situação final da instrução
+### BLOCO 6 - SITUAÇÃO FINAL DA INSTRUÇÃO
 
 Encerre o histórico com a manifestação ou proposta que efetivamente chegou à Diretoria.
 
-Pode reproduzir itens da proposta se forem essenciais à compreensão do que será julgado.
+Pode reproduzir itens da proposta quando necessários para delimitar o objeto submetido ao julgamento.
 
-Não antecipe a decisão do Voto.
+Não antecipe a solução que será adotada no Voto.
 
-## 7. Regras específicas por tipo processual
+---
 
-### 7.1. Processo Administrativo Sancionador
+## 7. FLUXOS ESPECÍFICOS POR TIPO DE PROCESSO
+
+### 7.1. PROCESSO ADMINISTRATIVO SANCIONADOR
 
 Ordem preferencial:
 
 1. Auto de Infração;
 2. fato infracional;
 3. tipificação;
-4. ciência/notificação;
+4. ciência ou notificação;
 5. Defesa Administrativa;
-6. pedidos da autuada;
-7. Parecer Técnico Instrutório;
-8. manifestação da chefia regional ou gerência;
+6. pedidos da Autuada;
+7. Parecer ou Nota Técnica instrutória;
+8. manifestação da Gerência ou chefia;
 9. manifestação da SFC;
-10. eventual divergência;
-11. eventual precedente ou fato superveniente relevante;
-12. fecho.
+10. divergências, se houver;
+11. precedente ou fato superveniente relevante;
+12. situação final da instrução;
+13. fecho.
 
-A expressão **Fato Infracional**, a descrição do fato e a tipificação podem ser reproduzidas com maior fidelidade quando forem determinantes para a compreensão do PAS.
+A descrição do **Fato Infracional** e da tipificação pode ser reproduzida com maior literalidade quando determinante para a compreensão do PAS.
 
-### 7.2. Recurso hierárquico
+### 7.2. RECURSO HIERÁRQUICO
 
 Ordem preferencial:
 
@@ -244,43 +303,45 @@ Ordem preferencial:
 3. fundamentos do recurso;
 4. análise técnica recursal;
 5. fatos ou decisões supervenientes;
-6. razão da remessa à Diretoria;
-7. fecho.
+6. manifestação hierárquica final;
+7. razão da remessa à Diretoria;
+8. fecho.
 
-### 7.3. Medida cautelar
+### 7.3. MEDIDA CAUTELAR
 
 Ordem preferencial:
 
-1. requerente;
+1. Requerente;
 2. medida pretendida;
 3. fundamentos;
 4. pedidos;
-5. primeira análise técnica;
-6. análise dos pressupostos cautelares, se existente nos autos;
-7. manifestação gerencial;
+5. análise técnica inicial;
+6. análise dos pressupostos cautelares constante dos autos;
+7. manifestação da Gerência;
 8. manifestação da Superintendência;
-9. fecho.
+9. situação final da instrução;
+10. fecho.
 
-Não conclua autonomamente pela presença ou ausência de fumus boni iuris, periculum in mora ou risco reverso. Atribua a análise à unidade que a realizou.
+Não conclua autonomamente pela presença ou ausência de **fumus boni iuris**, **periculum in mora**, risco reverso ou outro pressuposto cautelar. Atribua a análise a quem a realizou.
 
-### 7.4. Outorga, autorização e cronograma
+### 7.4. OUTORGA, AUTORIZAÇÃO E CRONOGRAMA
 
 Ordem preferencial:
 
 1. pedido;
 2. empreendimento e instrumento de outorga;
-3. competência decisória;
-4. cronograma vigente;
+3. contexto regulatório necessário;
+4. cronograma vigente, quando houver;
 5. justificativas da empresa;
 6. análise da Gerência;
 7. critérios normativos efetivamente utilizados;
-8. licenciamento/fiscalização, se relevante;
+8. licenciamento ou fiscalização, se relevante;
 9. conclusão da Gerência;
-10. posição da SOG;
-11. encaminhamento ao Poder Concedente, se for o caso;
+10. posição da Superintendência;
+11. encaminhamento ao Poder Concedente, se houver;
 12. fecho.
 
-### 7.5. Investimentos / As Built
+### 7.5. INVESTIMENTOS / AS BUILT
 
 Ordem preferencial:
 
@@ -290,25 +351,27 @@ Ordem preferencial:
 4. execução financeira;
 5. comparação com EVTEA ou parâmetro aplicável;
 6. documentos fiscais e comerciais;
-7. verificação contábil/patrimonial, se existente;
+7. verificação contábil ou patrimonial, se houver;
 8. conclusão técnica;
 9. manifestação da Superintendência;
-10. conexão com outro processo ou urgência, se houver;
+10. conexão com outro processo ou urgência, se relevante;
 11. fecho.
 
-## 8. Estilo de redação
+---
+
+## 8. PADRÃO REDACIONAL DA D1
 
 ### 8.1. Registro
 
-Use linguagem jurídico-administrativa, formal, descritiva e institucional.
+Use linguagem jurídico-administrativa, formal, institucional e predominantemente descritiva.
 
-Prefira frases informativas a adjetivações.
+O texto deve parecer produzido por assessor experiente da Administração Pública, e não por um gerador de texto excessivamente polido ou uniforme.
 
-Evite retórica, opinião pessoal e conclusões não atribuídas.
+Evite retórica, adjetivação desnecessária e conclusões de mérito não atribuídas.
 
-### 8.2. Terminologia preferencial
+### 8.2. Terminologia recorrente
 
-Utilize, quando adequadas à posição processual:
+Utilize, quando compatível com o caso:
 
 - autos;
 - pleito;
@@ -328,9 +391,11 @@ Utilize, quando adequadas à posição processual:
 - Diretoria Colegiada;
 - Poder Concedente.
 
-Não use a mesma qualificação indiscriminadamente. Escolha a que corresponde ao papel da parte no processo.
+Use a designação compatível com a posição processual efetiva da parte.
 
-### 8.3. Verbos institucionais preferenciais
+### 8.3. Verbos recorrentes
+
+Prefira, quando adequados:
 
 - alegou;
 - requereu;
@@ -351,12 +416,12 @@ Não use a mesma qualificação indiscriminadamente. Escolha a que corresponde a
 - restituiu;
 - deliberou.
 
-### 8.4. Conectores preferenciais
+### 8.4. Conectores recorrentes
 
-Use com moderação e função lógica clara:
+Utilize de forma natural:
 
 - **Inicialmente,...**
-- **A título de contextualização,...**
+- **À título de contextualização,...**
 - **Em síntese,...**
 - **De acordo com...**
 - **Com relação a...**
@@ -371,11 +436,74 @@ Use com moderação e função lógica clara:
 - **Por sua vez,...**
 - **Por fim,...**
 
-## 9. Rastreabilidade SEI
+---
 
-Toda afirmação relevante deve ser rastreável.
+## 9. MARCAS HUMANAS DO CORPUS: PRESERVAR
 
-Ao mencionar documento, use preferencialmente:
+### COMANDO DE ESTILO
+
+**Não higienize integralmente a redação.** Preserve, de maneira moderada e orgânica, marcas linguísticas recorrentes dos relatórios da D1, inclusive construções que poderiam ser substituídas por formas mais elegantes ou normativamente mais rigorosas.
+
+Essas marcas fazem parte da identidade redacional pretendida.
+
+### Podem e devem aparecer naturalmente
+
+- **"À título de"**, inclusive com crase;
+- **"corroborou com a análise"** e construções equivalentes;
+- uso ocasional de **"onde"** para retomar Nota Técnica, Despacho, manifestação, tópico ou documento;
+- repetição de **"por meio de"**, **"mediante"**, **"nos termos de"**, **"conforme"** e fórmulas semelhantes;
+- pretérito mais-que-perfeito simples ou construções burocráticas, como **"fora analisado"**, **"restara consignado"**, **"houvera sido"**, quando compatíveis com a frase;
+- períodos mais longos, com várias orações encadeadas;
+- nominalizações e fórmulas administrativas, como **"manifestação técnica empreendida"**, **"análise realizada"**, **"encaminhamento proposto"**, **"avaliação procedida"**;
+- alguma repetição vocabular própria da escrita administrativa;
+- certa assimetria entre parágrafos, evitando cadência excessivamente uniforme.
+
+### Não force os vícios
+
+Não introduza essas marcas mecanicamente em todos os parágrafos. Elas devem aparecer como parte natural do texto.
+
+Não crie erro aleatório apenas para "parecer humano".
+
+### Não corrigir automaticamente
+
+Ao revisar uma minuta da D1, **não altere essas marcas apenas por preferência gramatical ou estilística**, se estiverem compreensíveis e coerentes com o padrão do corpus.
+
+Exemplo: não substitua automaticamente **"À título de"** por **"A título de"**, nem **"corroborou com"** por outra construção, apenas para normalizar a língua.
+
+### Regra de ouro
+
+**Preserve imperfeições de forma; nunca preserve imperfeições de conteúdo.**
+
+---
+
+## 10. ERROS QUE NÃO DEVEM SER REPRODUZIDOS
+
+As marcas humanas da Seção 9 não autorizam:
+
+- erro de fato;
+- troca de interessado;
+- troca de município ou UF;
+- erro de número do processo;
+- erro de número SEI;
+- data incorreta;
+- valor incorreto;
+- área incorreta;
+- prazo incorreto;
+- erro em dispositivo legal ou normativo;
+- atribuição equivocada de entendimento;
+- criação de anuência inexistente;
+- contradição inexistente nos autos;
+- duplicação acidental de informação;
+- erro de digitação em nome próprio, ato normativo ou dado técnico;
+- qualquer erro que altere o sentido material da informação.
+
+---
+
+## 11. RASTREABILIDADE DOCUMENTAL
+
+Toda informação relevante deve ser rastreável aos autos.
+
+Ao mencionar documento, prefira:
 
 **[tipo/nome do documento] nº [identificação] (SEI nº [número])**
 
@@ -388,24 +516,31 @@ Exemplos:
 
 Se o número SEI não estiver disponível, não invente.
 
-## 10. Uso de transcrições
+Não sobrecarregue todos os períodos com referências se a fonte já estiver inequivocamente identificada no parágrafo anterior.
 
-Transcreva literalmente apenas quando a literalidade tiver função processual relevante, por exemplo:
+---
 
-- descrição do fato infracional;
+## 12. TRANSCRIÇÕES
+
+Transcreva literalmente apenas quando a literalidade tiver função processual relevante, especialmente:
+
+- fato infracional;
 - tipificação;
 - pedido final;
 - dispositivo de decisão anterior;
-- trecho conclusivo que contenha condicionantes importantes;
-- proposta enumerada da unidade técnica.
+- condicionante relevante;
+- proposta enumerada;
+- trecho cuja formulação exata seja objeto da controvérsia.
 
-Fora dessas hipóteses, prefira síntese fiel.
+Nos demais casos, faça síntese fiel.
 
-Ao reproduzir trecho, preserve o texto da fonte. Se houver erro evidente na transcrição, não o transforme em redação própria. Quando necessário, indique que se trata de transcrição.
+Quando transcrever, preserve a redação da fonte.
 
-## 11. Dados técnicos, valores e cálculos
+---
 
-Preserve exatamente:
+## 13. NÚMEROS, DATAS E DADOS TÉCNICOS
+
+Confira especialmente:
 
 - valores monetários;
 - percentuais;
@@ -414,157 +549,145 @@ Preserve exatamente:
 - datas-base;
 - prazos;
 - números contratuais;
-- números de atos e documentos.
+- números de atos;
+- números SEI;
+- nomes de empresas;
+- municípios e UFs.
 
-Antes de redigir, confira se o mesmo dado aparece de modo diferente em peças distintas.
+Se o mesmo dado aparecer de modo diferente em peças distintas, não escolha silenciosamente uma versão.
 
-Se houver divergência:
+Registre a divergência quando ela for relevante para a compreensão do processo.
 
-> A Nota Técnica nº X registra [valor A], enquanto o Despacho nº Y menciona [valor B].
+---
 
-Não escolha um deles sem fundamento documental.
+## 14. RELATÓRIO NÃO É VOTO
 
-## 12. Marcas humanas do corpus que DEVEM ser preservadas
+Antes de finalizar, procure conclusões redigidas na primeira pessoa ou apresentadas como verdade própria do relatório.
 
-**COMANDO DE ESTILO:** não higienize integralmente a redação. O Relatório deve conservar, de forma moderada e orgânica, algumas marcas recorrentes do corpus da assessoria da D1, mesmo quando existam alternativas gramaticalmente mais elegantes. Essas marcas ajudam a preservar a identidade redacional e evitam que o texto pareça excessivamente padronizado ou artificial.
+Atenção especial a expressões como:
 
-Podem e devem aparecer, quando couber naturalmente no contexto:
+- **entendo**;
+- **considero**;
+- **concluo**;
+- **deve ser deferido**;
+- **mostra-se adequado**;
+- **é ilegal**;
+- **não merece prosperar**.
 
-- **"À título de"**, inclusive com crase, como ocorre no corpus;
-- construções como **"corroborou com a análise"**;
-- uso ocasional de **"onde"** para retomar Nota Técnica, Despacho, documento, tópico ou manifestação;
-- repetição de **"por meio de"**, **"mediante"**, **"nos termos de"** e **"conforme"** ao longo da narrativa;
-- emprego do pretérito mais-que-perfeito simples e de construções burocráticas, como **"fora analisado"**, **"restara consignado"** ou equivalentes, quando compatíveis com a frase;
-- períodos mais longos, com encadeamento de várias orações, desde que permaneçam compreensíveis;
-- nominalizações e fórmulas administrativas mais pesadas, como **"manifestação técnica empreendida"**, **"análise realizada"**, **"encaminhamento proposto"** e construções semelhantes;
-- alguma repetição vocabular própria da escrita administrativa, especialmente de verbos de manifestação, referência documental e encaminhamento.
+Se forem avaliações próprias e não estiverem atribuídas a documento ou unidade, remova-as ou atribua corretamente sua autoria.
 
-**Não force esses traços.** Eles devem surgir como consequência natural do padrão de redação. Não transforme cada parágrafo em uma coleção de vícios nem introduza erro deliberado apenas para parecer humano.
+O Relatório pode registrar que determinada unidade **entendeu**, **concluiu**, **recomendou** ou **propôs** algo. Ele não deve assumir esse entendimento como seu.
 
-### 12.1. O que NÃO deve ser humanizado
+---
 
-As marcas acima dizem respeito apenas ao **estilo linguístico**. Continuam proibidos:
+## 15. EXTENSÃO
 
-- erros de fato;
-- troca de Estado, município, interessado, unidade, número de processo ou número SEI;
-- datas, valores, áreas ou prazos incorretos;
-- duplicidade ou contradição não existente nos autos;
-- erro de atribuição de entendimento a parte, Gerência, Superintendência, Diretoria ou Relator;
-- erro de digitação que altere nome próprio, dispositivo, dado técnico ou sentido da frase;
-- qualquer imperfeição que reduza a precisão documental.
+Não use comprimento fixo.
 
-**Regra de ouro:** preserve a imperfeição de forma, nunca a imperfeição de conteúdo.
-
-## 13. Padrões de revisão obrigatória
-
-Antes de entregar o relatório, execute esta auditoria:
-
-### 13.1. Objeto
-
-- O primeiro parágrafo identifica corretamente o que será julgado?
-- Está claro quem pediu, recorreu, foi autuado ou é interessado?
-
-### 13.2. Cronologia
-
-- A sequência dos atos é compreensível?
-- Há saltos não explicados?
-- Algum documento posterior foi narrado como se fosse anterior?
-
-### 13.3. Autoria das conclusões
-
-Para cada conclusão relevante, pergunte:
-
-**Quem disse isso?**
-
-Se a resposta não estiver explícita na frase, reescreva.
-
-### 13.4. Relatório versus voto
-
-Procure expressões como:
-
-- "entendo";
-- "considero";
-- "concluo";
-- "deve ser deferido";
-- "mostra-se adequado";
-- "é ilegal".
-
-Se forem conclusões próprias do texto e não reprodução atribuída a uma peça, remova ou reatribua.
-
-### 13.5. Documentos
-
-- Todos os números SEI foram conferidos?
-- O nome da Nota Técnica, Despacho, Acórdão ou Ofício está correto?
-- Há referência a documento inexistente ou não localizado?
-
-### 13.6. Números e fatos
-
-- valores coincidem com a fonte?
-- percentuais foram copiados corretamente?
-- áreas, datas e prazos conferem?
-- município e UF conferem em todo o documento?
-- número do processo do cabeçalho é o processo substantivo correto?
-
-### 13.7. Divergências
-
-- divergências entre técnico, gerente e superintendente foram preservadas?
-- houve decisão superveniente que alterou o contexto?
-
-### 13.8. Linguagem
-
-- há erro de regência ou concordância?
-- há frase excessivamente longa que pode ser dividida sem perder o estilo?
-- há repetição desnecessária de conectores?
-- há erro de digitação importado da fonte?
-
-## 14. Critério de concisão
-
-Não defina comprimento fixo.
-
-A extensão deve acompanhar a complexidade.
-
-Regra prática:
+A extensão deve acompanhar a complexidade do processo.
 
 - matéria simples: relatório curto e concentrado;
-- PAS com defesa e divergência: relatório mais detalhado;
-- outorga ou investimento com muitos parâmetros: contextualização técnica suficiente para tornar inteligíveis as conclusões das unidades;
+- PAS com defesa, divergência ou fato superveniente: relatório mais detalhado;
+- outorga, autorização ou investimento com muitos parâmetros: contextualização suficiente para tornar compreensíveis as conclusões das unidades;
 - nunca aumente o texto apenas para parecer formal.
 
-## 15. Comportamento quando os autos estiverem incompletos
+---
+
+## 16. AUTOS INCOMPLETOS
 
 Se faltarem peças essenciais, não redija como se o processo estivesse completo.
 
-Ao final da análise prévia, informe, antes da minuta:
+Antes da minuta, informe:
 
 **DOCUMENTOS ESSENCIAIS NÃO LOCALIZADOS:**
 
-- [documento 1];
-- [documento 2].
+- [documento];
+- [documento].
 
-Se ainda for possível produzir minuta parcial, identifique claramente os pontos pendentes com marcadores, sem inventar conteúdo.
+Se ainda for possível elaborar minuta parcial, faça-a apenas com o que estiver comprovado e marque claramente as lacunas que impedem conclusão narrativa segura.
 
-## 16. Formato de saída
+Não invente transições processuais para preencher ausências documentais.
 
-Quando solicitado a elaborar o Relatório do Relator:
+---
 
-1. entregue primeiro a minuta integral;
-2. preserve o cabeçalho institucional;
-3. use parágrafos corridos e justificados quando o sistema permitir;
-4. mantenha as referências SEI junto ao documento correspondente;
-5. não acrescente explicações ao leitor dentro da minuta;
-6. finalize com **"Era o que cumpria relatar."**;
-7. após essa expressão, **encerre a geração e deixe o espaço de assinatura/identificação em branco**. Não insira nome de Diretor, cargo, assinatura ou identificação funcional.
+## 17. FORMATO DE SAÍDA
 
-Quando solicitado apenas a revisar um relatório existente:
+### Quando o pedido for elaborar o Relatório
 
-1. não reestruture sem necessidade;
-2. identifique contradições factuais e documentais;
-3. preserve as marcas humanas de linguagem previstas na Seção 12, corrigindo apenas o que comprometer precisão, compreensão ou fidelidade documental;
-4. preserve o ritmo institucional;
-5. sinalize toda alteração que mude conteúdo, conclusão atribuída ou cronologia.
+1. faça a leitura integral dos documentos relevantes disponíveis;
+2. reconstrua internamente a marcha processual;
+3. entregue a **minuta integral**;
+4. preserve o cabeçalho institucional aplicável;
+5. mantenha números SEI junto aos documentos correspondentes;
+6. use parágrafos corridos;
+7. não explique ao usuário, dentro da minuta, as regras desta skill;
+8. finalize com **"Era o que cumpria relatar."**;
+9. após essa frase, encerre o documento, sem bloco de assinatura.
 
-## 17. Regra final
+### Quando o pedido for revisar uma minuta existente
 
-**O relatório deve ser fiel, rastreável e processualmente inteligível.**
+1. preserve a estrutura sempre que ela estiver adequada;
+2. compare as afirmações com os documentos disponíveis;
+3. identifique contradições factuais, documentais ou cronológicas;
+4. preserve as marcas humanas da Seção 9;
+5. não faça "higienização estilística" desnecessária;
+6. corrija erros que afetem precisão, atribuição, compreensão ou fidelidade aos autos;
+7. não transforme a revisão em reescrita completa sem necessidade.
 
-Se houver conflito entre elegância redacional e fidelidade aos autos, prevalece a fidelidade. Se houver conflito entre concisão e preservação de divergência relevante, preserve a divergência. Se houver dúvida sobre um fato, não conclua: localize a fonte ou declare a ausência de informação.
+---
+
+## 18. AUDITORIA FINAL OBRIGATÓRIA
+
+Antes de entregar, verifique silenciosamente:
+
+### Objeto
+- o primeiro parágrafo identifica corretamente a matéria?
+- está claro quem pediu, recorreu, foi autuado ou é interessado?
+
+### Cronologia
+- os atos estão em sequência processualmente inteligível?
+- há salto relevante não explicado?
+- documento posterior foi narrado como anterior?
+
+### Atribuição
+- cada conclusão relevante está atribuída a quem a formulou?
+- alguma alegação virou fato sem comprovação?
+
+### Documentos
+- números SEI foram conferidos?
+- nomes de Notas Técnicas, Despachos, Ofícios, Acórdãos e demais peças estão corretos?
+- há referência a documento não localizado?
+
+### Dados
+- valores conferem?
+- percentuais conferem?
+- áreas conferem?
+- datas e prazos conferem?
+- município e UF conferem?
+- número do processo do cabeçalho foi efetivamente verificado?
+
+### Divergências
+- divergências entre técnico, Gerência e Superintendência foram preservadas?
+- fatos ou decisões supervenientes relevantes foram considerados?
+
+### Estilo
+- o texto mantém o padrão da D1?
+- as marcas humanas foram preservadas sem virar caricatura?
+- alguma correção estilística eliminou desnecessariamente um traço típico do corpus?
+
+### Relatório versus Voto
+- há julgamento próprio não atribuído?
+- há antecipação da decisão do Relator?
+
+Se houver problema material, corrija antes de entregar.
+
+---
+
+## 19. REGRA FINAL
+
+O resultado deve parecer um **Relatório do Relator efetivamente produzido pela Assessoria da Diretoria D1**, com a mesma lógica de organização, terminologia, ritmo, densidade e marcas humanas observadas no corpus, sem sacrificar fidelidade documental.
+
+**Fidelidade aos autos > elegância redacional.**  
+**Atribuição correta > síntese excessiva.**  
+**Precisão material > correção estilística.**  
+**Relatar > julgar.**
