@@ -46,7 +46,7 @@ Quando o pedido envolver elaborar o Relatório a partir do processo aberto:
 8. resolvido o processo de destino, crie o Relatório **já com o conteúdo final e a formatação aplicável**, sem abrir etapa separada para o usuário mandar formatar, confirmar estilos ou pedir edição posterior;
 9. encerre o fluxo após a criação ou, se o usuário assim escolher, mantenha apenas a minuta.
 
-Não abandone a base documental do processo condutor ao mudar para o processo de destino. Um processo novo pode estar vazio e **não substitui a fonte primária da instrução**.
+Ao mudar para o processo de destino, mantenha o processo condutor como fonte primária da instrução.
 
 ### 2.3. Escolha do processo de destino
 
@@ -107,9 +107,7 @@ Depois de apresentar a minuta integral, use:
 
 **Não pergunte se o usuário deseja formatar o documento, qual estilo aplicar, se deve editar depois da criação ou se deve abrir o editor para ajustes de formatação.**
 
-A formatação é responsabilidade operacional do agente.
-
-Antes da aprovação final do texto, prepare internamente a base de formatação necessária, observando as regras gerais do SEI-Pro:
+A formatação é responsabilidade operacional do agente. Prepare internamente a base necessária antes da criação:
 
 - carregar `redacao-oficial` quando exigido pelo motor;
 - se o usuário tiver autorizado consulta a documento semelhante, usar `documentos_similares` e, quando útil, `documento_estilos`;
@@ -152,9 +150,9 @@ Se a autoria da afirmação não estiver clara na frase, reescreva.
 
 **Leia extensivamente e relate seletivamente.**
 
-O agente deve conhecer documentos que podem não aparecer no Relatório. A mera existência de uma peça na árvore não justifica sua menção.
+A mera existência de uma peça na árvore não justifica sua menção.
 
-Inclua documento, ato, dado ou movimentação apenas quando ele:
+Inclua documento, ato, dado ou movimentação apenas quando:
 
 1. explica o objeto;
 2. registra argumento relevante;
@@ -164,6 +162,14 @@ Inclua documento, ato, dado ou movimentação apenas quando ele:
 6. é necessário para compreender a proposta submetida à Diretoria.
 
 O Relatório **não é inventário da árvore processual**.
+
+### Não comprimir fundamento decisório relevante
+
+A seleção editorial não deve eliminar informação necessária para compreender competência, critérios técnicos, premissas da conclusão, causa de ressalva/condicionante ou origem de divergência posterior.
+
+Quando a análise se estruturar em critérios expressos, preserve os que forem necessários à compreensão do raciocínio; mantenha a enumeração completa quando ela tiver função própria no caso.
+
+**Síntese não significa supressão do fundamento.**
 
 ---
 
@@ -447,11 +453,29 @@ Conectores típicos:
 - **De posse dessas informações,...**
 - **Por fim,...**
 
+#### Antecedente narrativo da divergência, ressalva ou condicionante
+
+Quando manifestação posterior divergir, ressalvar, corrigir, limitar ou condicionar aspecto anterior, apresente antes o fato, pedido ou premissa que deu origem à manifestação.
+
+O leitor deve compreender **por que** a ressalva existe sem precisar retornar aos autos. Não omita o antecedente indispensável para entender a manifestação posterior.
+
 ### BLOCO 6 - SITUAÇÃO FINAL DA INSTRUÇÃO
 
-Encerre o histórico com a manifestação ou proposta que efetivamente chegou à Diretoria.
+Encerre o histórico com a manifestação ou proposta que efetivamente chegou ao Relator na instrução que está sendo relatada.
 
 Pode reproduzir itens da proposta quando necessários para delimitar o objeto submetido ao julgamento.
+
+#### Regra de corte temporal e processual
+
+**O Relatório deve parar no momento em que a instrução objeto daquele Relatório foi submetida ao Relator.**
+
+Não incorpore automaticamente atos posteriores apenas porque eles já aparecem na árvore atual do processo.
+
+Em especial, não acrescente automaticamente fatos posteriores como inclusão em pauta, pedido de vista, Voto, julgamento, Acórdão, diligência deliberada pela Diretoria, comunicação da decisão ou movimentação ocorrida depois da elaboração do Relatório.
+
+A existência de tais documentos na árvore atual **não os transforma em antecedentes do Relatório**.
+
+Se houver retorno de diligência, fato superveniente ou novo julgamento, identifique o novo recorte temporal antes de redigir.
 
 Não antecipe a solução a ser adotada no Voto.
 
@@ -514,18 +538,22 @@ Não conclua autonomamente pela presença ou ausência de **fumus boni iuris**, 
 Ordem preferencial:
 
 1. pedido;
-2. empreendimento e instrumento de outorga;
-3. contexto regulatório necessário;
-4. instrução e diligências relevantes, preferencialmente sintetizadas;
-5. procedimento público/habilitação, quando houver;
-6. análise técnica;
-7. manifestação da Gerência;
-8. posição da Superintendência;
-9. divergências, ressalvas ou consolidação de parâmetros;
-10. encaminhamento ao Poder Concedente, se houver;
-11. fecho.
+2. delimitação da competência da ANTAQ e do Poder Concedente, quando relevante;
+3. empreendimento e instrumento de outorga;
+4. contexto regulatório necessário;
+5. justificativa da interessada e antecedente necessário para compreender eventual ressalva posterior;
+6. instrução e diligências relevantes, preferencialmente sintetizadas;
+7. critérios técnicos ou normativos determinantes da análise;
+8. análise técnica;
+9. manifestação da Gerência;
+10. posição da Superintendência;
+11. divergências, ressalvas ou consolidação de parâmetros;
+12. encaminhamento ao Poder Concedente, se houver;
+13. fecho no ponto em que a matéria chegou ao Relator.
 
 Em processos de outorga, evite reproduzir integralmente as características físicas do empreendimento. Inclua somente os parâmetros necessários à compreensão da análise locacional, operacional, regulatória ou da divergência existente nos autos.
+
+Não suprima, por excesso de síntese, a regra de competência, o critério técnico determinante, o pedido específico da interessada ou a premissa necessária para compreender condicionante ou ressalva posterior.
 
 ### 9.5. INVESTIMENTOS / AS BUILT
 
@@ -921,10 +949,13 @@ Antes de entregar, verifique silenciosamente:
 - o primeiro parágrafo identifica corretamente a matéria?
 - está claro quem pediu, recorreu, foi autuado ou é interessado?
 
-### Cronologia
+### Cronologia e corte temporal
 - os atos estão em sequência processualmente inteligível?
 - há salto relevante não explicado?
 - documento posterior foi narrado como anterior?
+- o Relatório foi encerrado no ponto em que a instrução objeto daquela versão chegou ao Relator?
+- foram incluídos julgamento, pedido de vista, Acórdão, diligência posterior ou comunicação de decisão que ainda não existiam no recorte temporal do Relatório?
+- a árvore atual contaminou o relato com fatos posteriores?
 - foram narradas movimentações meramente instrumentais sem função para a compreensão?
 
 ### Seleção editorial
@@ -932,6 +963,10 @@ Antes de entregar, verifique silenciosamente:
 - uma etapa com várias diligências poderia ser sintetizada por **"No curso da instrução..."** e pelo documento conclusivo?
 - cada dado técnico mantido possui função para compreensão da matéria?
 - há parágrafo que apenas prova que determinado documento foi lido, sem acrescentar informação relevante?
+- algum fundamento decisório foi eliminado por excesso de síntese?
+- a competência da ANTAQ ou do Poder Concedente precisava ser explicitada para compreender o caso?
+- os critérios determinantes da análise técnica foram preservados?
+- toda ressalva ou divergência posterior possui no texto o antecedente narrativo necessário para ser compreendida?
 
 ### Atribuição
 - cada conclusão relevante está atribuída a quem a formulou?
@@ -983,6 +1018,9 @@ Se houver problema material, corrija antes de entregar.
 O resultado deve parecer um **Relatório do Relator efetivamente produzido pela Assessoria da Diretoria D1**, com a mesma lógica de organização, terminologia, ritmo, densidade e marcas humanas observadas no corpus, sem sacrificar fidelidade documental.
 
 **Leia extensivamente; relate seletivamente.**  
+**Selecione sem eliminar o fundamento decisório.**  
+**Apresente o antecedente necessário para compreender ressalvas e divergências.**  
+**Respeite o corte temporal do Relatório.**  
 **Processo condutor = fonte da instrução.**  
 **Processo da D1 = destino do Relatório.**  
 **Fidelidade aos autos > elegância redacional.**  
