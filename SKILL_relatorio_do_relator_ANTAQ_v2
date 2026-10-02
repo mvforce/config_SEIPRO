@@ -66,14 +66,7 @@ Se `processo_criar` não estiver disponível:
 
 Se escolher **Usar processo existente**, solicite o número se ainda não informado, valide-o e não o deduza por relacionamento, sequência ou semelhança.
 
-Se o usuário escolher **Criar novo processo**:
-
-- use `processo_criar` somente se a ferramenta estiver disponível;
-- a criação do processo é operação de escrita e permanece sujeita à aprovação nativa do SEI-Pro;
-- não invente tipo, especificação, interessado, nível de acesso ou hipótese legal;
-- use `sei_opcoes` e ferramentas de leitura para obter opções válidas;
-- pergunte ao usuário apenas quando houver escolha substantiva que não possa ser determinada pelos autos, pelas regras da unidade ou pelo padrão configurado;
-- se a ferramenta não estiver disponível, não prometa nem simule a criação.
+Se o usuário escolher **Criar novo processo**, use `processo_criar` somente se disponível, sujeito à aprovação nativa. Não invente tipo, especificação, interessado, acesso ou hipótese legal; obtenha opções válidas com `sei_opcoes` e pergunte apenas quando houver escolha substantiva não determinável pelos autos. Se a ferramenta não existir, não prometa nem simule a criação.
 
 Não relacione ou vincule processos sem regra expressa e ferramenta própria.
 
@@ -161,7 +154,7 @@ O Relatório **não é inventário da árvore processual**.
 
 A seleção editorial não deve eliminar competência, critérios técnicos, premissas da conclusão, causa de ressalva/condicionante ou origem de divergência posterior.
 
-Quando a análise se estruturar em critérios expressos, preserve os necessários ao raciocínio; mantenha a enumeração completa quando tiver função própria.
+Quando a fonte estruturar materialmente o raciocínio em **pedidos, critérios, condicionantes ou proposta conclusiva enumerada**, preserve a enumeração quando ela facilitar a compreensão do objeto submetido à decisão.
 
 **Síntese não significa supressão do fundamento.**
 
@@ -361,19 +354,13 @@ Quando diversas peças desempenharem a mesma função processual, sintetize a et
 
 #### Prática textual preferencial — “No curso da instrução”
 
-Para sintetizar diligências, complementações documentais, sucessivos check lists, ofícios ou providências instrutórias sem transformar o Relatório em inventário da árvore, prefira construções como:
+Para condensar diligências, complementações, check lists e ofícios, prefira:
 
 > **No curso da instrução, foram realizadas diligências para complementação documental, culminando no [documento conclusivo] (SEI nº [número]), no qual se registrou [resultado relevante].**
 
-Também podem ser utilizadas, conforme o caso:
+Também podem ser usadas variações como **“foram solicitadas complementações”**, **“a Requerente apresentou documentação complementar”** ou **“após as diligências empreendidas, restara consignado que...”**.
 
-- **No curso da instrução, foram solicitadas complementações documentais...**
-- **No curso da instrução, a Requerente apresentou documentação complementar...**
-- **No curso da instrução, foram promovidas diligências destinadas a...**
-- **No curso da instrução, a análise documental fora complementada por...**
-- **No curso da instrução, após as diligências empreendidas, restara consignado que...**
-
-Use a expressão de modo natural. Não a transforme em abertura obrigatória de todos os parágrafos.
+Ao usar essa construção, **não enumere em seguida todas as diligências que se pretendeu sintetizar**, salvo se alguma possuir conteúdo material indispensável. Use-a de modo natural, não obrigatório.
 
 ### BLOCO 3 - ALEGAÇÕES, DEFESA, PEDIDO OU RECURSO
 
@@ -414,6 +401,10 @@ Formas preferenciais:
 - **a SFC consignou...**
 - **a SOG recomendou...**
 
+#### Hierarquia de densidade narrativa
+
+Quando houver análise preliminar seguida de análise especializada ou conclusiva sobre o mesmo objeto, relate a preliminar de forma sintética, preservando sua conclusão e eventual divergência relevante. Concentre os fundamentos na análise que efetivamente estruturou a proposta final submetida ao Relator.
+
 ### BLOCO 5 - MANIFESTAÇÕES HIERÁRQUICAS
 
 Registre separadamente manifestações de técnico, Gerência, Superintendência ou outra instância quando isso for relevante.
@@ -438,12 +429,9 @@ A repetição somente se justifica quando o próprio dado for objeto de divergê
 
 #### Tramitações instrumentais
 
-Não narre movimentações administrativas internas meramente instrumentais — por exemplo, encaminhamento para assinatura, publicação, juntada ou providência administrativa — salvo quando:
+Não narre atos meramente instrumentais — distribuição, encaminhamento entre unidades, assinatura, publicação, juntada, consulta sobre conexão/continência ou providência administrativa — salvo quando produzirem efeito jurídico relevante, explicarem mudança de fase/controvérsia ou contiverem conteúdo material próprio.
 
-- produzirem efeito jurídico relevante;
-- explicarem irregularidade, controvérsia ou mudança de fase;
-- forem necessárias para compreender a sequência decisória; ou
-- o próprio ato intermediário possuir conteúdo material relevante.
+Quando o fato relevante puder ser narrado diretamente pelo ato produzido ou publicado, omita a rota interna que levou até ele.
 
 Não confunda **marcha processual** com reprodução de cada andamento do processo.
 
@@ -459,9 +447,7 @@ Conectores típicos:
 
 #### Antecedente narrativo da divergência, ressalva ou condicionante
 
-Quando manifestação posterior divergir, ressalvar, corrigir, limitar ou condicionar aspecto anterior, apresente antes o fato, pedido ou premissa que deu origem à manifestação.
-
-O leitor deve compreender **por que** a ressalva existe. Não omita o antecedente indispensável.
+Antes de relatar ressalva, limitação, correção ou condicionante formulada por manifestação posterior, **localize e apresente obrigatoriamente o pedido, fato ou premissa que está sendo ressalvado, limitado, corrigido ou condicionado**, quando esse antecedente for necessário à compreensão.
 
 ### BLOCO 6 - SITUAÇÃO FINAL DA INSTRUÇÃO
 
@@ -473,15 +459,11 @@ Pode reproduzir itens da proposta quando necessários para delimitar o objeto su
 
 **O Relatório deve parar no momento em que a instrução objeto daquele Relatório foi submetida ao Relator.**
 
-Não incorpore automaticamente atos posteriores apenas porque eles já aparecem na árvore atual do processo.
+**Marco padrão de encerramento:** localizada manifestação conclusiva da Superintendência que encaminhe os autos à Secretaria-Geral, Diretoria Colegiada ou unidade equivalente para sorteio, distribuição ou deliberação, encerre, em regra, a narrativa nesse ponto.
 
-Em especial, não acrescente automaticamente fatos posteriores como inclusão em pauta, pedido de vista, Voto, julgamento, Acórdão, diligência deliberada pela Diretoria, comunicação da decisão ou movimentação ocorrida depois da elaboração do Relatório.
+Não acrescente ao mesmo ciclo distribuição ao Diretor, tramitação interna da Assessoria, inclusão em pauta, pedido de vista, Voto, julgamento, Acórdão, diligência deliberada pela Diretoria ou comunicação da decisão apenas porque esses atos já aparecem na árvore atual.
 
-A existência de tais documentos na árvore atual **não os transforma em antecedentes do Relatório**.
-
-Se houver retorno de diligência, fato superveniente ou novo julgamento, identifique o novo recorte temporal antes de redigir.
-
-Não antecipe a solução a ser adotada no Voto.
+Se houver retorno de diligência, fato superveniente ou novo julgamento, defina o novo recorte temporal antes de redigir. Não antecipe a solução do Voto.
 
 ---
 
@@ -524,18 +506,15 @@ Ordem preferencial:
 
 Ordem preferencial:
 
-1. Requerente;
-2. medida pretendida;
-3. fundamentos;
-4. pedidos;
-5. análise técnica inicial;
-6. análise dos pressupostos cautelares constante dos autos;
-7. manifestação da Gerência;
-8. manifestação da Superintendência;
-9. situação final da instrução;
-10. fecho.
+1. Requerente, medida, fundamentos e pedidos;
+2. análise preliminar, quando houver, de forma sintética;
+3. análise técnica especializada/conclusiva dos pressupostos cautelares;
+4. manifestação da Gerência;
+5. manifestação da Superintendência;
+6. situação final da instrução;
+7. fecho.
 
-Não conclua autonomamente pela presença ou ausência de **fumus boni iuris**, **periculum in mora**, risco reverso ou outro pressuposto cautelar. Atribua a análise a quem a realizou.
+Não conclua autonomamente pela presença ou ausência de **fumus boni iuris**, **periculum in mora**, risco reverso ou outro pressuposto cautelar. Atribua a análise a quem a realizou. Se análise preliminar e análise conclusiva examinarem o mesmo ponto, concentre a fundamentação na segunda.
 
 ### 9.4. OUTORGA, AUTORIZAÇÃO E CRONOGRAMA
 
@@ -555,9 +534,11 @@ Ordem preferencial:
 12. encaminhamento ao Poder Concedente, se houver;
 13. fecho no ponto em que a matéria chegou ao Relator.
 
-Em outorgas, inclua apenas os parâmetros físicos necessários à compreensão da análise locacional, operacional, regulatória ou de divergência relevante.
+Em outorgas, diferencie **detalhe instrutório** de **detalhe caracterizador**: comprima check lists, certidões, ofícios e diligências instrumentais, mas preserve características físicas ou operacionais que expliquem concretamente o empreendimento ou sejam relevantes à análise.
 
-Não suprima, por excesso de síntese, a regra de competência, o critério técnico determinante, o pedido específico da interessada ou a premissa necessária para compreender condicionante ou ressalva posterior.
+Não suprima, por excesso de síntese, competência, critério técnico determinante, pedido específico ou premissa necessária para compreender condicionante ou ressalva posterior.
+
+Se imagem, planta, croqui ou diagrama dos autos for materialmente relevante à compreensão física/operacional e o recurso técnico permitir sua reutilização, considere incluí-lo com indicação da fonte. Se não houver suporte técnico, descreva o elemento essencial em texto; nunca invente ou regenere imagem para substituir documento dos autos.
 
 ### 9.5. INVESTIMENTOS / AS BUILT
 
@@ -583,7 +564,7 @@ Ordem preferencial:
 
 Use linguagem jurídico-administrativa, formal, institucional e predominantemente descritiva.
 
-O texto deve parecer produzido por assessor experiente da Administração Pública, sem polimento ou uniformidade excessivos.
+O texto deve parecer produzido por assessor experiente da Administração Pública.
 
 Evite retórica, adjetivação desnecessária e conclusões de mérito não atribuídas.
 
@@ -686,7 +667,7 @@ Evite fórmulas que reproduzam mecanicamente a estrutura de cada documento. O Re
 
 **Não higienize integralmente a redação.** Preserve, de maneira moderada e orgânica, marcas linguísticas recorrentes dos relatórios da D1, inclusive construções que poderiam ser substituídas por formas mais elegantes ou normativamente mais rigorosas.
 
-Em Relatórios médios ou extensos, preserve efetivamente algumas dessas marcas ao longo do texto. Não produza redação integralmente higienizada. Distribua-as de forma irregular e discreta, sem usar todas nem repeti-las mecanicamente.
+Em Relatórios médios ou extensos, distribua algumas dessas marcas de forma irregular e discreta, sem usá-las mecanicamente.
 
 ### Podem e devem aparecer naturalmente
 
@@ -770,25 +751,15 @@ Exemplos:
 
 Se o número SEI não estiver disponível, não invente.
 
-Não repita referências quando a fonte já estiver inequivocamente identificada.
-
 ---
 
-## 14. TRANSCRIÇÕES
+## 14. TRANSCRIÇÕES E ESTRUTURAS ENUMERADAS
 
-Transcreva literalmente apenas quando a literalidade tiver função processual relevante, especialmente:
+Transcreva literalmente apenas quando a literalidade tiver função processual relevante, especialmente em fato infracional, tipificação, dispositivo de decisão, condicionante ou trecho controvertido.
 
-- fato infracional;
-- tipificação;
-- pedido final;
-- dispositivo de decisão anterior;
-- condicionante relevante;
-- proposta enumerada;
-- trecho cuja formulação exata seja objeto da controvérsia.
+**Preserve a estrutura enumerada** quando a fonte organizar materialmente pedidos múltiplos, critérios de análise, condicionantes ou proposta conclusiva em itens e essa forma facilitar a compreensão do que foi submetido à decisão.
 
-Nos demais casos, faça síntese fiel.
-
-Quando transcrever, preserve a redação da fonte.
+Nos demais casos, faça síntese fiel. Ao transcrever, preserve a redação da fonte.
 
 ---
 
@@ -874,16 +845,9 @@ Se a resposta for não, considere suprimi-lo ou incorporá-lo de forma sintétic
 
 ## 18. AUTOS INCOMPLETOS
 
-Se faltarem peças essenciais, não redija como se o processo estivesse completo.
+Se faltarem peças essenciais, não redija como se o processo estivesse completo. Informe a ausência **fora da minuta** e, se possível, elabore minuta parcial apenas com o que estiver comprovado.
 
-Antes da minuta, informe:
-
-**DOCUMENTOS ESSENCIAIS NÃO LOCALIZADOS:**
-
-- [documento];
-- [documento].
-
-Se ainda for possível elaborar minuta parcial, faça-a apenas com o que estiver comprovado e marque claramente as lacunas que impeçam narrativa segura.
+**É proibido inserir no corpo do Relatório mensagens operacionais como “DOCUMENTO ESSENCIAL NÃO LOCALIZADO”, “NÃO LOCALIZADO”, dúvidas do agente ou advertências ao usuário.** Essas mensagens devem aparecer antes ou depois da minuta, nunca entre o cabeçalho e **“Era o que cumpria relatar.”**
 
 Não invente transições processuais para preencher ausências documentais.
 
@@ -891,48 +855,25 @@ Não invente transições processuais para preencher ausências documentais.
 
 ## 19. FORMATO DE SAÍDA E CRIAÇÃO NO SEI
 
-### 19.1. Quando o pedido for elaborar o Relatório
+### 19.1. Elaboração ou revisão
 
-1. faça a leitura integral dos documentos relevantes;
-2. reconstrua internamente a marcha processual;
-3. aplique a seleção editorial antes de redigir;
-4. entregue a **minuta integral**;
-5. preserve o cabeçalho institucional aplicável;
-6. mantenha números SEI junto aos documentos correspondentes quando relevantes;
-7. use parágrafos corridos;
-8. não explique, dentro da minuta, as regras desta skill;
-9. finalize com **"Era o que cumpria relatar."**;
-10. depois do fecho, encerre o documento sem bloco de assinatura.
+Ao elaborar, leia os documentos relevantes, reconstrua a marcha processual, aplique a seleção editorial e entregue a **minuta integral**, com cabeçalho aplicável, referências SEI relevantes, parágrafos corridos e fecho **"Era o que cumpria relatar."**, sem assinatura.
 
-### 19.2. Quando o pedido for revisar minuta existente
+Ao revisar, preserve a estrutura adequada, confronte a minuta com os autos, mantenha as marcas humanas e corrija apenas o que afetar precisão, atribuição, compreensão ou fidelidade, aplicando as regras de seleção e compressão.
 
-1. preserve a estrutura sempre que adequada;
-2. compare as afirmações com os documentos disponíveis;
-3. identifique contradições factuais, documentais ou cronológicas;
-4. preserve as marcas humanas;
-5. não faça higienização estilística desnecessária;
-6. corrija erros que afetem precisão, atribuição, compreensão ou fidelidade;
-7. aplique as regras de seleção e compressão sem reescrever completamente sem necessidade.
+### 19.2. Criação após aprovação
 
-### 19.3. Quando o usuário aprovar o texto e definir o processo de destino
+Depois de aprovado o texto e definido o destino:
 
-1. valide que o processo de destino é distinto do processo condutor, salvo ordem expressa em sentido diverso;
-2. leia `redacao-oficial` se ainda não tiver sido carregada;
-3. use `sei_opcoes` para confirmar o nome exato do tipo documental quando houver dúvida;
-4. se houver mais de um tipo plausível e não existir regra suficiente para decidir, use `perguntar`;
-5. não invente descrição, número manual, nível de acesso ou hipótese legal;
-6. **prepare o HTML final antes de chamar a escrita**, usando estrutura e classes obtidas de referência válida;
-7. prefira uma única chamada a `documento_criar` contendo `conteudo_html` final e, quando disponível, `documento_modelo` adequado;
-8. não crie documento vazio para depois perguntar se o usuário quer formatá-lo;
-9. não peça nova confirmação apenas para aplicar estilos ou inserir o mesmo texto já aprovado;
-10. use `documento_editar` depois da criação somente para corrigir falha efetiva, limitação técnica ou ajuste solicitado posteriormente;
-11. não duplique cabeçalho, rodapé, brasão, assinatura ou elementos que o modelo do SEI já forneça;
-12. preserve no corpo o conteúdo material aprovado, admitindo apenas transformações de marcação necessárias ao HTML;
-13. finalize em **"Era o que cumpria relatar."**;
-14. nunca assine o documento como parte desta skill;
-15. após a criação, informe objetivamente o número SEI gerado e o processo em que o Relatório foi criado.
+1. valide o processo de destino e o tipo documental; use `sei_opcoes` e `perguntar` apenas quando necessário;
+2. não invente descrição, número manual, nível de acesso ou hipótese legal;
+3. prepare o HTML final com estrutura/classes válidas e prefira uma única chamada a `documento_criar` com `conteudo_html` e, quando disponível, `documento_modelo`;
+4. não crie documento vazio nem peça nova confirmação apenas para formatar o texto já aprovado;
+5. use `documento_editar` depois da criação somente para corrigir falha técnica ou ajuste posterior solicitado;
+6. não duplique cabeçalho, rodapé, brasão ou assinatura fornecidos pelo modelo do SEI;
+7. preserve o conteúdo material aprovado, finalize em **"Era o que cumpria relatar."**, nunca assine e informe o número SEI e o processo de destino após a criação.
 
-A ferramenta `documento_criar` do SEI-Pro aceita `conteudo_html` e pode usar `documento_modelo`; portanto, o comportamento esperado é entregar o Relatório **criado e formatado em uma única operação de criação**, sujeita ao cartão nativo de aprovação.
+O comportamento esperado é entregar o Relatório **criado e formatado em uma única operação de criação**, sujeita ao cartão nativo de aprovação.
 
 ---
 
@@ -968,6 +909,8 @@ Antes de entregar, verifique silenciosamente:
 - algum fundamento decisório foi eliminado por excesso de síntese?
 - a competência da ANTAQ ou do Poder Concedente precisava ser explicitada para compreender o caso?
 - os critérios determinantes da análise técnica foram preservados?
+- pedidos, critérios, condicionantes ou propostas conclusivas estruturados em itens foram preservados quando materialmente relevantes?
+- análises preliminares foram sintetizadas quando havia análise posterior especializada/conclusiva sobre o mesmo objeto?
 - toda ressalva ou divergência posterior possui no texto o antecedente narrativo necessário para ser compreendida?
 
 ### Atribuição
@@ -1006,11 +949,13 @@ Antes de entregar, verifique silenciosamente:
 - o texto mantém o padrão da D1?
 - as marcas humanas foram preservadas sem virar caricatura?
 - a construção **"No curso da instrução..."** foi considerada quando havia sucessão de diligências ou complementações?
+- se houver numeração de parágrafos, ela é única, sequencial e uniforme, sem alternar `1.`/`1)` ou reiniciar a contagem?
 - alguma correção estilística eliminou desnecessariamente traço típico do corpus?
 
 ### Relatório versus Voto
 - há julgamento próprio não atribuído?
 - há antecipação da decisão do Relator?
+- alguma mensagem operacional, aviso de documento ausente ou comentário do agente foi inserido dentro da minuta?
 
 Se houver problema material, corrija antes de entregar.
 
