@@ -1,6 +1,6 @@
 # Cadastrar contrato no Sistema de Arrendamento a partir de um processo do SEI
 
-Use quando o usuário pedir para cadastrar, no Sistema de Arrendamento da ANTAQ, o contrato que chegou num processo do SEI (cessão de uso, arrendamento, passagem, transição, uso temporário), ou para registrar os efeitos de termo de apostilamento em instrumento já cadastrado. Para apostilamentos, siga a rotina específica abaixo: não crie outro contrato. O cadastro é feito pelo conector MCP "Arrendamento" (ferramentas `arrendamento_*`, via mcp_buscar_tools e mcp_chamar). Em mcp_chamar, o servidor é "Arrendamento".
+Use quando o usuário pedir para cadastrar, no Sistema de Arrendamento da ANTAQ, o contrato que chegou num processo do SEI (cessão de uso, arrendamento, passagem, transição, uso temporário), ou para registrar os efeitos de termo de apostilamento em instrumento já cadastrado. Após a confirmação e verificação do cadastro, prepare o despacho de registro e, com aprovação do usuário, crie-o no processo SEI por meio do agente SEI-Pro. Para apostilamentos, siga a rotina específica abaixo: não crie outro contrato. O cadastro é feito pelo conector MCP "Arrendamento" (ferramentas `arrendamento_*`, via mcp_buscar_tools e mcp_chamar). Em mcp_chamar, o servidor é "Arrendamento".
 
 As ferramentas abaixo EXISTEM no conector; chame-as direto com mcp_chamar, sem procurar antes:
 
@@ -130,6 +130,44 @@ Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas
 2. Confirme separadamente: ID e situação do registro corrigido; valores antes/depois; identificação SEI e data do processo/ato; PDF, nome e vínculo efetivos; eventuais duplicidades ou anexos incorretos.
 3. Informe, de modo explícito, o que foi **apenas analisado**, o que teve **prévia**, o que foi **gravado e verificado**, e as etapas **não executadas ou pendentes**, inclusive insuficiência de permissão ou inexistência de ferramenta de edição, renomeação ou exclusão.
 4. Nenhuma autorização para atualizar um campo ou anexar um PDF abrange automaticamente modificar outro registro, excluir arquivo ou executar nova operação de gravação.
+
+## 8. Despacho de registro após o cadastro — criação no SEI-Pro
+
+**Aplica-se a contratos novos, termos aditivos, retificações, apostilamentos e outros instrumentos efetivamente registrados ou atualizados.** Esta etapa integra o fluxo: após a verificação do cadastro no sistema Arrendamento, não encerre a atividade sem oferecer a minuta de despacho e a sua inclusão no SEI. A mera prévia de gravação não autoriza afirmar que o cadastro ocorreu.
+
+### 8.1 Pré-condição e conferência
+
+1. Reconsulte o Sistema de Arrendamento e confirme a efetiva persistência do contrato ou alteração: ambiente, ID, número, instrumento alcançado, informações principais, abas pertinentes e, se houver, anexos e seus vínculos. Registre no relato as pendências.
+2. Confira qual processo SEI deve receber o despacho: normalmente o processo que encaminhou o instrumento para registro, salvo determinação/documentação em sentido diverso. Não crie o despacho em processo apenas relacionado sem comprovar o vínculo.
+3. Antes de redigir, leia os documentos SEI relevantes: petição/ofício de encaminhamento, instrumento assinado e seus anexos, análise técnica ou deliberação prévia, se houver; para aditivos e apostilamentos, examine o instrumento original e os antecedentes necessários. Não afirme regularidade, aprovação, anuência, eficácia ou fundamento normativo se não estiverem documentalmente demonstrados.
+4. Quando apenas parte da rotina tiver sido concluída, descreva a **providência efetivamente executada**, sem usar "cadastrado" para etapas ainda não gravadas. Diante de falha material ou divergência no registro, proponha texto de pendência, mas não finalize um despacho que ateste conclusão inexistente.
+
+### 8.2 Padrão de redação GPO extraído dos 11 despachos-modelo
+
+Produza um **DESPACHO**, normalmente de 2 a 5 parágrafos numerados, com:
+- **Assunto:** "Cadastro do [tipo e número do instrumento] - [contratada] - Porto de [nome]"; para apostilamento, identificar "Termo de Apostilamento ao [contrato]" e a retificação tratada.
+- **Parágrafo inicial:** "Trata-se de..." ou "Refiro-me a...", identificando órgão/autoridade portuária remetente, documento de encaminhamento e número SEI, instrumento assinado e número SEI, contratante/contratada e vínculo com o porto.
+- **Parágrafo de objeto:** síntese fiel da cláusula pertinente, incluindo área, finalidade, prazo, datas e alterações **somente quando relevantes e comprovados**, sem transcrever cláusulas inteiras desnecessariamente.
+- **Parágrafo de antecedentes, se necessário:** decisão, Nota Técnica, ofício anterior, contrato substituído ou aditivo relacionado, com números SEI corretos. Diferencie registro cadastral de análise regulatória. Só mencione adequação/regularidade quando houver suporte técnico efetivo.
+- **Fecho:** quando todo registro relevante estiver confirmado: "Registra-se, por fim, que o instrumento foi cadastrado no Sistema de Gestão de Arrendamento Portuário." Em apostilamento que apenas corrigiu dados: "Registra-se, por fim, que as alterações constantes do Termo de Apostilamento foram lançadas no registro do instrumento correspondente, no Sistema de Gestão de Arrendamento Portuário." Adapte o fecho se houve cadastro parcial, e explicite a pendência sem afirmar conclusão integral.
+- **Conclusão do processo:** "Diante do exposto, concluem-se os autos nesta unidade." **Somente se** o processo estiver apto a ser concluído, sem providência substancial pendente e se esse for o encaminhamento documentalmente adequado. Este texto não autoriza executar a ação de concluir processo.
+- **Assinatura:** não invente nome, cargo, data de assinatura, código verificador ou CRC. Utilize a estrutura/cabeçalho institucional do próprio tipo documental Despacho no SEI; deixe a assinatura para o responsável no sistema, sem assinatura automática e sem reproduzir rodapés de PDFs anteriores.
+
+**Estilo:** jurídico-administrativo, objetivo, conectivos naturais e frases curtas; sem travessão. Evite fórmulas de deferimento ou atestado de legalidade em um despacho cujo único objeto é registrar providência cadastral. Se houver ressalva relevante na análise ou falha de anexação, relate-a expressamente. O nível de detalhe pode ser maior quando houver alterações substantivas, tal como os exemplos de aditivos de exploração portuária; não expanda artificialmente despachos simples.
+
+### 8.3 Integração operativa com o agente SEI-Pro
+
+1. Após concluir a etapa cadastral, apresente a minuta integral do despacho ao usuário e disponibilize uma ação de confirmação, por exemplo **"Criar despacho no SEI"** e uma opção de revisão **"Revisar texto"**, usando os controles/fluxo de aprovação existentes no agente. Não invente interface ou ferramenta específica.
+2. Identifique, nas ferramentas efetivamente disponibilizadas pelo **agente SEI-Pro**, a operação de **criar documento interno** e a de **escrever/editar seu conteúdo**. Consulte suas descrições e parâmetros reais; não confunda ferramentas do conector externo Arrendamento com as ferramentas internas do SEI. Se não estiverem disponíveis, apresente a minuta para inserção manual e relate a limitação.
+3. Após **aprovação expressa** do usuário e o cartão de autorização do SEI-Pro, crie no **processo correto** um documento do tipo **Despacho**, preferencialmente com o modelo institucional da unidade, e insira o texto validado no editor do SEI. Nunca crie documento externo PDF no lugar de documento interno editável, salvo instrução expressa.
+4. A criação e o preenchimento, quando dependerem de operações distintas, devem respeitar cada confirmação exigida pelo SEI-Pro. Não prossiga silenciosamente de uma aprovação genérica para ações adicionais. Não duplique despacho já existente: consulte antes a árvore do processo, inclusive eventuais minutas do mesmo assunto.
+5. Reabra/consulte o documento criado e verifique número SEI gerado, assunto, conteúdo integral, referências, parágrafos e situação (minuta/não assinado). Se a criação funcionar mas a inserção do texto falhar, relate o documento criado e a pendência, em vez de declarar finalização.
+6. **Não assine, não envie o processo, não conclua os autos e não exclua documentos automaticamente.** Essas ações exigem pedido e autorização específicos, separados da autorização para criar a minuta. Se o usuário solicitar assinatura, o fluxo de senha/cargo deve ocorrer exclusivamente no cartão próprio do SEI-Pro, jamais na conversa.
+7. Na resposta final, informe: processo, documento SEI criado (quando houver), situação da assinatura, ID do cadastro no Arrendamento, instrumento registrado e pendências. Se houver impedimento, forneça a minuta completa e diga precisamente qual operação não foi possível executar.
+
+### 8.4 Consistência obrigatória entre cadastro e despacho
+
+Antes da gravação no SEI, confronte: número do processo; números SEI de encaminhamento e instrumento; nome e número do contrato ou apostilamento; contratada; porto; área e prazo; natureza e extensão da alteração; situação real no Arrendamento; ausência ou existência de anexos. A informação documental é a fonte para descrever o instrumento; a consulta posterior ao Arrendamento é a fonte para declarar **o que efetivamente foi cadastrado**. Discrepâncias materiais devem ser destacadas na prévia e saneadas antes da criação do despacho.
 
 ## Erros
 
