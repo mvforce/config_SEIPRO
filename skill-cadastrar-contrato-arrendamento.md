@@ -133,7 +133,7 @@ Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas
 
 ## 8. Despacho de registro após o cadastro — criação no SEI-Pro
 
-**Aplica-se a contratos novos, termos aditivos, retificações, apostilamentos e outros instrumentos efetivamente registrados ou atualizados.** Esta etapa integra o fluxo: após a verificação do cadastro no sistema Arrendamento, não encerre a atividade sem oferecer a minuta de despacho e a sua inclusão no SEI. A mera prévia de gravação não autoriza afirmar que o cadastro ocorreu.
+**Aplica-se a contratos novos, termos aditivos, retificações, apostilamentos e outros instrumentos efetivamente registrados ou atualizados.** Esta etapa integra o fluxo: após a verificação do cadastro no sistema Arrendamento, não encerre a atividade sem criar diretamente o despacho no SEI pela ferramenta de criação de documento interno do SEI-Pro, respeitada a aprovação operacional do próprio agente. A mera prévia de gravação não autoriza afirmar que o cadastro ocorreu.
 
 ### 8.1 Pré-condição e conferência
 
@@ -144,7 +144,7 @@ Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas
 
 ### 8.2 Padrão de redação GPO extraído dos 11 despachos-modelo
 
-Produza um **DESPACHO GPO** (tipo documental a selecionar na ferramenta de criação do SEI; não gerar outro tipo de Despacho), normalmente de 2 a 5 parágrafos numerados, com:
+Produza o **conteúdo de um despacho da GPO**, normalmente de 2 a 5 parágrafos numerados, com:
 - **Assunto:** "Cadastro do [tipo e número do instrumento] - [contratada] - Porto de [nome]"; para apostilamento, identificar "Termo de Apostilamento ao [contrato]" e a retificação tratada.
 - **Parágrafo inicial:** "Trata-se de..." ou "Refiro-me a...", identificando órgão/autoridade portuária remetente, documento de encaminhamento e número SEI, instrumento assinado e número SEI, contratante/contratada e vínculo com o porto.
 - **Parágrafo de objeto:** síntese fiel da cláusula pertinente, incluindo área, finalidade, prazo, datas e alterações **somente quando relevantes e comprovados**, sem transcrever cláusulas inteiras desnecessariamente.
@@ -155,13 +155,20 @@ Produza um **DESPACHO GPO** (tipo documental a selecionar na ferramenta de cria�
 
 **Estilo:** jurídico-administrativo, objetivo, conectivos naturais e frases curtas; sem travessão. Evite fórmulas de deferimento ou atestado de legalidade em um despacho cujo único objeto é registrar providência cadastral. Se houver ressalva relevante na análise ou falha de anexação, relate-a expressamente. O nível de detalhe pode ser maior quando houver alterações substantivas, tal como os exemplos de aditivos de exploração portuária; não expanda artificialmente despachos simples.
 
-**Tipo documental obrigatório: Despacho GPO.** Na criação pelo SEI-Pro, selecione exatamente o tipo disponível no catálogo do SEI com esse nome. Não selecione tipos genéricos ou nomes semelhantes. Se o tipo não aparecer ou não puder ser identificado com segurança, informe a limitação e não crie um documento de tipo diferente.
+**Regra obrigatória de identificação do documento na árvore do SEI: o resultado deve aparecer como "Despacho GPO", jamais "Despacho Despacho".** Diferencie os campos usados pelo SEI-Pro:
+- **Tipo documental:** consulte o catálogo real de tipos internos. Se o tipo for **"Despacho"**, selecione-o como tipo, sem duplicar essa palavra em outro campo. Caso haja um tipo específico **"Despacho GPO"**, use-o apenas quando confirmado que esse é o tipo documental correto da unidade.
+- **Descrição/nome na árvore:** não preencha com "Despacho" nem "Despacho GPO" se o SEI já prefixar automaticamente o tipo. Prefira **deixar a descrição em branco**, quando permitido. Se houver campo obrigatório de descrição complementar, preencha apenas **"GPO"** caso a ferramenta use esse campo para formar "Despacho GPO", ou um assunto substantivo, nunca o nome do próprio tipo repetido.
+- **Assunto no corpo:** é o assunto do contrato cadastrado, não um segundo título "Despacho".
+- **Verificação antes da escrita:** confira a pré-composição de tipo + descrição fornecida pela ferramenta. Se resultar em "Despacho Despacho", corrija o campo duplicado **antes de criar**, sem trocar arbitrariamente o tipo.
+- **Verificação posterior:** consulte a árvore e confira o nome exibido. Se não ficar "Despacho GPO", relate a divergência e só tente corrigi-la se houver ferramenta de edição do nome/descrição e aprovação operacional para isso. Não crie um segundo documento para tentar corrigir o primeiro.
+
+Não use "Despacho GPO" como valor de um campo livre só porque esse é o nome esperado na árvore; determine primeiro como o SEI compõe a identificação final. Se o catálogo ou as regras de nomenclatura não puderem ser consultados, preserve o tipo correto da unidade e evite qualquer descrição redundante.
 
 ### 8.3 Integração operativa com o agente SEI-Pro
 
 1. Após concluir e verificar a etapa cadastral, **não apresente minuta de despacho no chat e não crie uma etapa de revisão textual ou confirmação conversacional específica para o despacho**. Elabore o conteúdo internamente e inicie diretamente o fluxo de criação de documento interno no SEI, sujeito ao cartão de aprovação de escrita do próprio SEI-Pro. Não invente interface ou ferramenta específica.
 2. Identifique, nas ferramentas efetivamente disponibilizadas pelo **agente SEI-Pro**, a operação de **criar documento interno** e a de **escrever/editar seu conteúdo**. Consulte suas descrições e parâmetros reais; não confunda ferramentas do conector externo Arrendamento com as ferramentas internas do SEI. Se não estiverem disponíveis, apresente a minuta para inserção manual e relate a limitação.
-3. No **processo correto**, acione a ferramenta de criação de documento interno do tipo **Despacho GPO**, preferencialmente com o modelo institucional da unidade, e insira o texto elaborado no editor do SEI. **Não solicite uma aprovação de minuta no chat**. A execução da escrita dependerá exclusivamente da autorização no cartão próprio do SEI-Pro, quando exigida. Nunca crie documento externo PDF no lugar de documento interno editável, salvo instrução expressa.
+3. No **processo correto**, acione a ferramenta de criação de documento interno usando o **tipo documental correto para Despacho da GPO**, conforme as regras de composição do nome na árvore acima, preferencialmente com o modelo institucional da unidade, e insira o texto elaborado no editor do SEI. **Não solicite uma aprovação de minuta no chat**. A execução da escrita dependerá exclusivamente da autorização no cartão próprio do SEI-Pro, quando exigida. Nunca crie documento externo PDF no lugar de documento interno editável, salvo instrução expressa.
 4. A criação e o preenchimento, quando dependerem de operações distintas, devem respeitar cada aprovação operacional exigida pelo SEI-Pro. Não acrescente uma aprovação conversacional redundante nem interprete a autorização de uma operação como autorização irrestrita para outras. Não duplique despacho já existente: consulte antes a árvore do processo, inclusive eventuais minutas do mesmo assunto.
 5. Reabra/consulte o documento criado e verifique número SEI gerado, assunto, conteúdo integral, referências, parágrafos e situação (minuta/não assinado). Se a criação funcionar mas a inserção do texto falhar, relate o documento criado e a pendência, em vez de declarar finalização.
 6. **Não assine, não envie o processo, não conclua os autos e não exclua documentos automaticamente.** Essas ações exigem pedido e autorização específicos, separados da autorização para criar a minuta. Se o usuário solicitar assinatura, o fluxo de senha/cargo deve ocorrer exclusivamente no cartão próprio do SEI-Pro, jamais na conversa.
