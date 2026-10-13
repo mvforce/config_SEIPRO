@@ -1,6 +1,6 @@
 # Cadastrar contrato no Sistema de Arrendamento a partir de um processo do SEI
 
-Use quando o usuário pedir para cadastrar, no Sistema de Arrendamento da ANTAQ, o contrato que chegou num processo do SEI (cessão de uso, arrendamento, passagem, transição, uso temporário). O cadastro é feito pelo conector MCP "Arrendamento" (ferramentas `arrendamento_*`, via mcp_buscar_tools e mcp_chamar). Em mcp_chamar, o servidor é "Arrendamento".
+Use quando o usuário pedir para cadastrar, no Sistema de Arrendamento da ANTAQ, o contrato que chegou num processo do SEI (cessão de uso, arrendamento, passagem, transição, uso temporário), ou para registrar os efeitos de termo de apostilamento em instrumento já cadastrado. Para apostilamentos, siga a rotina específica abaixo: não crie outro contrato. O cadastro é feito pelo conector MCP "Arrendamento" (ferramentas `arrendamento_*`, via mcp_buscar_tools e mcp_chamar). Em mcp_chamar, o servidor é "Arrendamento".
 
 As ferramentas abaixo EXISTEM no conector; chame-as direto com mcp_chamar, sem procurar antes:
 
@@ -84,6 +84,52 @@ Anexe só o contrato (documento externo). documento_baixar não baixa documento 
 ## 6. Fechar
 
 Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas, anexo e o que ficou pendente.
+
+## 7. Rotina específica — incluir Termo de Apostilamento em contrato existente
+
+**Condição de acionamento.** Use esta rotina quando o pedido envolver apostilamento. Ela não substitui o fluxo de criação para contratos novos. Um apostilamento pode retificar dados, registrar informações ou produzir outros efeitos definidos no próprio instrumento; não assuma que todo apostilamento altera CNPJ ou que produz efeitos sobre todos os instrumentos relacionados.
+
+### 7.1 Identificar o instrumento efetivamente alcançado
+
+1. Consulte a sessão com `arrendamento_sessao` e informe ao usuário o ambiente (produção ou homologação).
+2. No SEI, liste e leia integralmente o termo de apostilamento, o contrato original e os aditivos ou outros documentos necessários para interpretar seu objeto, suas referências e a cadeia de alterações. Confira assinaturas, datas e identificação dos signatários quando relevantes. Documento sem texto legível: não presuma seu conteúdo; interrompa a etapa dependente dele.
+3. No Sistema de Arrendamento, busque o contrato por número, porto e demais identificadores disponíveis. Consulte o registro-base e os aditivos cadastrados, inclusive seus vínculos e IDs. Não use apenas a coincidência de processo, a ordem cronológica ou o documento mais recente para decidir o destino.
+4. Determine e justifique, citando o trecho/documento SEI pertinente, se a correção incide no contrato-base, em aditivo específico ou em mais de um instrumento. Em caso de ambiguidade material, **não grave nem anexe** até que a identificação seja resolvida pelo processo ou confirmada pelo usuário com suporte documental.
+5. Verifique previamente se o apostilamento ou a correção já estão cadastrados, evitando duplicação. **Não crie um contrato novo.**
+
+### 7.2 Planejar as correções com escopo estrito
+
+1. Elabore um quadro de consistência: **instrumento/ID afetado | campo | valor atual | valor proposto | fundamento (cláusula e SEI) | efeito sobre outros registros | situação da validação**.
+2. Altere somente os campos expressamente corrigidos ou inequivocamente alcançados pelo apostilamento, por exemplo, `nrCnpj` da contratada e, **somente se comprovada a correspondência**, `nrcnpjInstalacao`. Confira identidade da pessoa jurídica e da instalação; não pressuponha que seus CNPJs sejam sempre iguais.
+3. Preserve os demais campos e os dados históricos dos aditivos tal como assinados, salvo retificação expressamente aplicável a cada um. Não replique automaticamente correções do contrato-base.
+4. Não infira datas, identificadores ou campos obrigatórios ausentes. Diferencie assinatura, início dos efeitos, protocolo no SEI e registro no sistema. Em divergência entre instrumentos ou insuficiência documental relevante, destaque a pendência e não a resolva por suposição.
+5. Antes de chamar ferramenta de **edição**, consulte o esquema efetivamente disponível no MCP (busca pelo trecho singular do nome, se necessário) e confirme se aceita alterar o registro existente e quais identificadores/campos exige. **`arrendamento_criar_contrato` não serve para atualizar; `arrendamento_incluir_registro` não deve ser usado como edição sem comprovação de que esse recurso permite atualização.** Se não houver ferramenta de atualização suportada, pare a etapa e relate a limitação, sem simular gravação.
+6. Apresente prévia detalhada, incluindo ambiente, IDs, quadro de diferenças e potenciais impactos. Use `confirmar=false` se a ferramenta de atualização o suportar. **Só execute a alteração com autorização expressa do usuário**, utilizando `confirmar=true` quando essa for a convenção da ferramenta; caso o conector use outro mecanismo, siga o esquema real e nunca interprete a ausência do parâmetro como autorização tácita.
+7. Reconsulte o registro e compare valores efetivamente persistidos com o plano. Se houver divergência, suspenda as etapas dependentes e informe o problema.
+
+### 7.3 Registrar processo e ato, quando cabível
+
+1. Verifique se já há vínculo correspondente na aba `contratos-processos`. Não duplique processos ou atos cadastrados.
+2. Quando couber, vincule ao **registro do instrumento alcançado** o número do processo SEI e, em `nrAto`, a referência `SEI nº <número do apostilamento>`, após conferir os campos permitidos em `arrendamento_consultar_campos` para `contratos-processos`.
+3. Para `dsAtoAntaq`, use a categoria que o sistema efetivamente admite. Se não houver Acórdão ou Resolução, a convenção operacional da GPO mencionada nesta skill é selecionar **"Acórdão"**; entretanto, **isso é somente uma classificação imposta pelo cadastro, não transforma o apostilamento em Acórdão**. Mostre explicitamente a incongruência na prévia e peça confirmação do usuário antes de utilizá-la. Se houver opção própria para apostilamento, prefira a categoria correta.
+4. Para `dtAto`, use a data de protocolo do apostilamento comprovada no SEI, quando aplicada a convenção da unidade; **não utilize a data de assinatura, de hoje ou a do contrato original em substituição automática**. Se não constar protocolo confiável, solicite o dado antes de gravar.
+5. Execute prévia, obtenha autorização expressa e então grave; reconsulte o vínculo e verifique processo, número SEI, tipo e data.
+
+### 7.4 Baixar, nomear e anexar o documento ao registro correto
+
+1. Baixe pelo SEI o PDF do termo assinado por meio de `documento_baixar`, respeitando eventuais limitações de documentos internos ou sigilosos. Identifique o ID do contrato-base ou aditivo **que o termo efetivamente corrige**.
+2. Apresente ao usuário um nome descritivo, por exemplo: `Termo de Apostilamento - Correção do CNPJ da SRRF02 (SEI nº 2894521).pdf`. Este é um **exemplo de nomenclatura, não um dado do processo analisado**.
+3. O conector descrito nesta skill **não disponibiliza ferramenta de renomeação de anexos**. Somente se houver recurso local efetivamente acessível e permitido, renomeie ou copie o PDF para um nome claro **dentro das pastas aceitas para envio**, preservando conteúdo, extensão e vínculo com o documento original; não presuma que seja possível renomear. Use o caminho absoluto exato resultante. Se o conector aceitar apenas o caminho original devolvido por `documento_baixar`, mantenha-o e explique a limitação de nomenclatura.
+4. Confirme o destino, nome, tamanho e, se possível, identidade do arquivo, antes de anexar. Use `arrendamento_enviar_arquivo` sem confirmação para a prévia, obtenha autorização expressa ("pode anexar") e só então envie com `confirmar=true`. **Não associe ao aditivo apenas porque está no mesmo processo.**
+5. Após o envio, consulte a listagem de anexos ou detalhe do registro e confirme que o novo PDF aparece com o nome e vínculo corretos. **Não presuma sucesso pela chamada de envio isolada.**
+6. Se houver anexo incorreto anterior, **não o exclua até comprovar o envio e o vínculo do correto**. A exclusão exige ferramenta disponível e suporte explícito, avaliação do impacto sobre a trilha de auditoria, identificação inequívoca do anexo e autorização separada do usuário. Se o envio novo falhar, preserve integralmente o existente. Se não houver exclusão permitida, mantenha-o e relate pendência de saneamento, sem alegar remoção.
+
+### 7.5 Verificação final e relato
+
+1. Consulte novamente o contrato-base e todos os aditivos potencialmente afetados. Verifique tanto os **campos alterados** quanto a **preservação dos não abrangidos**.
+2. Confirme separadamente: ID e situação do registro corrigido; valores antes/depois; identificação SEI e data do processo/ato; PDF, nome e vínculo efetivos; eventuais duplicidades ou anexos incorretos.
+3. Informe, de modo explícito, o que foi **apenas analisado**, o que teve **prévia**, o que foi **gravado e verificado**, e as etapas **não executadas ou pendentes**, inclusive insuficiência de permissão ou inexistência de ferramenta de edição, renomeação ou exclusão.
+4. Nenhuma autorização para atualizar um campo ou anexar um PDF abrange automaticamente modificar outro registro, excluir arquivo ou executar nova operação de gravação.
 
 ## Erros
 
