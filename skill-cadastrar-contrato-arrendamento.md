@@ -69,7 +69,19 @@ Com arrendamento_incluir_registro, id_contrato do passo anterior:
 - recurso=aspectos-fisicos: {"vlAreaTotal": área em m²}.
 - recurso=contratos-processos: {"nrProcesso": número do processo SEI (11111.111111/1111-11), "dsAtoAntaq": "Acórdão" ou "Resolução", "nrAto": "SEI nº <número SEI do contrato>", "dtAto": data do ato}. Sem acórdão nem resolução, a GPO usa "Acórdão" e, em dtAto, a data em que o contrato foi protocolado no SEI (está no Recibo Eletrônico de Protocolo ou na data do documento na árvore). Nunca a data de hoje. Confirme com o usuário.
 - recurso=observacoes: {"noResponsavel": unidade do usuário, "dtObservacao": hoje, "dsObservacao": resumo em 2 a 4 frases com finalidade, valor mensal, valor global e valor da garantia (os três, quando o contrato trouxer), condições de prazo e o resultado do despacho de análise}.
-- Só se o contrato trouxer: investimentos-previstos, bens, coordenadas, perfis-carga-passageiros, tipos-servicos-contrato (campos em arrendamento_consultar_campos).
+- Só se o contrato trouxer: investimentos-previstos, bens, perfis-carga-passageiros, tipos-servicos-contrato (campos em arrendamento_consultar_campos).
+- **Coordenadas:** seguir exclusivamente a rotina 4.1, aplicável apenas a contratos de transição, arrendamento e uso temporário.
+
+### 4.1 Coordenadas da área — somente transição, arrendamento e uso temporário
+
+1. **Escopo obrigatório:** executar esta verificação apenas quando `noTipoOutorga` corresponder a **Contrato de Transição**, **Arrendamento** ou **Contrato de Uso Temporário**. Para cessão de uso (onerosa ou não), contrato de passagem e outras modalidades, **não procurar nem cadastrar coordenadas por esta rotina**, salvo solicitação específica do usuário.
+2. Procure no processo SEI o memorial descritivo, planta georreferenciada, contrato e anexos, inclusive documentos com coordenadas ou arquivos KML/KMZ. Leia os documentos disponíveis com as ferramentas efetivamente existentes no SEI-Pro. Não presuma que o agente consiga interpretar KML/KMZ: verifique o suporte real e, se indisponível, relate a limitação sem fabricar vértices.
+3. Confira se as coordenadas correspondem à área do instrumento cadastrado, distinguindo áreas adjacentes, parcelas, polígonos de referência e versões anteriores. Verifique área, identificação, sequência dos vértices, latitude/longitude, unidades e sistema de referência geodésico informado. Não converta sistemas ou formatos sem método suportado e parâmetros suficientes.
+4. Consulte `arrendamento_consultar_campos` com recurso=`coordenadas` e verifique os campos e formato esperados pelo MCP. Não presuma a estrutura do objeto `dados` ou que o conector permita importação direta do arquivo.
+5. Quando houver dados completos e confiáveis, prepare os registros de vértices na sequência documental, confira a prévia e solicite autorização antes de qualquer gravação com `arrendamento_incluir_registro` (ou ferramenta equivalente comprovadamente disponível). Não invente vértices para completar o polígono nem reproduza automaticamente o primeiro ponto como último sem exigência do formato.
+6. Reconsulte a aba de coordenadas para verificar quantidade, sequência, valores e vínculo ao contrato correto. Havendo múltiplos polígonos, dúvidas de datum ou conflito entre contrato e planta, não grave os dados ambíguos; registre a pendência.
+7. **Ausência de dados georreferenciados:** informe expressamente a ausência ou impossibilidade de leitura como pendência cadastral, sem impedir automaticamente o cadastro das demais informações quando independentes. Não declare que as coordenadas foram cadastradas se não houver confirmação no sistema.
+
 
 ## 5. Anexar o contrato
 
