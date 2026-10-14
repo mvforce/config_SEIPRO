@@ -1,156 +1,200 @@
 ---
 name: despacho-encaminhamento-sog
-description: Examina a conclusão de Nota Técnica da GPO, consulta o processo e redige despacho da Gerência à SOG, com confirmação item a item, anuência ou divergência fundamentada e proposta de encaminhamento.
+description: Analisa Nota Técnica da GPO, verifica fundamentos e achados materiais, redige manifestação sucinta da Gerência à SOG e, quando autorizado, cria documento do tipo Despacho no SEI-Pro.
 ---
 
-# Despacho da GPO à SOG após Nota Técnica
+# SKILL: Despacho de encaminhamento da GPO à SOG
 
-## Finalidade e limites
-Use esta skill quando houver Nota Técnica ou manifestação conclusiva de servidor da GPO a ser apreciada pela chefia imediata e encaminhada à Superintendência de Outorgas. A Nota Técnica é a manifestação técnica do analista; o despacho é a posição própria da Gerência. Não presumir concordância do gerente, nem transformar o despacho de encaminhamento em voto da Diretoria. Aplicar o contexto fixo de Tavares já enviado à API para estilo e método, sem repetir o perfil pessoal no documento.
+## 1. Finalidade
 
-## Regra de execução: mostrar botões antes de avançar
-Esta skill deve ser carregada com `skill_ler` quando o usuário pedir despacho da GPO à SOG. **A primeira interação após localizar a NT é uma chamada de ferramenta `perguntar` com `opcoes`, antes de qualquer resposta final ou minuta.** Escrever “Deseja encaminhar?” na mensagem não cria botão. Exemplo executável:
+Produzir a manifestação da Gerência de Portos Organizados (GPO) dirigida à Superintendência de Outorgas (SOG) após a elaboração de Nota Técnica ou manifestação técnica conclusiva, com posição própria da chefia, proporcionalidade na revisão e encaminhamento adequado à competência decisória.
 
-```json
-{"pergunta":"Encaminhar a Nota Técnica nº [N]/[ANO]/GPO/SOG (SEI nº [ID]) à SOG?","opcoes":["Sim, esta NT","Ver resumo","Escolher outra NT"]}
+A Nota Técnica concentra a instrução e a fundamentação técnica. O Despacho registra se a Gerência acompanha, acompanha com ressalvas ou diverge de suas conclusões, indicando a consequência processual. **Não reescrever a Nota Técnica nem converter o Despacho em nova instrução ou voto da Diretoria.**
+
+Esta skill destina-se ao uso no SEI-Pro. Utilizar exclusivamente funções de consulta, interação e escrita efetivamente disponíveis; não presumir nomes de ferramentas ou sucesso de operação.
+
+## 2. Princípios obrigatórios
+
+1. **Precisão:** não inventar SEI, número de documento, fatos, cálculos, fundamentos jurídicos, conclusão, assinatura ou andamento.
+2. **Proporcionalidade:** conferir o indispensável em todos os processos e aprofundar o exame quando houver materialidade, risco, conflito ou complexidade.
+3. **Aproveitamento da instrução:** referenciar a Nota Técnica em vez de repetir suas análises; explicar apenas ressalvas, divergências e providências novas.
+4. **Autonomia da Gerência:** não presumir concordância automática nem criar divergência artificial.
+5. **Economia de interação:** nenhuma confirmação item a item ou rodada de cartões para decisões já expressas pelo usuário.
+6. **Competência:** distinguir providência da Gerência, SOG, Diretoria Colegiada, Poder Concedente e autoridade portuária.
+7. **Segurança de escrita:** criação de documento exige autorização no fluxo nativo do aplicativo; não assinar, tramitar, concluir, publicar ou enviar sem pedido e autorização específicos.
+
+## 3. Acionamento e definição do objeto
+
+Acionar ao receber pedido de elaboração, revisão ou criação de despacho da GPO para a SOG relativo a Nota Técnica ou manifestação conclusiva.
+
+1. Identificar o processo aberto e a Nota Técnica indicada pelo usuário. **Se o usuário informou o SEI ou o número da NT de maneira inequívoca, seguir sem perguntar novamente.**
+2. Na ausência de identificação, localizar a Nota Técnica pertinente mais recente da GPO/SOG, verificando assunto, data, versão e eventuais manifestações posteriores. Havendo apenas uma candidata inequívoca, prosseguir e identificá-la na resposta. Se houver mais de uma candidata materialmente possível, solicitar **uma única escolha** mediante a ferramenta nativa de interação, se disponível.
+3. Não selecionar NT de outra unidade ou versão superada apenas porque é o último documento da árvore. Conferir se há substituição, retificação, aditamento ou decisão posterior.
+4. Identificar o objeto e a providência pretendida. Distinguir pedido para **somente redigir**, **redigir e submeter à revisão**, ou **criar diretamente no SEI**. Respeitar a preferência explícita do usuário, ressalvadas as autorizações obrigatórias do aplicativo.
+
+## 4. Verificação documental interna
+
+### 4.1. Núcleo mínimo obrigatório
+
+Antes da redação, examinar, na extensão necessária:
+
+- inteiro teor da NT relevante, especialmente objeto, fatos essenciais, conclusão, recomendações e condicionantes;
+- identificação correta de processo, partes, área/instalação, documentos SEI, versões, datas e atos posteriores pertinentes;
+- suporte documental das premissas decisivas e coerência entre o pedido, o enquadramento jurídico, a análise e a conclusão;
+- dispositivo legal, regulamentar, contratual ou decisão administrativa decisiva, com atenção à competência, vigência e aplicabilidade;
+- adequação da providência proposta à esfera da SOG, da Diretoria ou de outros atores;
+- eventual contradição capaz de modificar o resultado ou impedir o encaminhamento.
+
+Ler fontes primárias citadas pela NT quando forem decisivas para a manifestação. Distinguir **comprovado**, **alegado**, **inferido** e **não verificado**. Se arquivo estiver ilegível ou inacessível, não concluir que a informação inexiste; buscar alternativa de leitura, se disponível, e registrar a limitação relevante.
+
+### 4.2. Auditoria aprofundada por materialidade
+
+Quando a matéria ou indícios exigirem, ampliar a verificação para:
+
+- contratos e aditivos, minuta, EVTEA, edital, PDZ, autorizações, acórdãos, diligências e respostas;
+- áreas, metragens e conceitos de área, memorial/planta, coordenadas e arquivos georreferenciados, quando disponíveis e confiáveis;
+- prazos, datas, vigências, cronogramas, valores, MME/MMC, CAPEX/OPEX, receitas, índices, volumes, capacidades e demais números decisivos;
+- cálculos, fórmulas, unidades, data-base, fontes, premissas e divergências entre texto, anexos e planilhas;
+- redação efetiva e incidência da norma vigente na data relevante e determinações administrativas aplicáveis.
+
+**Não presumir que uma conferência foi feita** quando não houve acesso à fonte ou meio de cálculo. Não declarar validação geométrica por mera inspeção visual; verificar geometria somente quando houver arquivo processável e instrumento adequado. Não exigir análise de cada item acima quando irrelevante ao despacho.
+
+Manter matriz de trabalho **interna**: `questão | fonte (SEI e localização) | verificação | impacto | providência`. Ela não integra automaticamente o Despacho nem precisa ser exibida ao usuário.
+
+### 4.3. Criticidade e tratamento de achados
+
+Classificar achados relevantes como:
+
+- **material sem impacto decisório:** corrigível sem alterar o encaminhamento;
+- **ressalva relevante:** exige esclarecimento ou qualificação, mas pode permitir prosseguimento;
+- **divergência de mérito:** altera fundamentação, conclusão ou proposta;
+- **impeditivo:** ausência ou contradição essencial que torna inseguro o encaminhamento;
+- **não verificado:** a fonte necessária não pôde ser consultada.
+
+Avaliar a consequência concreta, sem assumir que qualquer pendência demanda devolução ou paralisação. Havendo problema material na própria NT, não encobri-lo com concordância genérica; sugerir correção, diligência ou tratamento fundamentado.
+
+**Comunicação ao usuário:** não apresentar relatório de auditoria ou matriz por padrão. Apresentar, de forma breve, somente achados que possam alterar o texto, o mérito, a segurança jurídica ou a providência, com fonte, impacto e proposta. Exibir a auditoria completa apenas quando solicitada.
+
+## 5. Definição da posição da Gerência
+
+Escolher, a partir dos autos e das instruções do usuário, uma das três modalidades:
+
+### A. Concordância integral
+
+Usar quando a Gerência acompanha a conclusão e o encaminhamento propostos, sem ressalva material. Redigir Despacho **mínimo**, usualmente com 2 a 4 parágrafos: referência à NT e ao objeto, anuência e encaminhamento à SOG. Não repetir cada fundamento nem elaborar nova proposta dispositiva quando a NT já a contém adequadamente.
+
+Formulação possível: `A matéria foi analisada na Nota Técnica nº [nº]/[ano]/GPO/SOG (SEI nº [id]), cujo teor acompanho na íntegra.`
+
+### B. Concordância com ressalvas
+
+Declarar o que se acompanha, delimitar a ressalva, apresentar fundamento e efeito sobre o encaminhamento. Se a ressalva não exigir nova decisão, evitar desenvolvimento longo. Não usar `acompanho na íntegra` quando a posição efetivamente modifica aspecto substantivo da NT.
+
+### C. Divergência parcial ou integral
+
+Identificar com precisão o item ou a conclusão de que se diverge, indicar fato e norma ou decisão que fundamentam a posição própria da Gerência e explicitar consequência processual. Preservar as conclusões da NT não alcançadas pela divergência. A extensão do Despacho aumenta **somente na medida necessária** para justificar a posição alternativa.
+
+Se não houver base suficiente para concordar ou divergir, explicitar a pendência essencial e propor diligência ou complementação objetiva, com finalidade e documento necessários.
+
+## 6. Regras de redação
+
+- Destinatário: `À Superintendência de Outorgas`.
+- Documento no catálogo SEI: **`Despacho`**, nunca `Despacho GPO`, `Despacho Despacho GPO` ou nomenclatura inventada. Não inserir `Despacho GPO` como título manual que duplique o título automático.
+- Texto institucional, em primeira pessoa funcional quando pertinente (`acompanho`, `entendo`, `encaminho`, `recomendo`), sem inventar assinatura ou nome de signatário.
+- Frases curtas, linguagem jurídica simples, conectivos naturais: `Nesse sentido`, `Não obstante`, `De igual modo`, `Assim`, `Portanto`, `No entendimento desta Gerência`.
+- Evitar repetição da NT, introduções históricas extensas, listas e referências normativas que não desempenham papel na decisão.
+- Usar `Pois bem` e outras expressões retóricas somente quando melhorarem a fluidez; não impor expressão fixa.
+- Não usar travessão como recurso de redação.
+- Não inserir cabeçalhos institucionais, números, assinatura ou metadados que o modelo do SEI já gera automaticamente, salvo exigência verificada do editor.
+- Usar numeração, itens ou incisos somente quando adequados ao documento e necessários à clareza.
+- Priorizar **posição e encaminhamento** sobre reprodução da fundamentação da NT.
+
+## 7. Estruturas de referência
+
+As estruturas são flexíveis e devem ser adaptadas ao caso concreto. Não introduzir campos ou fatos não encontrados.
+
+### 7.1. Concordância integral (padrão)
+
+```text
+À Superintendência de Outorgas,
+
+Trata-se de [objeto em uma frase], analisado por meio da Nota Técnica nº [nº]/[ano]/GPO/SOG (SEI nº [id]).
+
+Nesse sentido, acompanho o entendimento manifestado pela área técnica, inclusive quanto às conclusões e recomendações apresentadas.
+
+Assim, encaminho os autos a essa Superintendência para conhecimento e prosseguimento.
 ```
 
-Depois de cada justificativa técnica, chamar novamente `perguntar` com opções de posição; depois da minuta integral, chamar `perguntar` para confirmar o texto. Nunca encerrar um turno com a pergunta escrita em prosa quando se espera uma escolha. Se `perguntar` não estiver disponível, informar explicitamente que o aplicativo não disponibilizou cartões interativos nesta conversa; não afirmar que apresentou botões. O cartão de escolha da próxima etapa não substitui a aprovação nativa da gravação do documento.
+Quando o ato anterior de encaminhamento for relevante, referenciá-lo de modo breve na abertura. Se a providência específica estiver clara, substituí-la ao genérico `conhecimento e prosseguimento`.
 
-## Interface de escolhas do SEI-Pro
-Sempre que uma resposta do usuário determinar qual NT usar, como avaliar uma conclusão ou qual versão da minuta manter, **chamar a ferramenta nativa `perguntar` com `pergunta` e `opcoes`**, para exibir um cartão com botões. Não apresentar as opções apenas como texto corrido ou lista Markdown. O SEI-Pro aceita até seis rótulos em `opcoes` e já mostra o campo `Outra resposta...`; deixar rótulos curtos, claros e orientados à ação. O cabeçalho do cartão traz contexto suficiente, como número da NT e item da conclusão. Não criar HTML de botões na mensagem: o aplicativo renderiza os botões a partir da chamada à ferramenta.
+### 7.2. Concordância com ressalva
 
-Exemplo de chamada para escolher a NT (adapte aos dados efetivamente lidos):
+```text
+À Superintendência de Outorgas,
 
-```json
-{"pergunta":"Nota Técnica nº 132/2026/GPO/SOG (SEI nº 2996813) · Análise da área SSZ34. Qual documento deseja encaminhar à SOG?","opcoes":["Encaminhar esta NT","Escolher outra NT","Ver resumo antes"]}
+Faço referência à Nota Técnica nº [nº]/[ano]/GPO/SOG (SEI nº [id]), que analisou [objeto].
+
+Acompanho, em linhas gerais, suas conclusões. Não obstante, quanto a [ponto], entendo que [ressalva fundamentada e consequência concreta].
+
+Diante disso, encaminho os autos à SOG, com recomendação de [providência adequada].
 ```
 
-Exemplo para cada conclusão, **após mostrar a evidência e a justificativa sugerida no texto da conversa**:
+### 7.3. Divergência
 
-```json
-{"pergunta":"NT nº [número] · Item [identificador]. Como a Gerência deve se posicionar?","opcoes":["Acompanhar proposta","Divergir parcialmente","Divergir integralmente","Pedir diligência","Ver fundamento"]}
+```text
+À Superintendência de Outorgas,
+
+A matéria foi examinada na Nota Técnica nº [nº]/[ano]/GPO/SOG (SEI nº [id]).
+
+Embora acompanhe [partes, se aplicável], divirjo da conclusão referente a [item], uma vez que [premissa comprovada, fundamento aplicável e consequência].
+
+Nesse contexto, entendo que [posição substitutiva]. Assim, encaminho os autos à SOG e recomendo [providência específica].
 ```
 
-Ao escolher `Ver resumo antes` ou `Ver fundamento`, apresentar os dados solicitados e abrir **novo cartão** com opções de decisão. Quando houver divergência, o campo livre ou um novo cartão com `Informar minha tese` deve permitir ao usuário indicar raciocínio e novas peças; não escolher uma tese por ele. Quando a resposta escrita for indispensável, pedir em uma única instrução: linha de raciocínio, tese desejada e documentos novos. Nunca interpretar um clique em `Ver fundamento` como anuência.
+Se houver conflito institucional ou decisão colegiada vigente, fundamentar o necessário e separar aplicação de entendimento atual de eventual sugestão de revisão futura. Não converter automaticamente a divergência em proposta de revisão de precedentes.
 
-O cartão `perguntar` resolve **escolhas de conteúdo e de fluxo**. Não o usar como substituto da aprovação da escrita: `documento_criar`/ferramenta equivalente abre seu próprio cartão de autorização no aplicativo. Após a confirmação do texto, abrir cartão de **escolha de próxima etapa** com `perguntar` e botões `Criar despacho no SEI`, `Manter apenas a minuta` e `Solicitar ajustes`. Essa escolha não aprova a escrita; a autorização efetiva ocorre no cartão da função de criação. Não invocar ferramenta de escrita se o usuário escolher apenas a minuta.
+## 8. Encaminhamento conforme competência
 
-## Primeiro: identificar e confirmar a Nota Técnica
-1. No processo aberto no SEI-Pro, listar as Notas Técnicas elaboradas pela GPO/SOG, com número, identificador SEI, data, assunto e situação disponível. Identificar a **última NT da GPO no processo**, preferencialmente pelo ato mais recente exibido na árvore e sua data, conferindo se trata da matéria em curso. Não selecionar automaticamente uma NT da Infra S.A., do Ministério, de outra unidade ou uma NT antiga da GPO só por ter número semelhante. Se houver minuta e versão final, destacar ambas e propor a versão final, se efetivamente existente.
-2. **Antes de analisar as conclusões ou redigir o despacho**, exibir o cartão `perguntar` com o número, SEI, data e assunto da NT encontrada e os botões `Encaminhar esta NT`, `Escolher outra NT` e `Ver resumo antes`. Aguardar escolha explícita. Caso o usuário diga não, mostrar as demais NTs GPO encontradas ou pedir o número SEI correto e só então prosseguir. Se não houver NT GPO no processo, informar isso e perguntar qual peça deseja encaminhar. Não tomar silêncio como confirmação.
-3. Confirmada a NT, executar a auditoria substantiva descrita abaixo. Ler seu inteiro teor, anexos e referências, eventuais retificações e manifestações posteriores. Extrair todas as conclusões, inclusive incisos, ressalvas, condicionantes e proposta de encaminhamento. Conferir se há ato posterior que a substitua ou altere. Caso haja, avisar o usuário e confirmar qual versão deve ser apreciada antes de continuar.
-4. Consultar os documentos que a própria NT cita para sustentar cada conclusão, com identificador SEI e localização. Reconstruir apenas o contexto processual necessário à redação do despacho: objeto, provocação original, peças principais, tramitação e comando eventualmente dirigido à GPO. **Não presumir a origem da provocação, tema ou posição fixa na árvore**; esses elementos só entram quando forem pertinentes ao caso concreto. Se houver peça ilegível, declarar o limite e buscar leitura alternativa antes de concluir.
+Escolher a providência **a partir da NT, da posição da Gerência e das competências efetivamente aplicáveis**:
 
-## Auditoria substantiva obrigatória da NT confirmada
-**Não iniciar a rodada de anuência/divergência nem redigir o despacho somente com a leitura da conclusão.** Após o usuário confirmar qual NT deseja encaminhar, auditar sua fundamentação e as premissas que sustentam cada conclusão. O objetivo é formar posição própria da Gerência. A NT e sua tabela de referências são roteiro de verificação, não prova autossuficiente.
+- **À SOG:** conhecimento, prosseguimento, apreciação, providência de sua alçada ou submissão motivada à Diretoria, se necessária.
+- **À Diretoria Colegiada, por intermédio da SOG:** formular proposta dispositiva apenas quando for matéria de competência colegiada. Incisos como `autorizar`, `aprovar`, `determinar`, `dar ciência`, `oficiar`, `indeferir` ou `reconhecer` devem refletir a decisão concretamente necessária, não um roteiro fixo.
+- **Ao Poder Concedente ou autoridade portuária:** quando a providência material couber a esses agentes, recomendar à instância competente que os oficie, cientifique ou inste a atuar, sem atribuir à ANTAQ competência alheia.
+- **Em diligência:** indicar destinatário, informação/documento necessário e finalidade, sem criar exigências documentais desproporcionais.
 
-### Escopo e trilha de evidências
-1. Ler integralmente a NT confirmada, inclusive notas, tabelas, anexos e itens antecedentes à conclusão. Relacionar cada afirmação decisiva, número e referência a uma peça primária do processo. Examinar as versões pertinentes, decisões, contratos, plantas, estudos, planilhas, diligências e manifestações que possam confirmar ou contrariar a NT. Usar as ferramentas de consulta e leitura do SEI-Pro, continuando a leitura paginada quando necessário. Se a busca por número SEI não localizar a peça, conferir árvore, anexos, vínculos e processos relacionados acessíveis. Não confundir ausência de extração/OCR com inexistência do dado.
-2. Construir uma matriz interna `afirmação da NT | fonte primária e localização (SEI, página/cláusula/aba) | versão/data | verificação independente | divergência | impacto | providência`. Diferenciar fato documental, alegação de parte, premissa da modelagem e inferência do analista. Indicar como não verificado tudo que não tenha sido efetivamente lido.
-3. Identificar os pontos decisivos para o encaminhamento e as informações contraditórias do processo. Verificar se manifestações posteriores, atos supervenientes ou nova versão substituíram documentos usados na NT. Uma aprovação anterior não dispensa exame da compatibilidade do ato com a situação analisada; uma manifestação técnica antiga não equivale a decisão colegiada vigente.
+Não reproduzir automaticamente a sequência `reconhecer, declarar, aprovar, responder`. Não tratar um Despacho de encaminhamento como deliberação consumada. Quando a proposta da NT for adequada, poderá ser acompanhada por remissão expressa, sem transcrever todos os comandos.
 
-### Conferência jurídica e normativa
-4. Para **cada fundamento legal, regulamentar, contratual ou jurisprudencial citado ou necessário**, conferir texto, artigo, inciso/parágrafo, redação vigente **na data relevante** e eventuais alterações/revogações. Identificar âmbito material, sujeitos alcançados, hipótese de incidência, regra de transição, competência da GPO/SOG, da Diretoria, do Poder Concedente ou de outro órgão, e consequência jurídica pretendida. Conferir se a NT faz a ponte entre fato provado e requisito da norma. Não assumir que uma citação correta em abstrato seja aplicável ao caso.
-5. Dar prioridade às versões oficiais das normas juntadas aos autos e, se houver acesso externo autorizado, a fontes oficiais atualizadas para verificação. Não inventar resultado de pesquisa. Conferir exatamente o dispositivo dos acórdãos, votos e determinações, seus destinatários e se são vinculantes para o processo; distinguir recomendação, determinação, entendimento e decisão específica. Sinalizar norma não encontrada, possível conflito temporal ou leitura jurídica disputável, com os caminhos argumentativos e sua consequência. Não transportar automaticamente entendimentos de outro processo.
-6. Conferir congruência entre pedido, instrução, contraditório necessário, competência, conclusão da NT e providência proposta. Identificar questões essenciais não enfrentadas e riscos de encaminhar autos com instrução incompleta.
+## 9. Interação enxuta
 
-### Recálculo independente
-7. Inventariar todos os cálculos e números decisivos: áreas e dimensões, prazos, volumes, capacidade, produtividade, demanda, MMC/MME, investimentos, custos, receitas, tarifas/pagamentos, taxas, percentuais e VPL, conforme o caso. Para cada um, anotar entradas, unidade, período, data-base, fonte, fórmula, arredondamento e resultado da NT.
-8. **Refazer os cálculos a partir das entradas originais** em ferramenta apropriada quando disponíveis, mostrando fórmula e resultado reprodutíveis. Conferir somas, percentuais, conversões de unidades, índices, atualização monetária, cronogramas, premissas das planilhas e consistência entre texto, tabelas e anexos. Não afirmar que verificou fórmula oculta ou planilha inacessível: neste caso, explicitar o limite, recalcular o que os dados permitem e pedir a memória de cálculo.
-9. Registrar diferenças com valor absoluto, diferença percentual quando fizer sentido, causa provável e materialidade. Evitar arredondamento prematuro. Uma coincidência de resultado não valida premissas erradas; uma diferença de arredondamento não deve ser tratada como vício substantivo sem avaliar o efeito.
+1. **Sem dúvida material:** verificar os autos e preparar o despacho diretamente. Não usar cartões para confirmar cada conclusão, cada achado ou a NT já identificada pelo usuário.
+2. **Com dúvida ou alternativas relevantes:** apresentar uma síntese curta, a fonte, a consequência e, se necessário, **uma única interação consolidada** com opções como `Acompanhar a NT`, `Acompanhar com ressalva`, `Divergir`, `Solicitar diligência`, `Ajustar orientação`. Usar `perguntar` e `opcoes` somente quando essa ferramenta estiver efetivamente disponível; caso contrário, solicitar a decisão em linguagem normal.
+3. **Pedido apenas de redação:** apresentar o texto completo e encerrar, sem forçar criação no SEI.
+4. **Pedido de redação com revisão:** apresentar a minuta, receber ajustes e criar somente se o usuário optar pela criação.
+5. **Pedido expresso de criação direta:** preparar o documento e invocar a ferramenta de criação quando estiver pronto, sem impor confirmação adicional da minuta. A autorização nativa da operação continua obrigatória.
+6. Não interpretar silêncio, leitura de evidências ou consulta a resumo como anuência. Não criar documento se a posição material da Gerência depender de decisão ainda não fornecida.
 
-### Confronto de metragens e dados cadastrais
-10. Procurar **todas as metragens pertinentes** ao objeto e à sua evolução processual: pedido, contrato/aditivos, planta, memorial descritivo, PDZ, EVTEA, edital/minuta, atos decisórios, notas e documentos posteriores. Confrontar área total, útil, operacional, construída e parcelas excluídas, evitando comparar conceitos distintos sem ressalva. Registrar `documento/SEI | data/versão | área em m² | conceito | delimitação | divergência`. Quando houver coordenadas ou polígono disponíveis em formato processável, conferir a delimitação; não declarar validação geométrica apenas por olhar uma imagem.
-11. Aplicar a mesma lógica a datas, nomes, partes, identificação da área, tipos de carga, valores e quantitativos. Investigar por que mudaram: revisão formal, retificação, ampliação/redução, conceitos distintos ou erro. Priorizar o documento vigente para a decisão, mas explicar a cadeia de alterações quando afetar direitos, competência ou modelagem.
+## 10. Criação do documento no SEI-Pro
 
-### Relatório prévio e consequências
-12. Antes de perguntar se o usuário acompanha as conclusões, apresentar **relatório de auditoria** com: (a) peças examinadas e limites de leitura; (b) matriz concisa de fundamentos normativos e sua aplicabilidade; (c) recálculos e divergências; (d) quadro comparativo de metragens e demais números; (e) contradições e lacunas; (f) classificação de cada achado como confirmado, corrigível sem mudar resultado, capaz de alterar conclusão, impeditivo ou não verificado; (g) proposta de tratamento da Gerência e sua justificativa.
-13. Usar a ferramenta `perguntar` com `opcoes` para cada **achado material** cuja consequência exija escolha do usuário: `Acolher correção`, `Manter conclusão`, `Pedir diligência`, `Ver evidência`, `Informar minha tese`. Antes do cartão, mostrar fonte e impacto. Se escolher manter conclusão apesar de divergência demonstrada, pedir fundamento alternativo e testar sua consistência. Corrigir eventual erro material da própria NT por diligência/retificação quando necessário; não ocultá-lo com simples anuência no despacho.
-14. Só depois dessa auditoria e de tratar os achados seguir para a conferência das conclusões da NT item a item. **Acompanhar na íntegra** apenas se todas as conclusões e premissas materiais estiverem suficientemente comprovadas, sem divergência substantiva não resolvida. Se um dado essencial permanecer inacessível, propor diligência específica em vez de declarar auditoria concluída.
+1. Confirmar processo de destino, Nota Técnica pertinente e texto definitivo a inserir. Se o processo de destino não estiver identificável com segurança, não escrever em outro processo.
+2. Consultar o catálogo de tipos de documento e selecionar **exatamente o tipo `Despacho`**. Não inventar tipo `Despacho GPO` nem concatenar `Despacho` ao título manual.
+3. Usar a função de criação de documento realmente exposta pelo SEI-Pro. Respeitar requisitos de formato, modelo e parâmetros que a ferramenta retornar.
+4. Se o usuário pedir criação direta, a autorização para iniciar a operação já está expressa em seu pedido, mas **não substitui o cartão ou confirmação nativa** que a ferramenta exigir para gravar o documento. Nunca afirmar que a gravação foi autorizada ou realizada antes do retorno efetivo da ferramenta.
+5. Não assinar, autenticar, disponibilizar bloco, enviar, tramitar, concluir, publicar ou expedir documento sem instrução e autorização próprias.
+6. Após a criação, reler ou consultar o documento gerado e verificar, quando a ferramenta permitir: número SEI, processo, tipo, texto, parágrafos, incisos, duplicação de título e formatação. Informar identificador apenas quando efetivamente retornado ou constatado.
+7. Se houver falha, indisponibilidade de ferramenta, erro de permissões ou formato, relatar o limite com precisão. Nunca alegar criação bem-sucedida sem confirmação.
 
-## Estrutura, ritmo e ordem lógica do despacho
-Tomar como referência de **forma e ritmo**, quando pertinente, o Despacho GPO SEI nº 3005027, que aprecia a NT nº 132/2026/GPO/SOG (SEI nº 2996813), no Processo nº 50300.015718/2026-31. O exemplo está ligado ao caso SSZ34; não reproduzir automaticamente sua tese, os itens TV1/TV2 nem a conclusão sobre PDZ em outros processos. O despacho contém uma posição da chefia, e não uma reedição integral da Nota Técnica.
+## 11. Controle final silencioso
 
-A sequência efetivamente observada é:
+Antes da entrega ou escrita, conferir:
 
-1. **Abertura curta:** destinatário `À Superintendência de Outorgas`, assunto preciso, referência ao ato de encaminhamento **se existente e relevante**, retorno dos autos, identificação da NT e posição global já anunciada: aprovação integral ou parcial, ou divergência. No exemplo: primeiro retorna os autos; em seguida diz que aprova parcialmente o teor da NT e que indicará divergências.
-2. **Transição e questão preliminar:** `Pois bem.` e `De início, cumpre delimitar...` introduzem a premissa que controla a análise. Quando houver precedente da Diretoria ou controvérsia de competência, expor a decisão vigente, sua força vinculante para as unidades e a possibilidade de propor revisão ao próprio Colegiado. Separar a **regra aplicada no processo atual** da **proposta de revisão para o futuro**; não anunciar como revogado entendimento ainda vigente. Se não houver questão preliminar relevante, passar diretamente à análise, sem fabricar discussão institucional.
-3. **Construção argumentativa:** enunciar a regra e o fato, depois a avaliação e consequência em parágrafos curtos, com conectivos como `Digo isto, pois,`, `Veja.`, `Desse modo,` e `No entendimento desta Gerência,` apenas quando naturais. No SEI nº 3005027, a tese de controle regulatório de elementos essenciais aparece após a explicação do entendimento colegiado, sem propor segunda aprovação do EVTEA. Não usar passagem retórica extensa se a matéria for simples.
-4. **Achados agrupados pela consequência**, sempre com referência aos itens da NT: primeiro pontos aproveitáveis ou sanáveis sem impedir avanço; depois pontos de que a Gerência diverge, com fundamento e efeito preciso; por fim, ponto decisivo que muda o encaminhamento, analisado em parágrafos próprios. Essa organização não exige um parágrafo repetitivo para cada item quando vários comportarem a mesma consequência. A matriz de conferência continua item a item nos bastidores e com o usuário.
-5. **Fecho direto:** afirmar a consequência processual concreta e encaminhar à SOG. No exemplo, o PDZ é tratado após os demais itens, recebe fundamento próprio e leva à recomendação de interromper a instrução até a compatibilização do estudo. Usar a forma de incisos `reconhecer/declarar/aprovar/responder` apenas se houver proposta colegiada com tais comandos. Não acrescentar proposição à Diretoria em todo despacho.
+- NT correta, vigente e pertinente ao processo;
+- posição da Gerência coerente com a análise e com a orientação do usuário;
+- ausência de conclusões inventadas e de divergências artificiais;
+- ressalvas materiais efetivamente tratadas;
+- fundamentos, números, metragens e referências decisivas conferidos no limite das fontes acessíveis;
+- ausência de `acompanho na íntegra` quando houver divergência substantiva;
+- encaminhamento específico, proporcional e dentro da competência;
+- Despacho conciso, sem repetição desnecessária da NT;
+- tipo de documento `Despacho`, sem duplicação de denominação;
+- autorização nativa respeitada e nenhuma ação processual adicional sem pedido.
 
-No caso do exemplo, a NT nº 132 concluiu pela pendência de TV1.I, IV, V, VI e XIV, TV2.II e TV2.III e recomendou saneamento antes da consulta e audiência. O despacho da Gerência não repete essa conclusão em bloco: (a) mantém TV2.II e TV2.III e trata TV1.VI e IV como melhorias sem óbice; (b) afasta TV1.I e V por entender que extrapolam o escopo então definido pela Resolução nº 5.945-ANTAQ; e (c) considera TV1.XIV, compatibilidade com o PDZ, impeditivo ao prosseguimento. Essa relação entre NT e despacho demonstra **como agrupar, hierarquizar e justificar** pontos, não qual resultado adotar em novo processo.
-
-### Como construir a introdução e a contextualização
-Depois de confirmar a NT, obter da árvore o objeto, o pedido original, o despacho que remeteu à GPO se houver, a versão dos estudos e as decisões relevantes. Selecionar apenas os antecedentes necessários para compreender a posição da Gerência. Abrir com `Faço referência ao [ato] (SEI nº [...]), para retornar os autos` quando houver encaminhamento identificado. Em seguida: `A matéria foi analisada no âmbito da Nota Técnica nº [número]/[ano]/GPO/SOG (SEI nº [...]), cujo teor [acompanho na íntegra / aprovo parcialmente, pelas razões a seguir / não acompanho, pelas razões a seguir].` Não atribuir à Gerência trabalho feito apenas pelo servidor. Evitar inventário longo se o leitor puder encontrá-lo na NT.
-
-## Conferência item a item com o usuário
-Antes de redigir a versão final, extrair **todas as conclusões autônomas da NT**, incluindo subitens capazes de mudar a decisão, sem fundir pontos de natureza distinta. Exibir um quadro de trabalho com as colunas `item da NT | conclusão da área técnica | suporte (SEI/localização) | justificativa sugerida pela Gerência | consequência proposta | posição do usuário`. Redigir uma justificativa **original e específica para cada item** a partir dos autos: fato verificado, norma/decisão aplicável, avaliação crítica e consequência. Quando a área técnica não tiver fundamento suficiente, apontar a lacuna, sem completar o raciocínio com suposições.
-
-Para cada item, apresentar primeiro o contexto e a justificativa, depois abrir o cartão nativo `perguntar` com botões de posição. Esperar resposta e manter a numeração da NT:
-
-> **Item [n] da Nota Técnica:** [transcrição curta ou paráfrase fiel da conclusão]. **Fundamento encontrado:** [SEI, página/seção e norma ou decisão aplicável]. **Proposta da Gerência:** [acompanhar / divergir parcialmente / divergir integralmente / pedir complementação]. **Justificativa proposta:** [duas a quatro frases com fato, fundamento e consequência]. Em seguida, use `perguntar` com `opcoes` como `Acompanhar proposta`, `Divergir parcialmente`, `Divergir integralmente`, `Pedir diligência` e `Ver fundamento`.
-
-Se o usuário escolher **Acompanhar proposta**, incorporar a justificativa confirmada ao despacho. Se escolher uma divergência ou responder pelo campo livre que deseja ajuste, pedir objetivamente que informe **(i)** a linha de raciocínio, **(ii)** a tese ou conclusão pretendida e **(iii)** os novos elementos ou peças a considerar. Usar as informações fornecidas para verificar novamente os autos, elaborar nova justificativa e submetê-la à confirmação. Não aceitar a divergência como fundamento em si; fundamentar a posição em evidência verificável. Prosseguir para o item seguinte apenas depois de registrar uma posição expressa para o item atual. Se forem muitos itens, mostrar o quadro completo e perguntar por grupos numerados, mas registrar resposta para **cada item** e retomar os que ficaram sem posição. Não interpretar silêncio como concordância.
-
-Ao final, mostrar a matriz consolidada de decisões: item, posição da área técnica, posição confirmada da Gerência, motivo e efeito sobre o encaminhamento. Abrir cartão `perguntar` para confirmar a síntese antes de apresentar o despacho integral, com opções `Confirmar síntese`, `Rever item` e `Ver evidências`. Esse passo não substitui a confirmação da versão final do documento.
-
-## Regra para anuência e divergência
-- **Todos os itens acompanhados sem ressalva:** usar exatamente o fecho solicitado, ajustando apenas a identificação já criada pelo SEI: **"A matéria foi analisada no âmbito da Nota Técnica nº [XXX]/[ANO]/GPO/SOG (SEI nº [XXX]), cujo teor acompanho na íntegra."** Não acrescentar "acompanho na íntegra" se existir qualquer ressalva substantiva da Gerência.
-- **Divergência parcial:** declarar "Divirjo parcialmente da Nota Técnica nº [XXX] quanto ao item [n]" e expor, separadamente, quais itens acompanha, qual conclusão modifica, por quê e qual encaminhamento resulta. Se a divergência atingir parte de um item, delimitar a parcela e preservar expressamente o restante.
-- **Divergência integral:** declarar "Divirjo integralmente da conclusão da Nota Técnica nº [XXX]" somente quando rejeitar o conjunto de suas conclusões decisórias, apontando fundamentos para cada ponto determinante e proposta substitutiva. A mera discordância quanto ao resultado final pode exigir explicação dos itens que permanecem aceitos.
-- **Insuficiência de instrução:** quando não houver base para anuência ou divergência conclusiva, propor diligência objetiva, indicando documento, pergunta e finalidade. Não classificar automaticamente essa situação como divergência integral.
-
-## Proposta final de encaminhamento
-Depois de firmar a posição da Gerência, redigir encaminhamento **à SOG**, indicando a providência que cabe à Superintendência e, apenas quando o caso exigir decisão colegiada, sugerir que a SOG submeta à Diretoria proposta objetiva. Usar, conforme competência e conteúdo efetivamente apurado, a seguinte estrutura. Cada inciso deve ter suporte próprio nos autos e ser omitido quando inaplicável:
-
-> Nesse sentido, recomendo que a SOG submeta à Diretoria Colegiada proposta de deliberação no sentido de:
->
-> I - reconhecer [fato, situação jurídica ou atendimento de requisito, com fundamento];
->
-> II - declarar [efeito ou consequência regulatória que caiba à Diretoria];
->
-> III - aprovar [providência ou proposta dentro da competência da Diretoria, com eventuais condicionantes]; e
->
-> IV - responder à consulente [síntese objetiva da resposta, **somente se houver consulta e destinatária identificada**].
-
-Se a providência couber à própria SOG ou a outra unidade competente, formular o encaminhamento adequado sem invocar a Diretoria. A sequência `reconhecer, declarar, aprovar, responder` é um repertório, **não quatro comandos obrigatórios**. Não propor aprovação de EVTEA ou decisão inexistente, nem qualificar interessada como "consulente" se não houver consulta. Se recomendar ciência, diligência, devolução ou condicionamento, usar inciso específico em vez de encaixar a providência artificialmente em um dos verbos.
-
-## Forma do despacho
-```
-AGÊNCIA NACIONAL DE TRANSPORTES AQUAVIÁRIOS
-Gerência de Portos Organizados - GPO/SOG
-
-DESPACHO
-À Superintendência de Outorgas
-Assunto: [objeto específico do processo]
-
-1. Faço referência ao [ato de encaminhamento, quando houver] (SEI nº [...]), para retornar os autos.
-
-2. A matéria foi analisada no âmbito da Nota Técnica nº [...]/[...]/GPO/SOG (SEI nº [...]), cujo teor [acompanho na íntegra / aprovo parcialmente, com as divergências a seguir / não acompanho, pelos fundamentos a seguir].
-
-3. Pois bem. [Usar apenas se iniciar desenvolvimento argumentativo.]
-
-4. De início, [premissa decisiva de competência, precedente ou enquadramento, se pertinente].
-
-5. [Fatos, fundamento e consequência da questão preliminar; separar entendimento vigente e revisão proposta, se cabível.]
-
-6. Quanto ao caso em apreço, [agrupar os itens da NT que não impedem o prosseguimento, indicando o efeito de cada um].
-
-7. Em relação a [itens da NT de que se diverge], [explicar o fundamento e a consequência].
-
-8. Quanto ao item [decisivo, se houver], [desenvolver fundamento próprio, prova e efeito processual].
-
-9. Ante o exposto, [consequência concreta e encaminhamento à SOG; incisos de proposta à Diretoria apenas se pertinentes].
-```
-O esquema é flexível: suprimir blocos que não se aplicam, renumerar os parágrafos e escrever a versão final sem marcadores de preenchimento. Se todos os itens forem acompanhados, basta a contextualização necessária, o fecho de anuência integral e o encaminhamento, sem fabricar divergências ou questão preliminar. No exemplo SEI nº 3005027, o fecho é uma recomendação de interromper a instrução; não há proposta final em quatro incisos. Conservar esse grau de objetividade quando o caso permitir. Não inserir assinatura ou número fictício; usar os campos do SEI.
-
-## Criação no aplicativo e confirmações finais
-1. Depois da validação item a item, apresentar **a íntegra da minuta**, seguida de cartão `perguntar` com o título `Despacho à SOG · revisão final do conteúdo` e opções `Confirmar texto`, `Solicitar ajustes` e `Rever conclusões`. Se houver mudanças, revisar, mostrar a versão integral e abrir novo cartão de confirmação.
-2. Somente após confirmação expressa do texto, abrir cartão `perguntar` com o título `Despacho revisado · próxima etapa` e as opções `Criar despacho no SEI`, `Manter apenas a minuta` e `Solicitar ajustes`. O primeiro botão escolhe a próxima etapa, mas **não autoriza a execução**. Se selecionado, usar a ferramenta de escrita, cujo cartão próprio solicita a aprovação efetiva. Se o usuário escolher apenas a minuta, encerrar sem escrita.
-3. Com resposta afirmativa, usar as funções de consulta e criação/edição efetivamente oferecidas pelo SEI-Pro para selecionar o processo, o tipo `Despacho`, inserir o texto confirmado e apresentar o cartão de aprovação do aplicativo. O usuário decide ali pela execução. Não assinar, enviar, concluir processo ou responder externamente sem pedido específico.
-4. Depois da aprovação e execução, reler o documento criado para conferir texto, parágrafos, incisos e número SEI. Informar o identificador somente se retornado. Se a criação ou a leitura falhar, informar a falha sem afirmar que o despacho foi gerado.
-
-## Controle final
-Verificar que a identidade da NT GPO foi expressamente confirmada antes da análise, sua versão, todas as conclusões e suas provas, a posição confirmada do usuário para cada uma, coerência entre anuência/divergência e o fecho, competência de SOG e Diretoria, redação de cada inciso e ausência de fatos não comprovados. O histórico ou um exemplo não autorizam replicar conclusão no processo atual.
+**Resultado esperado:** um despacho da Gerência curto quando houver concordância, fundamentado na medida necessária quando houver ressalva ou divergência, e criado com segurança no SEI-Pro somente quando solicitado e autorizado.
