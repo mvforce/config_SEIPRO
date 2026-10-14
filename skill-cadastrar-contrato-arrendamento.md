@@ -13,7 +13,7 @@ As ferramentas abaixo EXISTEM no conector; chame-as direto com mcp_chamar, sem p
 | arrendamento_criar_contrato | dados (objeto), confirmar (false = prévia, true = grava) |
 | arrendamento_incluir_registro | recurso, id_contrato, dados (objeto), confirmar |
 | arrendamento_consultar_contrato | id_contrato |
-| arrendamento_enviar_arquivo | id_contrato, caminho_arquivo (o caminho devolvido por documento_baixar), confirmar |
+| arrendamento_enviar_arquivo | id_contrato, caminho_arquivo (caminho devolvido por documento_baixar), confirmar; nome_arquivo e conteudo_base64 são preenchidos pela ponte SEI Pro na transferência remota |
 
 Se precisar do esquema de uma delas, use mcp_buscar_tools com UMA palavra só, o trecho do nome (ex.: busca "criar_contrato"). Não busque com várias palavras nem com "arrendamento": a busca devolve só as 10 primeiras que casam com qualquer palavra, e as de cadastro ficam de fora.
 
@@ -87,10 +87,11 @@ Com arrendamento_incluir_registro, id_contrato do passo anterior:
 
 Depois das abas, anexe o PDF do contrato assinado:
 
-1. Baixe o documento do contrato com documento_baixar (ferramenta do SEI, não do conector), passando o nº SEI dele. O usuário aprova no cartão. A ferramenta devolve o caminho do arquivo em Downloads/SEI Pro/<processo>/.
-2. Chame arrendamento_enviar_arquivo com id_contrato e `caminho_arquivo` igual ao caminho devolvido, copiado sem mudar nada, SEM confirmar. Mostre nome e tamanho ao usuário.
-3. Com o "pode anexar", repita com confirmar=true.
-
+1. Leia o instrumento e defina um nome legível com base nos dados comprovados: tipo do instrumento, número e, quando útil, porto ou contratada. Não invente dados nem inclua CPF, informação sigilosa ou detalhes pessoais desnecessários. Use hífen no lugar de barras do número. Exemplo fictício: `Contrato de Cessão de Uso 002-2026 - Porto de Exemplo.pdf`.
+2. Chame `documento_baixar` com `documento` (número SEI) e `nome_arquivo` (nome legível escolhido). A ferramenta preserva a extensão original, acrescenta o número SEI e mostra o destino no cartão de aprovação. Use o `nome_arquivo` e o `caminho` efetivamente devolvidos, sem reconstruí-los. Se a ferramenta não aceitar nome_arquivo, informe que a versão instalada precisa ser atualizada; não afirme que renomeou.
+3. Chame `arrendamento_enviar_arquivo` com `id_contrato`, `caminho_arquivo` exatamente como devolvido e `confirmar=false`. No SEI Pro atualizado, usando o conector HTTPS público autenticado da casa7 ou o túnel localhost, a ponte transfere o conteúdo diretamente do SEI ao MCP e conserva o nome aprovado. Não coloque base64 nem conteúdo binário nos argumentos da IA. Não presuma que o servidor consiga ler o disco do Windows.
+4. Mostre o destino, o nome e o tamanho da prévia. Com o "pode anexar", repita com `confirmar=true`, preservando o documento e o nome aprovados. Os cartões do SEI Pro continuam aplicáveis.
+5. Consulte a lista de anexos e confirme o nome legível efetivo e o vínculo ao contrato correto. Se o documento tiver mudado desde o download, baixe novamente e obtenha nova aprovação.
 Anexe só o contrato (documento externo). documento_baixar não baixa documento criado no editor do SEI (despacho, ofício interno) nem sigiloso: se recusar, diga qual documento ficou sem anexo e siga. O mesmo nome de arquivo não pode ser anexado duas vezes ao mesmo contrato.
 
 ## 6. Fechar
@@ -129,9 +130,9 @@ Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas
 
 ### 7.4 Baixar, nomear e anexar o documento ao registro correto
 
-1. Baixe pelo SEI o PDF do termo assinado por meio de `documento_baixar`, respeitando eventuais limitações de documentos internos ou sigilosos. Identifique o ID do contrato-base ou aditivo **que o termo efetivamente corrige**.
-2. Apresente ao usuário um nome descritivo, por exemplo: `Termo de Apostilamento - Correção do CNPJ da SRRF02 (SEI nº 2894521).pdf`. Este é um **exemplo de nomenclatura, não um dado do processo analisado**.
-3. O conector descrito nesta skill **não disponibiliza ferramenta de renomeação de anexos**. Somente se houver recurso local efetivamente acessível e permitido, renomeie ou copie o PDF para um nome claro **dentro das pastas aceitas para envio**, preservando conteúdo, extensão e vínculo com o documento original; não presuma que seja possível renomear. Use o caminho absoluto exato resultante. Se o conector aceitar apenas o caminho original devolvido por `documento_baixar`, mantenha-o e explique a limitação de nomenclatura.
+1. Identifique o ID do contrato-base ou aditivo que o termo efetivamente corrige. Leia o termo e escolha um nome legível que descreva o instrumento e sua finalidade comprovada.
+2. Exemplo fictício: `Termo de Apostilamento - Correção do CNPJ da Contratada.pdf`. Não copie informações desse exemplo para um processo real. O número SEI será acrescentado pela ferramenta.
+3. Chame `documento_baixar` com `documento` e `nome_arquivo` escolhido. Siga as regras de nome, integridade e transferência privada da seção 5. O nome é definido antes do download e preservado no envio; não é uma operação de renomear anexo já existente.
 4. Confirme o destino, nome, tamanho e, se possível, identidade do arquivo, antes de anexar. Use `arrendamento_enviar_arquivo` sem confirmação para a prévia, obtenha autorização expressa ("pode anexar") e só então envie com `confirmar=true`. **Não associe ao aditivo apenas porque está no mesmo processo.**
 5. Após o envio, consulte a listagem de anexos ou detalhe do registro e confirme que o novo PDF aparece com o nome e vínculo corretos. **Não presuma sucesso pela chamada de envio isolada.**
 6. Se houver anexo incorreto anterior, **não o exclua até comprovar o envio e o vínculo do correto**. A exclusão exige ferramenta disponível e suporte explícito, avaliação do impacto sobre a trilha de auditoria, identificação inequívoca do anexo e autorização separada do usuário. Se o envio novo falhar, preserve integralmente o existente. Se não houver exclusão permitida, mantenha-o e relate pendência de saneamento, sem alegar remoção.
@@ -156,7 +157,7 @@ Consulte arrendamento_consultar_contrato e relate: id, situação, abas gravadas
 
 ### 8.2 Padrão de redação GPO extraído dos 11 despachos-modelo
 
-Produza o **conteúdo de um despacho da GPO**, normalmente de 2 a 5 parágrafos numerados, com:
+Produza o **conteúdo de um despacho da GPO**, normalmente de 2 a 5 parágrafos com numeração automática pelo estilo nativo do SEI, com:
 - **Assunto:** "Cadastro do [tipo e número do instrumento] - [contratada] - Porto de [nome]"; para apostilamento, identificar "Termo de Apostilamento ao [contrato]" e a retificação tratada.
 - **Parágrafo inicial:** "Trata-se de..." ou "Refiro-me a...", identificando órgão/autoridade portuária remetente, documento de encaminhamento e número SEI, instrumento assinado e número SEI, contratante/contratada e vínculo com o porto.
 - **Parágrafo de objeto:** síntese fiel da cláusula pertinente, incluindo área, finalidade, prazo, datas e alterações **somente quando relevantes e comprovados**, sem transcrever cláusulas inteiras desnecessariamente.
@@ -176,13 +177,64 @@ Produza o **conteúdo de um despacho da GPO**, normalmente de 2 a 5 parágrafos 
 5. Se a ferramenta exigir descrição não vazia, consulte seu esquema e informe a limitação: **não preencha arbitrariamente "Despacho GPO"**. Se o SEI já trouxer esse valor pré-preenchido, limpe-o antes de executar, quando houver ferramenta para isso.
 6. Antes de criar, inspecione os parâmetros que serão enviados e confirme: **tipo = Despacho; descrição complementar = ausente/vazia**. Depois, consulte a árvore. Se o resultado continuar como `Despacho Despacho GPO`, trate como problema da configuração/template ou concatenação interna da ferramenta e reporte os parâmetros utilizados; não crie duplicata para tentar corrigir.
 
+### 8.2.1 Formatação obrigatória do despacho no editor SEI
+
+**Referência visual:** Despacho SEI nº 2878109, HTML fornecido pelo usuário. Use somente sua estrutura e formatação, não seus dados, destinatário, unidade emitente, signatário, assinatura ou fundamentos. O modelo contém divergência entre o número do contrato no assunto e no corpo, além de trecho repetido; não reproduza essas inconsistências. A redação de cada despacho deve continuar baseada no processo efetivamente analisado.
+
+**Não gravar texto simples ou Markdown no corpo.** O conteúdo deve ser HTML real no parâmetro `conteudo_html` da ferramenta do SEI Pro, sem cerca de código, sem `**negrito**`, sem sequências literais `\n` e sem HTML escapado como `&lt;p&gt;`. Use parágrafos `<p>` separados, com as classes nativas efetivamente disponíveis na seção editada.
+
+#### Consultar estilos antes de preencher
+
+1. Se ainda não conhece o catálogo do documento, use `documento_criar` sem `conteudo_html` para criar a minuta do tipo `Despacho`, preservando as regras de nome da árvore. Não envie conteúdo já formatado com classes presumidas.
+2. Leia o catálogo `estilos` devolvido pela criação ou consulte `documento_estilos` para o número SEI gerado. Identifique a seção do corpo e suas classes disponíveis. Se necessário, use `editor_ler` para conferir o HTML existente e distinguir cabeçalho, corpo e assinatura. Não copie o documento inteiro para a seção do corpo.
+3. Monte o HTML e preencha por `documento_editar`, no documento e seção corretos, com `conteudo_html` e `modo="substituir"`, respeitando o cartão próprio de autorização. Ao substituir uma minuta existente, preserve todo conteúdo pertinente e não apague seções fora do escopo. Não crie duplicata para corrigir formatação.
+4. As classes abaixo são as observadas no modelo, não uma autorização para usá-las quando ausentes do catálogo. Se o editor oferecer nomes diferentes, escolha equivalentes comprovados. Se não houver equivalente ou suporte efetivo à formatação, informe a limitação; não grave silenciosamente uma versão sem formatação nem declare conformidade visual.
+
+#### Estrutura visual a reproduzir
+
+| Elemento | Classe observada no modelo | Regra de montagem |
+|---|---|---|
+| Timbre, nome da Agência e identificação da unidade | `Texto_Centralizado` | Aproveitar o cabeçalho institucional do novo documento, com a unidade emitente real. Não inserir imagem base64 nem copiar URESL/GREBL/SFC para um despacho da GPO. |
+| Título DESPACHO | `Texto_Centralizado_Maiusculas_Negrito` | Título centralizado, maiúsculo, negrito, 13 pt no modelo. Preservar o título gerado pelo SEI; não duplicá-lo no corpo. |
+| Destinatário, quando cabível | `Texto_Alinhado_Esquerda` | Nome real da unidade destinatária, alinhado à esquerda, sem numeração. Não acrescentar destinatário inexistente ou copiar o do modelo. Não deixar `@destinatarios_virgula_espaco@` ou outro marcador não resolvido. Se a ferramenta não permite tratar a seção pertinente, registrar a limitação. |
+| Assunto | `Texto_Justificado` | Parágrafo sem numeração: `Assunto: <strong>texto do assunto</strong>`. No modelo, o rótulo Assunto não está em negrito; o conteúdo do assunto está. |
+| Corpo e conclusão argumentativa | `Paragrafo_Numerado_Nivel1` | Cada parágrafo usa a classe nativa: Calibri 12 pt, justificado, margem de 6 pt e reserva horizontal de 25 mm para a numeração no CSS do modelo. O número vem do contador CSS, não do texto. |
+| Fecho de cortesia, quando adotado | `Texto_Justificado_Recuo_Primeira_Linha` | `Atenciosamente,` em parágrafo próprio, sem numeração, Calibri 12 pt e recuo de primeira linha de 25 mm no modelo. Não usar esse parágrafo para substituir a conclusão administrativa. |
+| Nome e cargo do responsável, quando comprovados e exigidos pelo modelo institucional | `Tabela_Texto_Centralizado` | O modelo usa texto centralizado de 11 pt. Preservar a seção institucional de assinatura. Não copiar o signatário do exemplo nem inserir `[INFORMAR SIGNATÁRIO]`, `[Informar Cargo]` ou dados inventados. |
+
+**Numeração:** para `Paragrafo_Numerado_Nivel1`, escreva apenas o texto do parágrafo, sem prefixos `1.`, `2.` etc. Não combine a classe com `<ol><li>` e não use espaços, tabulações ou `&nbsp;` repetidos para simular recuo. Os números automáticos podem não aparecer em uma extração textual; confira na visualização renderizada.
+
+**HTML ilustrativo, não texto pronto de um processo:** substitua todos os marcadores pelos dados comprovados antes de executar. Os parágrafos de título, destinatário e assinatura só entram na seção apropriada quando não forem gerados pelo modelo institucional. O corpo pode seguir esta estrutura, desde que as classes tenham sido confirmadas:
+
+```html
+<p class="Texto_Justificado">Assunto: <strong>{{ASSUNTO_COMPROVADO}}</strong></p>
+<p class="Paragrafo_Numerado_Nivel1">{{IDENTIFICACAO_DO_ENCAMINHAMENTO_E_INSTRUMENTO}}</p>
+<p class="Paragrafo_Numerado_Nivel1">{{SINTESE_DO_OBJETO_E_ANTECEDENTES_PERTINENTES}}</p>
+<p class="Paragrafo_Numerado_Nivel1">{{REGISTRO_EFETIVAMENTE_VERIFICADO_E_EVENTUAIS_PENDENCIAS}}</p>
+<p class="Paragrafo_Numerado_Nivel1">{{CONCLUSAO_E_ENCAMINHAMENTO_CABIVEIS}}</p>
+<p class="Texto_Justificado_Recuo_Primeira_Linha">Atenciosamente,</p>
+```
+
+A quantidade de parágrafos deve acompanhar o caso. O fecho de cortesia e a frase de conclusão dos autos seguem as condições da seção 8.2. Não envie os marcadores `{{...}}` ao SEI. Faça escape dos caracteres especiais dos dados inseridos no HTML. Não use negrito no corpo inteiro.
+
+**Referências SEI:** preserve os números corretos. Só crie links/âncoras quando houver recurso suportado e endereço legítimo obtido no processo atual. Não copie `infra_hash`, IDs de links, spans `contenteditable=false` ou URLs de sessão do HTML-modelo; se não houver recurso seguro, use a referência textual correta.
+
+**Não inserir o HTML completo exportado:** exclua `DOCTYPE`, `<html>`, `<head>`, `<body>`, scripts, estilos da extensão, fontes Font Awesome, imagens base64, QR Code, autenticação, código verificador, CRC e assinatura eletrônica do exemplo. Não injete `<style>` ou CSS arbitrário para contornar a ausência de classes do catálogo. A fonte e os recuos devem vir dos estilos institucionais. Não afirmar que uma fonte foi renderizada se não houver conferência visual.
+
+#### Conferência obrigatória após salvar
+
+- Reabra o documento e confira a visualização renderizada: título único, cabeçalho institucional correto, assunto em negrito, alinhamento justificado, recuos e numeração automática sem duplicação.
+- Confira o HTML salvo, quando a ferramenta permitir: classes preservadas, parágrafos separados e `<strong>` no assunto. A leitura apenas do texto não comprova a formatação.
+- Verifique ausência de Markdown literal, tags visíveis, marcadores não resolvidos, caracteres corrompidos e assinatura inventada. Preserve acentos, `º` e referências numéricas.
+- Se o editor remover classes ou a formatação não corresponder ao padrão, corrija a mesma minuta com estilos realmente disponíveis. Se não houver como conferir visualmente, declare que o HTML foi verificado e que a validação visual permanece pendente; não declare formatação validada.
+
 ### 8.3 Integração operativa com o agente SEI-Pro
 
 1. Após concluir e verificar a etapa cadastral, **não apresente minuta de despacho no chat e não crie uma etapa de revisão textual ou confirmação conversacional específica para o despacho**. Elabore o conteúdo internamente e inicie diretamente o fluxo de criação de documento interno no SEI, sujeito ao cartão de aprovação de escrita do próprio SEI-Pro. Não invente interface ou ferramenta específica.
 2. Identifique, nas ferramentas efetivamente disponibilizadas pelo **agente SEI-Pro**, a operação de **criar documento interno** e a de **escrever/editar seu conteúdo**. Consulte suas descrições e parâmetros reais; não confunda ferramentas do conector externo Arrendamento com as ferramentas internas do SEI. Se não estiverem disponíveis, apresente a minuta para inserção manual e relate a limitação.
-3. No **processo correto**, acione a ferramenta de criação de documento interno selecionando exatamente o tipo documental **Despacho** do catálogo do SEI, conforme as regras de nomenclatura acima, utilizando o layout institucional apenas se ele não preencher automaticamente uma descrição adicional, e insira o texto elaborado no editor do SEI. **Não solicite uma aprovação de minuta no chat**. A execução da escrita dependerá exclusivamente da autorização no cartão próprio do SEI-Pro, quando exigida. Nunca crie documento externo PDF no lugar de documento interno editável, salvo instrução expressa.
+3. No **processo correto**, acione a ferramenta de criação de documento interno selecionando exatamente o tipo documental **Despacho** do catálogo do SEI, conforme as regras de nomenclatura acima, utilizando o layout institucional apenas se ele não preencher automaticamente uma descrição adicional, e insira o conteúdo HTML conforme a seção 8.2.1, após conferir o catálogo de estilos do documento. **Não solicite uma aprovação de minuta no chat**. A execução da escrita dependerá exclusivamente da autorização no cartão próprio do SEI-Pro, quando exigida. Nunca crie documento externo PDF no lugar de documento interno editável, salvo instrução expressa.
 4. A criação e o preenchimento, quando dependerem de operações distintas, devem respeitar cada aprovação operacional exigida pelo SEI-Pro. Não acrescente uma aprovação conversacional redundante nem interprete a autorização de uma operação como autorização irrestrita para outras. Não duplique despacho já existente: consulte antes a árvore do processo, inclusive eventuais minutas do mesmo assunto.
-5. Reabra/consulte o documento criado e verifique número SEI gerado, assunto, conteúdo integral, referências, parágrafos e situação (minuta/não assinado). Se a criação funcionar mas a inserção do texto falhar, relate o documento criado e a pendência, em vez de declarar finalização.
+5. Reabra/consulte o documento criado e verifique número SEI gerado, assunto, conteúdo integral, referências, parágrafos, formatação renderizada conforme a seção 8.2.1 e situação (minuta/não assinado). Se a criação funcionar mas a inserção do texto falhar, relate o documento criado e a pendência, em vez de declarar finalização.
 6. **Não assine, não envie o processo, não conclua os autos e não exclua documentos automaticamente.** Essas ações exigem pedido e autorização específicos, separados da autorização para criar a minuta. Se o usuário solicitar assinatura, o fluxo de senha/cargo deve ocorrer exclusivamente no cartão próprio do SEI-Pro, jamais na conversa.
 7. Na resposta final, informe: processo, documento SEI criado (quando houver), situação da assinatura, ID do cadastro no Arrendamento, instrumento registrado e pendências. Se houver impedimento, forneça a minuta completa e diga precisamente qual operação não foi possível executar.
 
@@ -194,7 +246,7 @@ Antes da gravação no SEI, confronte: número do processo; números SEI de enca
 
 - "[sessao] ... janela de login": peça ao usuário para concluir o login da Microsoft na janela do Chrome que abriu e repita a mesma chamada.
 - "[validacao]": o dado foi recusado antes de enviar; corrija conforme a mensagem.
-- "[validacao] ... fora das pastas permitidas" ou "extensão não aceita" ao anexar: o arquivo não veio de documento_baixar ou não é documento; baixe de novo com documento_baixar e use o caminho devolvido.
+- "[validacao] ... fora das pastas permitidas" ou "extensão não aceita" ao anexar: confira o tipo e a origem. Em servidor remoto, atualize o SEI Pro e o MCP para a ponte de conteúdo, refaça o download com nome legível e use o caminho devolvido; não altere o caminho do Windows para inventar um caminho Linux.
 - "[acesso]" ou "[permissao]": o usuário não tem acesso ou perfil no sistema; informe e pare.
 - "não está rodando neste computador": o servidor do conector Arrendamento está desligado; peça ao usuário para iniciá-lo e repita a chamada.
 - "não tem autorização para acessar o endereço": peça ao usuário para abrir a configuração do agente, em Conectores, e clicar em "Testar conexão" no conector Arrendamento.
