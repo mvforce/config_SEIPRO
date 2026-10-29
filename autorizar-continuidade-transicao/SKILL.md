@@ -25,6 +25,17 @@ As instruções atuais do usuário prevalecem sobre preferências históricas, o
 - Usar o protocolo efetivo para contar a antecedência, sem substituir por data da carta. Explicitar término contratual, suspensões e prazo remanescente.
 - Verificar poderes de representação, validade de certidões e habilitação na data do ato pertinente. Vencimento posterior do mandato não invalida retrospectivamente ato regularmente praticado.
 
+### Identificação e solicitação de processos anteriores e relacionados
+
+Ao iniciar a análise de continuidade, identificar ativamente os processos anteriores e os demais processos necessários à decisão, a partir das referências nos autos e das fontes acessíveis. Não esperar a conclusão da Nota Técnica para descobrir ou pedir elemento indispensável ao cotejo.
+
+- Rastrear a cadeia da autorização originária, contratação, aditivos, novos ciclos, recursos, suspensões e decisões posteriores. Identificar também processos de regularização definitiva, fiscalização, controle ou judiciais quando seu conteúdo puder alterar a validade, as condições ou a continuidade da operação. Não solicitar todo processo apenas mencionado: justificar sua necessidade para o caso.
+- Para cada processo necessário, registrar número comprovado, documento/SEI que o identifica, finalidade da consulta, documentos relevantes e disponibilidade. Se o número não puder ser confirmado, não inventar: descrever o instrumento, o objeto e a referência disponíveis e pedir sua identificação.
+- Conferir primeiro os arquivos já fornecidos e as fontes conectadas/autorizadas ou oficiais pertinentes. Se o material necessário continuar indisponível, solicitar ao usuário, assim que a lacuna for identificada, o ZIP integral do processo ou os documentos suficientes, explicitando quais e por quê. Para reconstituir a contratação vigente, priorizar contrato e aditivos efetivamente assinados, anexos e decisões aplicáveis; para o cotejo econômico, incluir a memória de reajuste. Minuta, modelo público ou relato em Nota anterior não equivalem ao instrumento celebrado.
+- Formular o pedido de forma concreta: número do processo, relação com o pedido atual, questão que sua leitura resolverá e documentos mínimos, admitindo a exportação integral como alternativa. Não pedir novamente processo já anexado nem exigir o ZIP inteiro se os documentos disponíveis forem suficientes.
+- Continuar a análise dos pontos independentes enquanto aguarda o material. Se a ausência impedir conclusão segura, delimitar a análise como preliminar ou propor diligência precisa na minuta, registrando a limitação e a solicitação na tabela do chat. Distinguir o pedido de arquivos ao usuário da diligência institucional à autoridade portuária; preparar a segunda não autoriza seu envio.
+- Ao receber processo complementar, inventariar e ler integralmente os documentos fornecidos, integrar a cronologia e reavaliar pendências, revogações e provas supervenientes. Retirar objeções efetivamente superadas, preservando os pontos que os novos autos não resolvam. O processo anterior comprova seu próprio histórico, sem presumir situação financeira, habilitação ou regularização atuais.
+
 ## Enquadramento e decisão
 
 Identificar nova autorização para novo ciclo, cumprimento de autorização existente ou adaptação de autorização anterior à Resolução nº 127/2025. Evitar chamar todo novo ciclo de “prorrogação”. Examinar alterações normativas, portos concedidos, decisões judiciais/TCU e comandos específicos.
@@ -70,7 +81,7 @@ Preparar minuta não autoriza inserção no SEI, assinatura, envio de ofício ou
 
 ## Conferência final
 
-Conferir fundamentos e conclusão; evidências e datas; evolução documental; somas e multiplicadores; prazo e MME; valor global; garantias e seguros durante toda a vigência; anexos, inclusive termos de bens; reajuste e data-base; investimentos e indenização; extinção, desocupação e competência. Fórmula da minuta não equivale a fórmula validada.
+Conferir identificação, acesso e leitura dos processos anteriores e relacionados necessários, ou delimitação de sua falta; fundamentos e conclusão; evidências e datas; evolução documental; somas e multiplicadores; prazo e MME; valor global; garantias e seguros durante toda a vigência; anexos, inclusive termos de bens; reajuste e data-base; investimentos e indenização; extinção, desocupação e competência. Fórmula da minuta não equivale a fórmula validada.
 
 Usar os scripts para formatação e aritmética, sem lhes atribuir julgamento jurídico. Validar HTML e inspecionar tabelas e figura. Indicar limitações de acesso, extração, consulta ou renderização com precisão no relatório, sem transformar ausência de informação em inexistência do fato.
 
