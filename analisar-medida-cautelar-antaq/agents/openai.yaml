@@ -1,0 +1,4 @@
+interface:
+  display_name: "Medida cautelar na ANTAQ"
+  short_description: "Analisa cautelares e gera Nota Técnica em HTML para o SEI"
+  default_prompt: "Use $analisar-medida-cautelar-antaq para analisar os autos, recomendar a medida cabível e gerar a Nota Técnica em HTML para o SEI, com tabelas e imagens documentais pertinentes."

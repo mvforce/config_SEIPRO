@@ -1,0 +1,133 @@
+{
+  "titulo": "Nota Técnica - Exemplo fictício de formatação",
+  "processo": "Demonstração sem número de processo administrativo",
+  "assunto": "Exemplo de HTML com tabelas e figura para colagem no SEI.",
+  "arquivo_base": "exemplo_medida_cautelar",
+  "blocos": [
+    {
+      "tipo": "secao",
+      "numero": "1",
+      "titulo": "DA INTRODUÇÃO E CONTEXTUALIZAÇÃO"
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "1.1",
+      "texto": "Este documento é inteiramente fictício e demonstra a formatação produzida pela skill. Não corresponde a processo, ato administrativo ou recomendação sobre instalação real."
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "1.2",
+      "texto": "No cenário demonstrativo, a Parte A pede a paralisação de uma intervenção física, enquanto a Parte B requer a conclusão da obra e o início da operação. O material sintético distingue essas providências para mostrar uma análise por pedido."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quadro 1 - Pedidos do cenário fictício",
+      "cabecalhos": [
+        "Parte",
+        "Pretensão",
+        "Questão a examinar"
+      ],
+      "linhas": [
+        [
+          "Parte A",
+          "Paralisar a intervenção física.",
+          "Necessidade e extensão da restrição."
+        ],
+        [
+          "Parte B",
+          "Concluir a obra e operar.",
+          "Diferença entre execução física, testes e operação."
+        ]
+      ]
+    },
+    {
+      "tipo": "secao",
+      "numero": "2",
+      "titulo": "DA ANÁLISE E MANIFESTAÇÃO"
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "2.1",
+      "titulo": "Quanto à delimitação do objeto e ao contraditório"
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "2.1.1",
+      "texto": "A demonstração considera pedidos distintos e posições contrapostas. Em processo real, esta setorial técnica deve identificar as peças, os interessados afetados, as manifestações recebidas e o alcance das decisões vigentes antes de formular o encaminhamento."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "2.2",
+      "titulo": "Quanto ao perigo na demora e à probabilidade do direito"
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "2.2.1",
+      "texto": "A urgência depende de evento e prazo crítico demonstrados nos autos. A ausência de prova de urgência não equivale ao reconhecimento de regularidade do ato questionado. A existência de obra, por sua vez, não constitui título para operação."
+    },
+    {
+      "tipo": "figura",
+      "arquivo": "figura_exemplo_sintetico.png",
+      "legenda": "Figura 1 - Etapas distintas no cenário fictício.",
+      "fonte": "Fonte: esquema sintético criado apenas para demonstrar a apresentação do HTML; sem correspondência com os autos fornecidos."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "2.3",
+      "titulo": "Quanto ao dano reverso e às alternativas"
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "2.3.1",
+      "texto": "A solução depende da comparação entre riscos de não intervir e consequências da intervenção. O quadro ilustra questões de análise; suas linhas não substituem prova, fundamentação normativa ou avaliação técnica de um processo concreto."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quadro 2 - Comparação ilustrativa de alternativas",
+      "cabecalhos": [
+        "Alternativa",
+        "Risco a verificar",
+        "Limite da conclusão"
+      ],
+      "linhas": [
+        [
+          "Não intervir",
+          "Consolidação de situação que prejudique a decisão futura.",
+          "Depende de demonstração atual ou iminente."
+        ],
+        [
+          "Paralisar integralmente",
+          "Deterioração, remobilização e efeitos sobre terceiros.",
+          "Custos alegados exigem avaliação."
+        ],
+        [
+          "Delimitar por etapas",
+          "Confusão entre obra, energização, testes e uso.",
+          "Cada etapa exige comando coerente com seu fundamento."
+        ]
+      ]
+    },
+    {
+      "tipo": "secao",
+      "numero": "3",
+      "titulo": "DAS CONCLUSÕES E RECOMENDAÇÕES"
+    },
+    {
+      "tipo": "paragrafo",
+      "numero": "3.1",
+      "texto": "A demonstração comprova somente a apresentação do conteúdo. Nenhuma medida é recomendada ou concedida neste exemplo. Em aplicação real, a conclusão deve decidir cada pedido com base nas provas, enfrentar o contraditório e encaminhar a matéria à autoridade competente."
+    },
+    {
+      "tipo": "item",
+      "texto": "I - Individualizar o resultado de cada pedido, os destinatários, as condutas e os limites pertinentes."
+    },
+    {
+      "tipo": "item",
+      "texto": "II - Definir duração ou evento final, forma de acompanhamento e questões reservadas à instrução de mérito, conforme a norma aplicável."
+    },
+    {
+      "tipo": "fecho",
+      "texto": "Fim do exemplo fictício."
+    }
+  ]
+}
