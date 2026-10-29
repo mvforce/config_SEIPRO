@@ -1,0 +1,17 @@
+{
+  "observacao": "Todos os números e datas são fictícios e servem somente a teste aritmético.",
+  "protocolo": "2026-01-01",
+  "termino": "2026-03-15",
+  "mensal": "100.00",
+  "mensal_anterior": "90.00",
+  "mensalidades": "12",
+  "global_informado": "1200.00",
+  "multiplicador_garantia": "3",
+  "garantia_informada": "300.00",
+  "mme": {
+    "carga_ficticia": [
+      "10",
+      "20"
+    ]
+  }
+}

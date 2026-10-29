@@ -1,0 +1,127 @@
+{
+  "titulo": "Nota Técnica - Exemplo inteiramente fictício",
+  "processo": "EXEMPLO SINTÉTICO, SEM NÚMERO REAL",
+  "assunto": "Demonstração do gerador HTML para contratos de transição.",
+  "arquivo_base": "nota_tecnica_exemplo_sintetico",
+  "blocos": [
+    {
+      "tipo": "secao",
+      "numero": "1",
+      "titulo": "DA INTRODUÇÃO"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este exemplo é inteiramente fictício e demonstra o formato de saída. Todos os fatos e valores aqui utilizados são sintéticos e não correspondem a processo administrativo real."
+    },
+    {
+      "tipo": "secao",
+      "numero": "2",
+      "titulo": "DA CONTEXTUALIZAÇÃO"
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quadro 1 - Histórico fictício",
+      "cabecalhos": [
+        "Documento sintético",
+        "Conteúdo ilustrativo"
+      ],
+      "linhas": [
+        [
+          "Requerimento A",
+          "Pedido de continuidade da mesma operação."
+        ],
+        [
+          "Minuta B",
+          "Proposta de novo ciclo anual, a ser examinada com os demais documentos do caso real."
+        ]
+      ]
+    },
+    {
+      "tipo": "figura",
+      "arquivo": "figura_exemplo_sintetico.png",
+      "legenda": "Figura 1 - Esquema fictício, sem escala.",
+      "fonte": "Fonte: desenho sintético elaborado apenas para demonstrar o gerador; não substitui planta de processo real."
+    },
+    {
+      "tipo": "secao",
+      "numero": "3",
+      "titulo": "DA ANÁLISE E MANIFESTAÇÃO"
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.1",
+      "titulo": "Quanto à competência para a análise do pleito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.2",
+      "titulo": "Quanto ao enquadramento da nova contratação transitória"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.3",
+      "titulo": "Quanto aos requisitos de instrução"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.4",
+      "titulo": "Quanto à continuidade e aos requisitos da nova autorização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.5",
+      "titulo": "Quanto à conformidade da minuta contratual"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.6",
+      "titulo": "Quanto à aderência ao contrato vigente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "subsecao",
+      "numero": "3.7",
+      "titulo": "Quanto aos ajustes necessários à formalização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na utilização em um caso real, desenvolver este tópico com a norma vigente, os documentos efetivamente lidos, os argumentos pertinentes e a conclusão específica. A presente demonstração não contém juízo sobre processo concreto."
+    },
+    {
+      "tipo": "secao",
+      "numero": "4",
+      "titulo": "DAS CONCLUSÕES E RECOMENDAÇÕES"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O exemplo demonstra a apresentação institucional do documento. A conclusão autorizativa, as condições ou eventual diligência devem resultar da análise dos autos do caso real."
+    },
+    {
+      "tipo": "fecho",
+      "texto": "É o entendimento."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO}}</title>
+<style>
+@page { size: A4; margin: 20mm 18mm; }
+body { margin: 0; background: #fff; color: #000; }
+main { max-width: 960px; margin: 32px auto; padding: 0 28px; }
+table { break-inside: auto; } tr { break-inside: avoid; }
+p { orphans: 3; widows: 3; }
+@media print { main { max-width: none; margin: 0; padding: 0; } }
+</style>
+</head>
+<body>
+<main>
+{{CORPO}}
+</main>
+</body>
+</html>

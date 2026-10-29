@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuidade de contratos de transição"
+  short_description: "Análise autorizativa e Nota Técnica em HTML para o SEI"
+  default_prompt: "Use $autorizar-continuidade-transicao para analisar o processo e entregar Nota Técnica em HTML para o SEI, com quadro de pendências no chat."
