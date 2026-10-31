@@ -1,6 +1,6 @@
 # Estilo de escrita de Tavares
 
-Versão 1.1. Atualizado em 31/10/2026.
+Versão 1.2. Atualizado em 31/10/2026.
 
 Perfil de escrita para uso em ChatGPT web, projetos, aplicativos de IA e instruções locais. Consolida as preferências informadas por Tavares e os padrões identificados em 12 PDFs selecionados como referências de estilo, totalizando 73 páginas.
 
@@ -22,7 +22,9 @@ A aplicação entre conversas depende da configuração usada. Colar o texto em 
 
 Obtenha a versão atual deste arquivo pelo repositório e use o mesmo bloco de instruções na ferramenta de destino. No ChatGPT web, abra a conta e o projeto em que deseja trabalhar; se usar outra conta ou espaço de trabalho, configure o perfil nesse destino.
 
-Em uma instalação local do Codex, incorpore o bloco da seção 3 ao AGENTS.md efetivamente carregado pela instalação ou pelo projeto. Preserve outras instruções locais pertinentes. Puxar o repositório mantém o arquivo atualizado no computador, mas a ferramenta precisa recebê-lo como instrução ou referência para aplicá-lo.
+Em uma instalação local do Codex, incorpore o bloco da seção 3 ao AGENTS.md efetivamente carregado pela instalação ou pelo projeto. Para preferências pessoais entre projetos, use o AGENTS.md global no diretório de configuração do Codex. Harmonize eventuais modelos locais de redação com as regras deste perfil e preserve as demais instruções. Puxar o repositório mantém o arquivo atualizado no computador, mas a ferramenta precisa recebê-lo como instrução ou referência para aplicá-lo.
+
+O Codex lê as instruções no início de uma nova execução. Depois de atualizar o AGENTS.md, inicie um novo chat para carregar a versão atual. Confira se existe AGENTS.override.md no mesmo nível e se o limite de leitura comporta o conjunto de instruções. A incorporação do estilo deve manter os comandos de precisão, o contexto profissional e as instruções de outros assuntos que já estejam no arquivo.
 
 A memória local do Codex e a memória do ChatGPT web são separadas. Este arquivo serve como referência portátil e versionada, sem depender da transferência dessas memórias.
 
@@ -30,7 +32,7 @@ Referências oficiais: [personalização](https://learn.chatgpt.com/docs/persona
 
 ## 2. Instruções personalizadas prontas para colar
 
-Bloco com 1487 caracteres, incluindo espaços e quebras de linha, na versão 1.1.
+Bloco com 1487 caracteres, incluindo espaços e quebras de linha, na versão 1.2.
 
 ```text
 Responda em português do Brasil. No contexto profissional, trate-me como Tavares. Na conversa, seja natural, direto e crítico.
@@ -224,11 +226,15 @@ Os principais refinamentos da versão 1.0 foram: permitir primeira pessoa técni
 
 A versão 1.1 incorpora os ajustes de estilo aprovados por Tavares em 31/10/2026: conclusões concisas, distinção dos despachos de acolhimento, escrita na voz do signatário, correções documentais explícitas, bases de comparação numérica e fórmulas preferenciais de encaminhamento. O exemplo abstrato foi revisto para evitar fragmentação. Esta atualização não envolveu nova leitura dos 12 PDFs.
 
+A versão 1.2 consolida a aplicação persistente ao AGENTS.md global, com harmonização das seções de escrita e dos modelos locais. Mantém o bloco curto e as preferências substantivas da versão 1.1.
+
 ## 12. Como atualizar este perfil
 
 Este arquivo será a referência de estilo neste repositório. Quando Tavares solicitar uma atualização, leia a versão atual, considere as correções ou amostras indicadas e incorpore as mudanças confirmadas ao corpo do perfil.
 
 Mantenha coerência entre o bloco curto, o bloco completo e as orientações detalhadas. Ao alterar o bloco curto, conte novamente os caracteres e ajuste a indicação correspondente. Uma preferência específica de uma tarefa não deve virar regra geral sem suporte no pedido.
+
+Quando a atualização incluir o AGENTS.md local, incorpore as preferências duradouras às seções de estilo, revisão e modelos de documentos. Harmonize instruções repetidas que possam gerar conflito, preserve o restante e confira o arquivo final. Não publique o AGENTS.md pessoal integral como parte de uma atualização deste perfil; o material portátil deve continuar concentrado nas orientações de escrita.
 
 Atualize a data, a versão e o histórico abaixo. Preserve o nome deste arquivo para manter utilizável o mesmo endereço. Publique no repositório quando a solicitação autorizar a atualização nele. Atualizações deste perfil não abrangem outros arquivos nem a publicação de documentos de referência sem pedido correspondente.
 
@@ -244,3 +250,5 @@ No outro computador, obtenha a versão atual do repositório e substitua o conte
 | --- | --- | --- |
 | 31/10/2026 | 1.0 | Perfil inicial consolidado a partir das preferências informadas e de 12 PDFs, com blocos curto e completo, orientações de uso e procedimento de atualização a pedido. |
 | 31/10/2026 | 1.1 | Harmonização dos blocos curto e completo; conclusões concisas; despachos de acolhimento sem reprodução da nota; voz do signatário; correções documentais explícitas e bases de comparação; fórmulas preferenciais; exemplo com parágrafos encadeados. |
+| 31/10/2026 | 1.2 | Aplicação persistente ao AGENTS.md global; harmonização de estilo, revisão e modelos locais; orientação para carregar as regras em novos chats e preservar o contexto existente. |
+
