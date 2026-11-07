@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo textual de Voto do Relator</title>
+<style>
+  /* Base portátil, não exportação nativa do SEI. Não usar estas classes
+     como se fossem nomes de estilos internos do editor institucional. */
+  html { background: #f1f1f1; }
+  body { margin: 0; color: #111; font-family: Calibri, Arial, sans-serif; font-size: 12pt; }
+  .orientacao { max-width: 18cm; margin: 1cm auto .5cm; padding: .5cm; background: #fff; border: 1px solid #aaa; font-size: 10pt; line-height: 1.35; }
+  .orientacao p { margin: 0 0 .25cm; }
+  .orientacao p:last-child { margin-bottom: 0; }
+  .documento { box-sizing: border-box; width: 21cm; min-height: 27cm; margin: 0 auto 1cm; padding: 1.8cm 1.7cm; background: #fff; }
+  .identificacao { margin-bottom: 1cm; }
+  .identificacao p { margin: 0 0 .22cm; line-height: 1.25; text-align: left; }
+  .paragrafos { margin: 0; padding-left: .65cm; list-style-type: decimal; }
+  .paragrafos > li { margin: 0 0 .3cm; padding-left: .1cm; text-align: justify; line-height: 1.25; }
+  .paragrafos > li > p { margin: 0; text-indent: 1.7cm; }
+  .incisos { margin: .35cm 0 0 1.2cm; padding-left: .9cm; list-style-type: upper-roman; }
+  .incisos > li { margin: 0 0 .25cm; text-align: justify; padding-left: .15cm; }
+  .incisos > li::marker { content: counter(list-item, upper-roman) " - "; }
+  .alineas { margin: .25cm 0; padding-left: .7cm; list-style-type: lower-alpha; }
+  .alineas > li::marker { content: counter(list-item, lower-alpha) ") "; }
+  .fecho { margin: .7cm 0 .8cm 1.7cm; }
+  .signatario { text-align: center; margin: 0; }
+  .funcao { text-align: center; margin: .25cm 0 0; }
+  .campo { color: #111; }
+  @media (max-width: 850px) { .documento { width: calc(100% - 1cm); padding: 1cm; } .orientacao { margin: .5cm; } }
+  @media print { html { background: #fff; } .orientacao { display: none; } .documento { margin: 0; width: auto; padding: 0; min-height: auto; } @page { size: A4; margin: 2cm; } }
+</style>
+</head>
+<body>
+<aside class="orientacao" aria-label="Instruções de uso, fora do voto">
+  <p><strong>Modelo de trabalho. Não é um voto pronto para assinatura.</strong></p>
+  <p>Esta é uma base HTML portátil de redação. Os PDFs permitem reproduzir a estrutura visual, mas não identificar as classes ou a numeração nativa do SEI. Antes do uso no sistema, adaptar a um HTML original de Voto do Relator e conferir a numeração no editor.</p>
+  <p>Preencher os campos com fontes do caso, excluir parágrafos e incisos inaplicáveis e desenvolver somente os fundamentos necessários. A lista decimal e a lista romana usam numeração própria desta página; não as sobrepor à numeração automática do SEI.</p>
+  <p>Este quadro não integra o documento. Não foram reproduzidos logotipo, assinatura eletrônica, autenticação, rodapé ou identificadores de votos anteriores.</p>
+</aside>
+<main class="documento" id="corpo-voto">
+  <header class="identificacao">
+    <p><strong>Processo:</strong> <span class="campo">[PROCESSO DE MÉRITO CONFIRMADO]</span></p>
+    <p><strong>Tipo:</strong> <span class="campo">[TIPO PROCESSUAL CONFIRMADO]</span></p>
+    <p><strong>Interessado:</strong> <span class="campo">[DENOMINAÇÃO CONFIRMADA]</span></p>
+    <p><strong>Contextualização:</strong> <span class="campo">[QUESTÃO CONCRETA SUBMETIDA À DELIBERAÇÃO]</span></p>
+    <p><strong>Relator:</strong> <span class="campo">[NOME CONFIRMADO]</span></p>
+  </header>
+  <ol class="paragrafos">
+    <li><p>[INSERIR A CERTIFICAÇÃO INSTITUCIONAL SOMENTE APÓS VERIFICAÇÃO DA SITUAÇÃO PROCESSUAL, DA REFERÊNCIA NORMATIVA E VALIDAÇÃO PELO GABINETE.]</p></li>
+    <li><p>Encontra-se para deliberação [PEDIDO, CONSULTA, REANÁLISE OU QUESTÃO ESPECÍFICA], referente a [OBJETO E INSTRUMENTO], [FORMULADO POR OU DECORRENTE DE ATO CONFIRMADO, QUANDO PERTINENTE].</p></li>
+    <li><p>[APRESENTAR SOMENTE O ANTECEDENTE NECESSÁRIO PARA COMPREENDER A DECISÃO ATUAL, SEM REPETIR O RELATÓRIO.]</p></li>
+    <li><p>Conforme [MANIFESTAÇÃO IDENTIFICADA E SEI], [CONCLUSÃO RELEVANTE E SUA PREMISSA].</p></li>
+    <li><p>[SE HOUVER POSIÇÕES DISTINTAS, IDENTIFICAR CADA UNIDADE E O FUNDAMENTO DA DIVERGÊNCIA. EXCLUIR ESTE PARÁGRAFO SE INAPLICÁVEL.]</p></li>
+    <li><p>Nesse ponto, [JUÍZO DO RELATOR SOBRE A QUESTÃO], uma vez que [FUNDAMENTO DECISIVO DISPONÍVEL NOS DOCUMENTOS].</p></li>
+    <li><p>Desse modo, [CONSEQUÊNCIA PARA O PEDIDO, COM AS CONDIÇÕES E OS LIMITES PERTINENTES].</p></li>
+    <li>
+      <p>Diante do exposto e dos demais elementos contidos nos autos, <strong>VOTO</strong> por:</p>
+      <ol class="incisos" type="I">
+        <li>[VERBO NO INFINITIVO, OBJETO E ALCANCE DO COMANDO PRINCIPAL];</li>
+        <li>[PARÂMETRO, CONDIÇÃO OU PROVIDÊNCIA ADICIONAL FUNDAMENTADA, SOMENTE SE NECESSÁRIA]; e</li>
+        <li>[ENCAMINHAMENTO OU CIÊNCIA COM DESTINATÁRIO E FINALIDADE, SOMENTE SE PERTINENTE].</li>
+      </ol>
+    </li>
+  </ol>
+  <p class="fecho">É como voto.</p>
+  <p class="signatario">[NOME CONFIRMADO, APENAS SE O CAMPO FOR EDITÁVEL]</p>
+  <p class="funcao">[FUNÇÃO CONFIRMADA, APENAS SE O CAMPO FOR EDITÁVEL]</p>
+</main>
+</body>
+</html>
