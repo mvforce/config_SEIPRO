@@ -17,7 +17,7 @@ O voto deve indicar **o que se decide, por quais razões e com quais efeitos**. 
 
 ## 2. Base de referência e alcance do padrão
 
-A referência empírica desta versão são os oito PDFs fornecidos pelo usuário. Os localizadores abaixo permitem recuperar os exemplos sem depender da memória da conversa.
+A referência empírica inicial são os oito PDFs fornecidos pelo usuário. Esta versão também incorpora a comparação das peças centrais dos três processos TEMAPE, PAR05 e TPAR, nos limites e com os localizadores da seção 16. Os localizadores abaixo permitem recuperar os exemplos sem depender da memória da conversa.
 
 | Arquivo | Voto SEI | Exemplo de construção textual | Trechos de referência |
 |---|---|---|---|
@@ -349,7 +349,9 @@ Entregar o voto e, separadamente, apenas as pendências relevantes. Não anexar 
 
 ## 13. Materiais adicionais úteis para aperfeiçoar esta skill
 
-**Para a estrutura e a linguagem, os oito votos já são suficientes.** Os complementos abaixo têm finalidades distintas e não são pré-requisitos cumulativos:
+**Situação da base:** TEMAPE, PAR05 e TPAR já foram recebidos e utilizados na comparação dirigida registrada na seção 16. As referências abaixo preservam as finalidades dos complementos originalmente sugeridos; não pedir novamente os três processos já fornecidos. O HTML nativo de Voto do Relator continua não identificado nos arquivos recebidos.
+
+**Para a estrutura e a linguagem, os oito votos já são suficientes.** Os demais complementos têm finalidades distintas e não são pré-requisitos cumulativos:
 
 - **Um Voto do Relator em HTML nativo do SEI:** permite reproduzir classes, campos editáveis, recuos e numeração sem aproximação. É o complemento prioritário para a formatação.
 - **Um conjunto Relatório + NT + despachos GPO/SOG + Voto + Acórdão:** permite observar o que o gabinete sintetiza, incorpora, afasta e converte em comando. Um caso representativo é suficiente para começar.
@@ -365,7 +367,7 @@ Os processos acima são os **indicados nos cabeçalhos dos votos**. Não presumi
 
 ## 14. Uso deste pacote por link único
 
-Este arquivo reúne a skill completa, o complemento de síntese processual abaixo e o modelo HTML integral no Anexo A. Não é necessário abrir outro link para obter as instruções e a base HTML. Os dois arquivos originais são preservados separadamente para edição.
+Este arquivo reúne a skill completa, os complementos de síntese processual das seções 15 e 16 e o modelo HTML integral no Anexo A. Esta é a versão consolidada para uso por link único; os arquivos originais separados permanecem como base de referência. Não é necessário abrir outro link para obter as instruções e a base HTML. Os dois arquivos originais são preservados separadamente para edição.
 
 **Comando de uso:** Leia integralmente este pacote e elabore o Voto do Relator com base nos documentos do caso. Aplique a estrutura, a linguagem, o ritmo argumentativo e as regras do dispositivo. Entregue em HTML. Não invente fatos, referências, certificações ou comandos. Informe as pendências relevantes fora do documento.
 
@@ -385,6 +387,61 @@ Estas regras complementam a versão-base após a leitura das peças centrais do 
 6. **Não confundir original e reprodução juntada.** Registrar separadamente o identificador do documento original e o da cópia incorporada aos autos. Citar aquele que permita localizar com segurança o conteúdo utilizado e esclarecer a relação quando necessário.
 7. **Separar proposta e deliberação.** Em estudo de caso concluído, comparar voto e acórdão para identificar o que foi efetivamente decidido. Em processo novo, o voto propõe; não escrever como se o Colegiado já tivesse deliberado.
 8. **Não reproduzir falhas da amostra.** Divergências de área, unidade, extenso, referência ou objeto devem ser apontadas, e não corrigidas silenciosamente nem tratadas como padrão de estilo. A síntese textual não dispensa a identificação da pendência material.
+
+## 16. Incorporação dos três processos de origem
+
+**Alcance desta atualização:** comparação dirigida das peças centrais de TEMAPE, PAR05 e TPAR para aperfeiçoar a estrutura, a síntese, a linguagem e o dispositivo. Não corresponde à leitura exaustiva de todos os anexos, auditoria das planilhas ou validação integral do mérito. O conjunto continua apoiado nos oito votos da seção 2 e passa a contar também com estas três cadeias documentais. Os processos e suas peças não integram a publicação.
+
+| Processo de mérito | Peças centrais utilizadas na comparação | Elemento incorporado |
+|---|---|---|
+| TEMAPE: 50300.013489/2024-59 | NT 165/2024, SEI 2355772; NT 186/2024, SEI 2379600; Despacho SOG 2564886; Relatório juntado como 2706471; Voto 2689522, juntado como 2706472; Acórdão 688/2025, SEI 2706538 | Seleção entre posições divergentes, atribuição exata do fundamento e coerência entre a metodologia acolhida e o resultado adotado. |
+| PAR05: 50300.007137/2026-26 | NT 40/2026/GPO/SOG, SEI 2852804; Despacho SOG 2863035; NT 11/2026/SELC/DG, SEI 2864360, especialmente ajustes e conclusão; Despacho SELC 2868447; Relatório juntado como 2916632; Voto 2900685, juntado como 2916633; Acórdão 294/2026, SEI 2917272 | Delimitação da etapa e do alcance da apreciação, acolhimento por remissão e incorporação das condições ao dispositivo. |
+| TPAR: 50300.003652/2021-22 | NT 57/2025/GPO/SOG, SEI 2491427; Despacho GPO 2523853; Despacho SOG 2531548; Relatório 2570214, juntado como 2632525; Voto 2570215, juntado como 2632526; Acórdão 517/2025, SEI 2633119 | Organização por comandos anteriores, explicação dos ajustes e da manutenção fundamentada de premissas, identificação da versão adotada e alteração delimitada de decisão anterior. |
+
+Os localizadores identificam a base da comparação textual, não uma lista de peças obrigatórias para qualquer voto. O Relatório e o Voto podem ter identificador próprio no processo de deliberação e outro identificador como reprodução nos autos de mérito. Preservar essa distinção.
+
+### 16.1. TEMAPE: escolher e fundamentar, sem fabricar consenso
+
+Não reduzir a controvérsia a uma sucessão de documentos. Apresentar o ponto em que as posições divergem, explicar a razão determinante da escolha e levar ao dispositivo apenas o resultado compatível com a linha acolhida.
+
+A comparação da instrução com o voto mostra a importância de consultar também a manifestação complementar. A defesa da parametrização com referência ao item 225 do Manual de EVTEA está desenvolvida na NT 186/2024, SEI 2379600. Não atribuir automaticamente todos os argumentos à NT inicial apenas porque ela é a referência mais repetida no voto de exemplo.
+
+Quando a Superintendência divergir da Gerência, o voto deve identificar a divergência sem desqualificar as unidades. Evitar escrever que a SOG concluiu de forma unânime ou que a manifestação mais recente substituiu todas as anteriores quando isso não estiver demonstrado. Não adotar o fundamento de uma posição e o valor de outra sem explicação.
+
+**Ritmo de referência:** controvérsia delimitada; posições e fundamentos; escolha do relator; efeito sobre o pedido; comando correspondente. A escolha feita no caso TEMAPE não se torna preferência permanente pela GPO.
+
+### 16.2. PAR05: preservar a etapa e tornar a condição operativa
+
+A conclusão de que determinada insuficiência não impede o prosseguimento de uma etapa não equivale à afirmação de que todos os requisitos foram atendidos, nem à aprovação irrestrita do objeto. Preservar a diferença entre verificação formal, abertura de participação pública, ajustes de minutas e aprovação final, conforme o que os autos efetivamente submetem à decisão.
+
+O acolhimento das manifestações por remissão deve indicar documentos e alcance. Após a remissão, destacar as ressalvas que alteram a proposta. Se o relator transformar ajuste sugerido pela unidade em condição de aprovação, explicitar essa escolha e assegurar sua correspondência no dispositivo. Não aumentar silenciosamente a força de uma recomendação da fonte.
+
+Identificar os ajustes por documento, parágrafo, item ou texto suficiente para localização. Quando houver vários grupos de ressalvas, não substituí-los por uma referência indeterminada a "todas as recomendações". Não copiar para um novo caso as cláusulas específicas, os campos em aberto ou as competências do convênio do PAR05.
+
+**Ritmo de referência:** delimitação da competência e da etapa; conclusão técnica acolhida; ressalva relevante; aprovação ou prosseguimento com alcance definido; condição incorporada ao comando.
+
+### 16.3. TPAR: atender ao comando sem reabrir desnecessariamente o mérito
+
+Em voto decorrente de determinação anterior, organizar o desenvolvimento pelos pontos efetivamente devolvidos à análise. Vincular cada ponto ao ato e ao item correspondentes, à resposta da instrução e à conclusão do relator. Esse vínculo serve à redação e não exige exibir matriz ou submeter cada item ao usuário.
+
+Preservar a diferença entre **determinar reavaliação** e **determinar adoção de um resultado específico**. No exemplo, a instrução reexamina a demanda e justifica a manutenção das projeções, enquanto outros componentes do estudo são ajustados. Portanto, não escrever que uma premissa necessariamente mudou apenas porque foi reavaliada, nem que a manutenção constitui descumprimento por si só. Tampouco transformar uma hipótese mencionada no comando anterior em resultado imposto.
+
+Selecionar a explicação técnica necessária para compreender o resultado: o que foi alterado, o que permaneceu e por quê. Não reproduzir todo o relatório, todas as versões de planilha ou todo o histórico da prorrogação. Se a mesma avaliação aplicar métodos diferentes a grupos de ativos, preservar a distinção indicada na fonte em vez de atribuir um método único a todo o conjunto.
+
+Associar o resultado à versão efetivamente adotada, com sinal, data-base e data focal, quando pertinentes. A referência a uma planilha na NT, no relatório ou no voto não equivale a recálculo independente pelo redator. Não importar para a minuta de outro caso o montante ou as datas do exemplo.
+
+No dispositivo, identificar o acórdão e o item que se propõe alterar e explicitar o conteúdo substitutivo necessário. Não converter essa providência em nova autorização de prorrogação ou nova aprovação integral de todas as cláusulas se esse não for o objeto submetido à deliberação. Separar a alteração de mérito das remessas ao órgão de controle, ao Poder Concedente e das ciências pertinentes.
+
+**Ritmo de referência:** comando anterior; resposta técnica por questão; resultado consolidado; alcance da mudança; alteração expressa do item decisório.
+
+### 16.4. Controles de redação comuns às três cadeias
+
+- **Corte temporal:** distinguir peças disponíveis na formação do voto de documentos e providências posteriores. Não usar uma declaração posterior para afirmar que já estava nos autos quando o voto anterior foi produzido. Na redação de um voto atual, considerar os fatos supervenientes pertinentes e identificá-los como tais.
+- **Grau de conclusão:** antes de escrever "integralmente atendido", verificar se os elementos disponíveis cobrem todos os comandos alcançados pela frase, inclusive declarações ou providências atribuídas a outras unidades. Não ampliar uma conclusão restrita à modelagem para toda a regularidade do processo.
+- **Rastreabilidade:** manter, como apoio interno, o vínculo entre afirmação, peça, localização, versão e comando. Isso não transforma a skill em auditoria integral nem obriga a inserir quadro de conferência no voto.
+- **Independência dos casos:** extrair a técnica argumentativa, não transplantar premissas, valores, competências, condicionantes ou decisões de um processo para outro.
+
+Os três processos complementam a redação, mas os Relatórios e Votos neles localizados estão em PDF. Os HTML de notas técnicas, despachos e acórdãos não substituem um HTML nativo de Voto do Relator. Mantém-se, portanto, a limitação de formatação indicada na seção 10.
 
 ## Anexo A. Modelo HTML incorporado
 
